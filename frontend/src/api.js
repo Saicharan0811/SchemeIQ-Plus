@@ -15,7 +15,9 @@ const rawBase = import.meta.env.VITE_API_BASE_URL;
 const API_BASE =
   typeof rawBase === "string" && rawBase.trim().length > 0
     ? rawBase.trim().replace(/\/+$/, "")
-    : "http://127.0.0.1:5000";
+    : import.meta.env.DEV
+    ? "http://127.0.0.1:5000"
+    : "";
 
 async function apiRequest(path, options = {}) {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;

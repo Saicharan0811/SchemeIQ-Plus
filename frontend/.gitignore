@@ -9,8 +9,16 @@ lerna-debug.log*
 
 node_modules
 dist
-dist-ssr
 *.local
+
+# Environment variables & local configuration
+.env
+.env.*
+!.env.example
+
+# Vercel deployment cache
+.vercel
+
 
 # Editor directories and files
 .vscode/*
