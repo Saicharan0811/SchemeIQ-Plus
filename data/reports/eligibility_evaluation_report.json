@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-09-04T07:29:32.918482+00:00",
+  "total_scenarios_tested": 12,
+  "scenarios_passed": 12,
+  "privacy_test_passed": true,
+  "schemes_evaluated_per_run": 14,
+  "all_tests_passed": true,
+  "scenario_results": [
+    {
+      "scenario_id": "SC01",
+      "scenario_name": "Complete Telangana Landholding Farmer",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS001",
+      "top_scheme_name": "Rythu Bharosa",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 111.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 11,
+        "NOT_APPLICABLE": 2,
+        "NOT_ELIGIBLE": 1
+      }
+    },
+    {
+      "scenario_id": "SC02",
+      "scenario_name": "Low-Income Telangana Post-Matric Student",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS006",
+      "top_scheme_name": "Telangana ePASS Scholarships",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 103.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 13,
+        "INSUFFICIENT_INFORMATION": 1
+      }
+    },
+    {
+      "scenario_id": "SC03",
+      "scenario_name": "Micro-Enterprise Entrepreneur seeking PMEGP/MUDRA",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "CT004",
+      "top_scheme_name": "Pradhan Mantri Mudra Yojana",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 101.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 10,
+        "INSUFFICIENT_INFORMATION": 2,
+        "NOT_APPLICABLE": 2
+      }
+    },
+    {
+      "scenario_id": "SC04",
+      "scenario_name": "Senior Citizen Aged 72 in Telangana",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS005",
+      "top_scheme_name": "Aasara Pensions",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 103.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 10,
+        "INSUFFICIENT_INFORMATION": 2,
+        "NOT_ELIGIBLE": 2
+      }
+    },
+    {
+      "scenario_id": "SC05",
+      "scenario_name": "Low-Income Urban Family Seeking Housing / Healthcare",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "CT003",
+      "top_scheme_name": "PMAY-U 2.0",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 101.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 13,
+        "INSUFFICIENT_INFORMATION": 1
+      }
+    },
+    {
+      "scenario_id": "SC06",
+      "scenario_name": "Partial Profile: Missing Income (Must not crash or fail falsely)",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS006",
+      "top_scheme_name": "Telangana ePASS Scholarships",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 95.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 12,
+        "INSUFFICIENT_INFORMATION": 2
+      }
+    },
+    {
+      "scenario_id": "SC07",
+      "scenario_name": "Partial Profile: Missing Age (Must not fail age-bounded schemes falsely)",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS001",
+      "top_scheme_name": "Rythu Bharosa",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 111.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 9,
+        "INSUFFICIENT_INFORMATION": 5
+      }
+    },
+    {
+      "scenario_id": "SC08",
+      "scenario_name": "Explicit Rule Failure: Age 55 applying for APY (Max Age 40)",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS008",
+      "top_scheme_name": "Telangana Diagnostics",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 95.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 11,
+        "INSUFFICIENT_INFORMATION": 2,
+        "NOT_ELIGIBLE": 1
+      }
+    },
+    {
+      "scenario_id": "SC09",
+      "scenario_name": "Unknown Field Handling: Minimal Profile",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS008",
+      "top_scheme_name": "Telangana Diagnostics",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 95.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 8,
+        "INSUFFICIENT_INFORMATION": 6
+      }
+    },
+    {
+      "scenario_id": "SC10",
+      "scenario_name": "Geographic Mismatch: Karnataka Resident",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "CT001",
+      "top_scheme_name": "PM-KISAN",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 101.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 5,
+        "INSUFFICIENT_INFORMATION": 1,
+        "NOT_APPLICABLE": 8
+      }
+    },
+    {
+      "scenario_id": "SC11",
+      "scenario_name": "Recommendation Priority & Deterministic Sorting",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS006",
+      "top_scheme_name": "Telangana ePASS Scholarships",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 103.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 13,
+        "INSUFFICIENT_INFORMATION": 1
+      }
+    },
+    {
+      "scenario_id": "SC12",
+      "scenario_name": "Corpus Completeness: All 14 Schemes Assessed",
+      "passed": true,
+      "notes": [],
+      "top_scheme": "TS008",
+      "top_scheme_name": "Telangana Diagnostics",
+      "top_scheme_status": "POTENTIALLY_ELIGIBLE",
+      "top_scheme_score": 95.0,
+      "status_counts": {
+        "POTENTIALLY_ELIGIBLE": 12,
+        "INSUFFICIENT_INFORMATION": 2
+      }
+    }
+  ]
+}

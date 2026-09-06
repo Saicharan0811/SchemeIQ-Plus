@@ -1,0 +1,3002 @@
+{
+  "metadata": {
+    "annotator_id": "expert_01",
+    "generated_at": "2026-09-04T08:12:15.597617+00:00",
+    "total_archetypes": 16,
+    "rubric": {
+      "1": "BROADLY RELEVANT: Baseline eligibility met; secondary/indirect benefit",
+      "2": "HIGH INTEREST: Strong alignment with immediate livelihood/welfare need",
+      "3": "PRIMARY CHOICE: Top priority; maximum direct socio-economic impact"
+    },
+    "instructions": "Review each eligible candidate scheme for the citizen archetype. Assign 'relevance_grade' as an integer 1, 2, or 3. Optionally add a 'justification' text string. Do NOT alter archetype_id, scheme_id, or candidate metadata."
+  },
+  "candidate_reviews": [
+    {
+      "archetype_id": "ARCH001",
+      "archetype_name": "Smallholder Farmer Household",
+      "narrative": "A Telangana resident aged 42 who is a smallholder farmer. The household has limited annual income and owns agricultural land. The person is looking for schemes that can support farming income, family protection, and essential welfare needs.",
+      "demographics_summary": {
+        "age": 42,
+        "state": "Telangana",
+        "district": "Mahabubabad",
+        "residence_type": "rural",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 180000.0,
+        "occupation": "farmer",
+        "farmer_status": true,
+        "land_ownership_status": true,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": true,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "category": "Agriculture",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "land_ownership_status",
+              "reason": "Condition 'land_ownership_status' is satisfied (True)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS002",
+          "scheme_name": "Rythu Bima",
+          "category": "Agriculture / Insurance",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '42' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '42' is within upper limit of '59'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '180000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT001",
+          "scheme_name": "PM-KISAN",
+          "category": "Agriculture",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "land_ownership_status",
+              "reason": "Condition 'land_ownership_status' is satisfied (True)"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '42' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '42' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH002",
+      "archetype_name": "Low-Income Rural Woman Student",
+      "narrative": "A 20-year-old Telangana woman from a low-income rural household who is currently studying. She wants support for education and household welfare and does not own a business or agricultural land.",
+      "demographics_summary": {
+        "age": 20,
+        "state": "Telangana",
+        "district": "Nizamabad",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 120000.0,
+        "occupation": "student",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": true,
+        "education_level": "undergraduate",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 10,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '120000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "category": "Education / Scholarship",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "student_status",
+              "reason": "Condition 'student_status' is satisfied (True)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '120000.0' is within upper limit of '200000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '20' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '20' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '20' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '20' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH003",
+      "archetype_name": "Women Micro-Entrepreneur",
+      "narrative": "A 34-year-old Telangana woman running a small non-farm enterprise in an urban area. Her household has modest income and she is exploring financial support to expand the business while also considering relevant welfare benefits.",
+      "demographics_summary": {
+        "age": 34,
+        "state": "Telangana",
+        "district": "Hyderabad",
+        "residence_type": "urban",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 240000.0,
+        "occupation": "entrepreneur",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": true,
+        "is_non_farm_enterprise": true,
+        "project_cost": 400000.0,
+        "loan_requirement": 400000.0,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 10,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '240000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "category": "Housing",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "residence_type",
+              "reason": "Value 'urban' matches required 'urban'"
+            },
+            {
+              "field": "owns_pucca_house",
+              "reason": "Exclusion condition 'owns_pucca_house' is satisfied (False)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '240000.0' is within upper limit of '900000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '34' meets minimum requirement of '18'"
+            },
+            {
+              "field": "loan_requirement",
+              "reason": "Value '400000.0' is within upper limit of '1000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '34' meets minimum requirement of '18'"
+            },
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "project_cost",
+              "reason": "Value '400000.0' is within upper limit of '5000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '34' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '34' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH004",
+      "archetype_name": "Senior Citizen Pension Seeker",
+      "narrative": "A 68-year-old Telangana resident with low household income who is no longer working and is seeking social-security support appropriate for an older person.",
+      "demographics_summary": {
+        "age": 68,
+        "state": "Telangana",
+        "district": "Warangal",
+        "residence_type": "urban",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 90000.0,
+        "occupation": "retired",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "primary",
+        "pensioner_status": true,
+        "pensioner_category": "old_age",
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 7,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '90000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "pensioner_category",
+              "reason": "Value 'old_age' is in allowed list ['old_age', 'widow', 'disabled', 'weaver', 'toddy_tapper', 'single_women', 'filaria']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "category": "Housing",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "residence_type",
+              "reason": "Value 'urban' matches required 'urban'"
+            },
+            {
+              "field": "owns_pucca_house",
+              "reason": "Exclusion condition 'owns_pucca_house' is satisfied (False)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '90000.0' is within upper limit of '900000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '68' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '68' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH005",
+      "archetype_name": "Low-Income Urban Worker",
+      "narrative": "A 29-year-old Telangana resident working in the informal urban sector with low annual income and no farm land or business ownership. The person is seeking healthcare and broader welfare support for the household.",
+      "demographics_summary": {
+        "age": 29,
+        "state": "Telangana",
+        "district": "Hyderabad",
+        "residence_type": "urban",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 150000.0,
+        "occupation": "informal_worker",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 8,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '150000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "category": "Housing",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "residence_type",
+              "reason": "Value 'urban' matches required 'urban'"
+            },
+            {
+              "field": "owns_pucca_house",
+              "reason": "Exclusion condition 'owns_pucca_house' is satisfied (False)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '150000.0' is within upper limit of '900000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '29' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '29' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '29' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '29' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH006",
+      "archetype_name": "Low-Income Woman Head of Household",
+      "narrative": "A 40-year-old Telangana woman responsible for a low-income household in a semi-urban area. She is not a farmer or business owner and is seeking schemes that may provide direct household welfare support.",
+      "demographics_summary": {
+        "age": 40,
+        "state": "Telangana",
+        "district": "Sangareddy",
+        "residence_type": "urban",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 130000.0,
+        "occupation": "homemaker",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 10,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '130000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "category": "Housing",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "residence_type",
+              "reason": "Value 'urban' matches required 'urban'"
+            },
+            {
+              "field": "owns_pucca_house",
+              "reason": "Exclusion condition 'owns_pucca_house' is satisfied (False)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '130000.0' is within upper limit of '900000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '40' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '40' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '40' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '40' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH007",
+      "archetype_name": "Small Business Loan Seeker",
+      "narrative": "A 38-year-old Telangana resident operating a small non-farm business and looking for credit to expand the enterprise. Household income is moderate and the person is not a farmer or pensioner.",
+      "demographics_summary": {
+        "age": 38,
+        "state": "Telangana",
+        "district": "Karimnagar",
+        "residence_type": "urban",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 300000.0,
+        "occupation": "entrepreneur",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": true,
+        "is_non_farm_enterprise": true,
+        "project_cost": 600000.0,
+        "loan_requirement": 600000.0,
+        "owns_pucca_house": true,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 7,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '300000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '38' meets minimum requirement of '18'"
+            },
+            {
+              "field": "loan_requirement",
+              "reason": "Value '600000.0' is within upper limit of '1000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '38' meets minimum requirement of '18'"
+            },
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "project_cost",
+              "reason": "Value '600000.0' is within upper limit of '5000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '38' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '38' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH008",
+      "archetype_name": "Low-Income Scheduled Caste Student",
+      "narrative": "A 19-year-old Telangana student from a low-income Scheduled Caste household. The student is pursuing undergraduate education and is looking for education-related financial support.",
+      "demographics_summary": {
+        "age": 19,
+        "state": "Telangana",
+        "district": "Nagarkurnool",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "SC",
+        "annual_income": 100000.0,
+        "occupation": "student",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": true,
+        "education_level": "undergraduate",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 10,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '100000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "category": "Education / Scholarship",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "student_status",
+              "reason": "Condition 'student_status' is satisfied (True)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '100000.0' is within upper limit of '200000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '19' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '19' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '19' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '19' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH009",
+      "archetype_name": "Pregnant Woman Household",
+      "narrative": "A 27-year-old Telangana woman in a low-income rural household who is pregnant and seeking maternal and child welfare support. Other personal details are intentionally limited to those needed for scheme matching.",
+      "demographics_summary": {
+        "age": 27,
+        "state": "Telangana",
+        "district": "Jagtial",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 140000.0,
+        "occupation": "homemaker",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '140000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '27' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '27' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '27' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '27' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH010",
+      "archetype_name": "Low-Income Minority Student",
+      "narrative": "A 21-year-old Telangana student from a low-income household who is pursuing higher education and wants to identify relevant education and welfare support.",
+      "demographics_summary": {
+        "age": 21,
+        "state": "Telangana",
+        "district": "Hyderabad",
+        "residence_type": "urban",
+        "gender": "male",
+        "category": "minority",
+        "annual_income": 110000.0,
+        "occupation": "student",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": true,
+        "education_level": "undergraduate",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '110000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "category": "Education / Scholarship",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "student_status",
+              "reason": "Condition 'student_status' is satisfied (True)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '110000.0' is within upper limit of '200000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "category": "Housing",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "residence_type",
+              "reason": "Value 'urban' matches required 'urban'"
+            },
+            {
+              "field": "owns_pucca_house",
+              "reason": "Exclusion condition 'owns_pucca_house' is satisfied (False)"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '110000.0' is within upper limit of '900000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '21' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '21' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '21' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '21' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH011",
+      "archetype_name": "Tenant Farmer Household",
+      "narrative": "A 45-year-old Telangana rural resident who cultivates agricultural land as a tenant farmer. The household has low income and the person is seeking agriculture-related support and family protection.",
+      "demographics_summary": {
+        "age": 45,
+        "state": "Telangana",
+        "district": "Nalgonda",
+        "residence_type": "rural",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 160000.0,
+        "occupation": "farmer",
+        "farmer_status": true,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "primary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 7,
+      "candidates": [
+        {
+          "scheme_id": "TS002",
+          "scheme_name": "Rythu Bima",
+          "category": "Agriculture / Insurance",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '45' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '45' is within upper limit of '59'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '160000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '45' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '45' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH012",
+      "archetype_name": "Rural Woman Micro-Enterprise Starter",
+      "narrative": "A 31-year-old Telangana rural woman planning to start a small non-farm enterprise. Household income is low and she is exploring financing and welfare options relevant to a new micro-enterprise.",
+      "demographics_summary": {
+        "age": 31,
+        "state": "Telangana",
+        "district": "Vikarabad",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 170000.0,
+        "occupation": "entrepreneur",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": true,
+        "project_cost": 250000.0,
+        "loan_requirement": 250000.0,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '170000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '31' meets minimum requirement of '18'"
+            },
+            {
+              "field": "loan_requirement",
+              "reason": "Value '250000.0' is within upper limit of '1000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '31' meets minimum requirement of '18'"
+            },
+            {
+              "field": "project_cost",
+              "reason": "Value '250000.0' is within upper limit of '5000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '31' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '31' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH013",
+      "archetype_name": "Low-Income Household Seeking Housing Support",
+      "narrative": "A 36-year-old Telangana resident from a low-income household living in a rural area without a pucca house. The household is exploring housing and general welfare support.",
+      "demographics_summary": {
+        "age": 36,
+        "state": "Telangana",
+        "district": "Khammam",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 125000.0,
+        "occupation": "daily_wage_worker",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "primary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '125000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '36' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '36' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '36' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '36' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH014",
+      "archetype_name": "Low-Income Elderly Woman",
+      "narrative": "A 72-year-old Telangana woman with low income who is no longer working and is seeking social-security support suitable for an elderly person.",
+      "demographics_summary": {
+        "age": 72,
+        "state": "Telangana",
+        "district": "Adilabad",
+        "residence_type": "rural",
+        "gender": "female",
+        "category": "general",
+        "annual_income": 75000.0,
+        "occupation": "retired",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "primary",
+        "pensioner_status": true,
+        "pensioner_category": "old_age",
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 8,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '75000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS004",
+          "scheme_name": "Maha Lakshmi",
+          "category": "Women / Welfare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'transgender', 'women', 'girl']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "pensioner_category",
+              "reason": "Value 'old_age' is in allowed list ['old_age', 'widow', 'disabled', 'weaver', 'toddy_tapper', 'single_women', 'filaria']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "category": "Healthcare / Women & Child",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "gender",
+              "reason": "Value 'female' is in allowed list ['female', 'women']"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '72' meets minimum requirement of '70'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '72' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '72' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH015",
+      "archetype_name": "Middle-Income Urban Farmer-Entrepreneur",
+      "narrative": "A 46-year-old Telangana resident who combines farming with a small non-farm enterprise. The person has moderate income and is interested in both livelihood finance and agriculture-related support.",
+      "demographics_summary": {
+        "age": 46,
+        "state": "Telangana",
+        "district": "Siddipet",
+        "residence_type": "urban",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 360000.0,
+        "occupation": "farmer_entrepreneur",
+        "farmer_status": true,
+        "land_ownership_status": true,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": true,
+        "is_non_farm_enterprise": true,
+        "project_cost": 500000.0,
+        "loan_requirement": 500000.0,
+        "owns_pucca_house": true,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 9,
+      "candidates": [
+        {
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "category": "Agriculture",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "land_ownership_status",
+              "reason": "Condition 'land_ownership_status' is satisfied (True)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS002",
+          "scheme_name": "Rythu Bima",
+          "category": "Agriculture / Insurance",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '46' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '46' is within upper limit of '59'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '360000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT001",
+          "scheme_name": "PM-KISAN",
+          "category": "Agriculture",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "farmer_status",
+              "reason": "Condition 'farmer_status' is satisfied (True)"
+            },
+            {
+              "field": "land_ownership_status",
+              "reason": "Condition 'land_ownership_status' is satisfied (True)"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "age",
+              "reason": "Value '46' meets minimum requirement of '18'"
+            },
+            {
+              "field": "loan_requirement",
+              "reason": "Value '500000.0' is within upper limit of '1000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '46' meets minimum requirement of '18'"
+            },
+            {
+              "field": "business_owner_status",
+              "reason": "Condition 'business_owner_status' is satisfied (True)"
+            },
+            {
+              "field": "project_cost",
+              "reason": "Value '500000.0' is within upper limit of '5000000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    },
+    {
+      "archetype_id": "ARCH016",
+      "archetype_name": "Low-Income Rural Youth Job Seeker",
+      "narrative": "A 23-year-old Telangana rural resident with low income who is not currently a student, farmer, or business owner. The person is looking for broadly applicable welfare and livelihood support.",
+      "demographics_summary": {
+        "age": 23,
+        "state": "Telangana",
+        "district": "Wanaparthy",
+        "residence_type": "rural",
+        "gender": "male",
+        "category": "general",
+        "annual_income": 90000.0,
+        "occupation": "job_seeker",
+        "farmer_status": false,
+        "land_ownership_status": false,
+        "student_status": false,
+        "education_level": "secondary",
+        "pensioner_status": false,
+        "business_owner_status": false,
+        "is_non_farm_enterprise": false,
+        "owns_pucca_house": false,
+        "pays_income_tax": false
+      },
+      "eligible_candidates_count": 7,
+      "candidates": [
+        {
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            },
+            {
+              "field": "annual_income",
+              "reason": "Value '90000.0' is within upper limit of '500000'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "category": "Social Security",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "TS008",
+          "scheme_name": "Telangana Diagnostics",
+          "category": "Healthcare",
+          "scheme_scope": "State",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "state",
+              "reason": "Value 'Telangana' matches required 'Telangana'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "category": "Healthcare",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "category": "Entrepreneurship / Credit",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '23' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "category": "Employment / Entrepreneurship",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '23' meets minimum requirement of '18'"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        },
+        {
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "category": "Pension / Social Security",
+          "scheme_scope": "Central",
+          "eligibility_status": "POTENTIALLY_ELIGIBLE",
+          "deterministic_score": 0.0,
+          "matched_rules": [
+            {
+              "field": "age",
+              "reason": "Value '23' meets minimum requirement of '18'"
+            },
+            {
+              "field": "age",
+              "reason": "Value '23' is within upper limit of '40'"
+            },
+            {
+              "field": "pays_income_tax",
+              "reason": "Exclusion condition 'pays_income_tax' is satisfied (False)"
+            }
+          ],
+          "relevance_grade": null,
+          "justification": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "TRAINING_STATUS": "SUCCESS",
+  "MODEL_PATH": "models\\ranking\\xgboost_ltr_model.json",
+  "DATASET_PATH": "data\\ranking\\annotations_expert_01.json",
+  "TIMESTAMP": "2026-09-05T07:21:24.288415+00:00",
+  "TRAIN_QUERY_GROUPS": [
+    "ARCH001",
+    "ARCH002",
+    "ARCH003",
+    "ARCH005",
+    "ARCH006",
+    "ARCH007",
+    "ARCH009",
+    "ARCH010",
+    "ARCH012",
+    "ARCH013",
+    "ARCH014",
+    "ARCH016"
+  ],
+  "VALIDATION_QUERY_GROUPS": [
+    "ARCH004",
+    "ARCH008",
+    "ARCH011",
+    "ARCH015"
+  ],
+  "N_TRAIN_RECORDS": 105,
+  "N_VAL_RECORDS": 33,
+  "FEATURE_DIM": 32,
+  "XGBOOST_PARAMS": {
+    "objective": "rank:ndcg",
+    "n_estimators": 50,
+    "learning_rate": 0.08,
+    "max_depth": 3,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "random_state": 42,
+    "tree_method": "hist"
+  },
+  "TRAIN_METRICS": {
+    "xgboost": {
+      "per_query": {
+        "ARCH001": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH002": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH003": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH005": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 8
+        },
+        "ARCH006": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 0.925,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH007": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        },
+        "ARCH009": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH010": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH012": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH013": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH014": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 0.8748,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 8
+        },
+        "ARCH016": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        }
+      },
+      "aggregate": {
+        "ndcg@3": 1.0,
+        "ndcg@5": 0.9833,
+        "mrr": 1.0,
+        "precision@3": 1.0,
+        "n_groups": 12
+      }
+    },
+    "heuristic_baseline": {
+      "per_query": {
+        "ARCH001": {
+          "ndcg@3": 0.8659,
+          "ndcg@5": 0.8196,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH002": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.6974,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH003": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.6728,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH005": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.7396,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 8
+        },
+        "ARCH006": {
+          "ndcg@3": 0.8659,
+          "ndcg@5": 0.7447,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH007": {
+          "ndcg@3": 0.6297,
+          "ndcg@5": 0.7711,
+          "mrr": 1.0,
+          "precision@3": 0.6667,
+          "n_candidates": 7
+        },
+        "ARCH009": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.7539,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH010": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.6728,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        },
+        "ARCH012": {
+          "ndcg@3": 0.6297,
+          "ndcg@5": 0.7015,
+          "mrr": 1.0,
+          "precision@3": 0.6667,
+          "n_candidates": 9
+        },
+        "ARCH013": {
+          "ndcg@3": 0.6297,
+          "ndcg@5": 0.7015,
+          "mrr": 1.0,
+          "precision@3": 0.6667,
+          "n_candidates": 9
+        },
+        "ARCH014": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.7808,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 8
+        },
+        "ARCH016": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.8286,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        }
+      },
+      "aggregate": {
+        "ndcg@3": 0.7081,
+        "ndcg@5": 0.7404,
+        "mrr": 1.0,
+        "precision@3": 0.9167,
+        "n_groups": 12
+      }
+    }
+  },
+  "VALIDATION_METRICS": {
+    "xgboost": {
+      "per_query": {
+        "ARCH004": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        },
+        "ARCH008": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH011": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        },
+        "ARCH015": {
+          "ndcg@3": 1.0,
+          "ndcg@5": 1.0,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        }
+      },
+      "aggregate": {
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0,
+        "mrr": 1.0,
+        "precision@3": 1.0,
+        "n_groups": 4
+      }
+    },
+    "heuristic_baseline": {
+      "per_query": {
+        "ARCH004": {
+          "ndcg@3": 0.8659,
+          "ndcg@5": 0.8196,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        },
+        "ARCH008": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.6974,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 10
+        },
+        "ARCH011": {
+          "ndcg@3": 0.6967,
+          "ndcg@5": 0.8441,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 7
+        },
+        "ARCH015": {
+          "ndcg@3": 0.8659,
+          "ndcg@5": 0.7779,
+          "mrr": 1.0,
+          "precision@3": 1.0,
+          "n_candidates": 9
+        }
+      },
+      "aggregate": {
+        "ndcg@3": 0.7813,
+        "ndcg@5": 0.7848,
+        "mrr": 1.0,
+        "precision@3": 1.0,
+        "n_groups": 4
+      }
+    }
+  },
+  "HEURISTIC_METRICS": {
+    "ndcg@3": 0.7813,
+    "ndcg@5": 0.7848,
+    "mrr": 1.0,
+    "precision@3": 1.0,
+    "n_groups": 4
+  },
+  "XGBOOST_VS_HEURISTIC": {
+    "ndcg@3_improvement": 0.2187,
+    "ndcg@5_improvement": 0.2152,
+    "mrr_improvement": 0.0,
+    "precision@3_improvement": 0.0
+  },
+  "OVERFITTING_ANALYSIS": {
+    "train_val_gap": {
+      "ndcg@3_gap": 0.0,
+      "ndcg@5_gap": -0.0167,
+      "mrr_gap": 0.0,
+      "precision@3_gap": 0.0
+    },
+    "overfitting_flag": false,
+    "overfitting_observation": "No strong overfitting detected (train/val gap within 0.15). Note: 16 query groups is a small sample -- results should be interpreted cautiously."
+  },
+  "CAVEATS": [
+    "Only 16 query groups total -- results have high variance.",
+    "All 138 records annotated as POTENTIALLY_ELIGIBLE (no ELIGIBLE records).",
+    "Model must NOT override deterministic eligibility in live recommendation.",
+    "XGBoost model is NOT integrated into live recommendation yet."
+  ]
+}

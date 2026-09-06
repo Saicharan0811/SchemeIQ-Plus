@@ -1,0 +1,340 @@
+{
+  "timestamp": "2026-08-27T09:54:59.031703+00:00",
+  "current_retrieval_strategy": "dense-only cosine similarity via ChromaDB (sentence-transformers all-MiniLM-L6-v2, 384-dim)",
+  "failing_queries": [
+    {
+      "query_key": "MCH_Kit",
+      "query_text": "What benefits are provided under the MCH Kit Scheme?",
+      "expected_scheme": "TS007",
+      "correct_scheme_rank": null
+    },
+    {
+      "query_key": "Aasara",
+      "query_text": "What pension is available under Aasara?",
+      "expected_scheme": "TS005",
+      "correct_scheme_rank": 15
+    }
+  ],
+  "top_10_results": {
+    "MCH_Kit": [
+      {
+        "rank": 1,
+        "chunk_id": "CT003_CT003_21_009_ebb6c7f9",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.4087,
+        "distance": 0.5913,
+        "chunk_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "CT003_CT003_21_006_c8c2e53f",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.4074,
+        "distance": 0.5926,
+        "chunk_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "CT003_CT003_21_007_c8c2e53f",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.4074,
+        "distance": 0.5926,
+        "chunk_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "CT003_CT003_21_008_c8c2e53f",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.4074,
+        "distance": 0.5926,
+        "chunk_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "CT003_CT003_21_005_09359656",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.3903,
+        "distance": 0.6097,
+        "chunk_preview": "ISS XXX BIHAR Sensitization Programme on New Construction Technologies for Mass Housing... 27th November 2024 Read More National Workshop on PMAY-U 2."
+      },
+      {
+        "rank": 6,
+        "chunk_id": "CT003_CT003_21_003_4bb166e0",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.3742,
+        "distance": 0.6258,
+        "chunk_preview": "to the Eligibility beneficiaries of EWS category Affordable Rental Housing (ARH) ARH will promote creation of adequate rental housing for EWS/LIG bene"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "CT003_CT003_22_004_2cc96b44",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_22_PMAY_U_20_Interest_Subsidy_Scheme_ISS_and_BLC_Oper.html",
+        "similarity_score": 0.3719,
+        "distance": 0.6281,
+        "chunk_preview": "Central Nodal Agencies (CNAs) for providing houses to all eligible families/ beneficiaries against the validated demand for houses for about 1.12 cr. "
+      },
+      {
+        "rank": 8,
+        "chunk_id": "CT002_CT002_30_002_fa3a394a",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.3635,
+        "distance": 0.6365,
+        "chunk_preview": "All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years "
+      },
+      {
+        "rank": 9,
+        "chunk_id": "CT002_CT002_30_008_fa3a394a",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.3635,
+        "distance": 0.6365,
+        "chunk_preview": "All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years "
+      },
+      {
+        "rank": 10,
+        "chunk_id": "CT003_CT003_21_010_9c81e98c",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.3608,
+        "distance": 0.6392,
+        "chunk_preview": "Facilitating Citizens for demand survey Awareness Camps on PMAY-U 2.0: Local authorities of different States/UTs are organising camps to help people f"
+      },
+      {
+        "rank": 11,
+        "chunk_id": "CT001_CT001_18_001_68af5493",
+        "scheme_id": "CT001",
+        "scheme_name": "PM-KISAN",
+        "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.html",
+        "similarity_score": 0.359,
+        "distance": 0.641,
+        "chunk_preview": "The benefits for such cases have been temporarily withheld till physical verification is completed. Farmers are requested to check their eligibility s"
+      },
+      {
+        "rank": 12,
+        "chunk_id": "CT003_CT003_21_000_2ee6a8ec",
+        "scheme_id": "CT003",
+        "scheme_name": "PMAY-U 2.0",
+        "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+        "similarity_score": 0.3543,
+        "distance": 0.6457,
+        "chunk_preview": "PMAY-HFA PMAY-U 2.0 Statistics MOU Signed No.XXX Cities | Towns Covered No.XXX Provisional Sanctioned Houses No.XXX Demand Entered No.XXX BLC No: XXX "
+      },
+      {
+        "rank": 13,
+        "chunk_id": "CT001_CT001_18_000_47bbc89d",
+        "scheme_id": "CT001",
+        "scheme_name": "PM-KISAN",
+        "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.html",
+        "similarity_score": 0.3526,
+        "distance": 0.6474,
+        "chunk_preview": "PM-Kisan Samman Nidhi New Farmer Registration Know Your Status The Hon’ble Prime Minister has released the 23rd installment of the PM-Kisan on 20th Ju"
+      },
+      {
+        "rank": 14,
+        "chunk_id": "CT004_CT004_23_003_ada6e085",
+        "scheme_id": "CT004",
+        "scheme_name": "Pradhan Mantri Mudra Yojana",
+        "source_filename": "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.html",
+        "similarity_score": 0.3502,
+        "distance": 0.6498,
+        "chunk_preview": "The funding support from MUDRA are of two types: Micro Credit Scheme (MCS) for loans up to 1 lakh finance through MFIs. Refinance Scheme for Commercia"
+      },
+      {
+        "rank": 15,
+        "chunk_id": "CT002_CT002_30_010_6febe89d",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.3468,
+        "distance": 0.6532,
+        "chunk_preview": "The  AB PM-JAY  scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the "
+      }
+    ],
+    "Aasara": [
+      {
+        "rank": 1,
+        "chunk_id": "CT001_CT001_18_006_97195e92",
+        "scheme_id": "CT001",
+        "scheme_name": "PM-KISAN",
+        "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.html",
+        "similarity_score": 0.522,
+        "distance": 0.478,
+        "chunk_preview": "(Excluding Multi Tasking Staff /Class IV/Group D employees) All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more (Excludin"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "CT006_CT006_27_003_ac7f7ecb",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.518,
+        "distance": 0.482,
+        "chunk_preview": "Gallery Image Gallery Video Gallery Publicity Material Contest Hackathon Financial Literacy Pension Sanchay Subscriber Education Retirement Planner Sc"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "CT006_CT006_27_002_1baaf0d8",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4871,
+        "distance": 0.5129,
+        "chunk_preview": "NPS Non-Government Sector About NPS All Citizen Model Superannuation Funds Corporate NPS Lite NPS Vatsalya Unified Pension Scheme (UPS) Atal Pension Y"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "CT006_CT006_27_006_66d1d376",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4841,
+        "distance": 0.5159,
+        "chunk_preview": "Return of the pension wealth to the nominee of the subscriber: After the demise of both the subscriber and the spouse, the nominee of the subscriber s"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "CT002_CT002_30_002_fa3a394a",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4703,
+        "distance": 0.5297,
+        "chunk_preview": "All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years "
+      },
+      {
+        "rank": 6,
+        "chunk_id": "CT002_CT002_30_008_fa3a394a",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4703,
+        "distance": 0.5297,
+        "chunk_preview": "All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years "
+      },
+      {
+        "rank": 7,
+        "chunk_id": "CT006_CT006_27_005_a7ef046f",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4623,
+        "distance": 0.5377,
+        "chunk_preview": "Features of APY APY is a voluntary, periodic contribution-based pension system, under which, the subscriber is entitled to receive the following benef"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "CT006_CT006_27_004_9bb22e28",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4583,
+        "distance": 0.5417,
+        "chunk_preview": "APY is available to all Indian citizens with savings bank account in banks or Department of Posts. The minimum age of joining APY is 18 years and maxi"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "CT006_CT006_27_009_edf296b4",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4497,
+        "distance": 0.5503,
+        "chunk_preview": "Share On Copy URL Pension Fund Regulatory and Development Authority GST No. 07AAALP0291L1ZU Get to know Investor Charter Website Policies Tenders Care"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "CT002_CT002_30_001_256376e7",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4276,
+        "distance": 0.5724,
+        "chunk_preview": "With this approval, all senior citizens of the age 70 years and above irrespective of their socio- economic status would be eligible to avail the bene"
+      },
+      {
+        "rank": 11,
+        "chunk_id": "CT002_CT002_30_007_256376e7",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4276,
+        "distance": 0.5724,
+        "chunk_preview": "With this approval, all senior citizens of the age 70 years and above irrespective of their socio- economic status would be eligible to avail the bene"
+      },
+      {
+        "rank": 12,
+        "chunk_id": "CT002_CT002_30_005_b39cf31c",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4205,
+        "distance": 0.5795,
+        "chunk_preview": "***** MJPS/BM (Release ID: 2053881) Visitor Counter : 58763 Read this release in: Assamese , Bengali , Khasi , Urdu , Marathi , हिन्दी , Manipuri , Be"
+      },
+      {
+        "rank": 13,
+        "chunk_id": "CT006_CT006_27_000_781c4a89",
+        "scheme_id": "CT006",
+        "scheme_name": "Atal Pension Yojana",
+        "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+        "similarity_score": 0.4108,
+        "distance": 0.5892,
+        "chunk_preview": "Atal Pension Yojana (APY) – PFRDA | Government-Backed Retirement Scheme for Unorganized Sector - PFRDA Alerts List of Holidays to be... Same-Day Inves"
+      },
+      {
+        "rank": 14,
+        "chunk_id": "CT002_CT002_30_000_9a64933b",
+        "scheme_id": "CT002",
+        "scheme_name": "Ayushman Bharat PM-JAY",
+        "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+        "similarity_score": 0.4049,
+        "distance": 0.5951,
+        "chunk_preview": "Press Release Page | Press Information Bureau Cabinet Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespecti"
+      },
+      {
+        "rank": 15,
+        "chunk_id": "TS005_TS005_09_000_90e18dc4",
+        "scheme_id": "TS005",
+        "scheme_name": "Aasara Pensions",
+        "source_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.html",
+        "similarity_score": 0.4008,
+        "distance": 0.5992,
+        "chunk_preview": "LoginPage Home GOs GO MS No 23 - Amendment GO-MS No 17 Aasara Pensions GO MS No 29 - Amendment GO MS No 38 - Amendment GO MS No 75 - Amendment GO 25 -"
+      }
+    ]
+  },
+  "correct_scheme_rank": {
+    "MCH_Kit": null,
+    "Aasara": 15
+  },
+  "root_causes": [
+    "TS007 (MCH Kit Scheme): The source document (chfw.telangana.gov.in/programmes.html) yielded only 119 words and 2 tiny chunks. These chunks are navigation-menu heavy and contain almost no MCH-specific terminology (no 'mch', 'kit', 'maternal', 'child'). The query 'benefits under MCH Kit Scheme' semantically matches PMAY-U 2.0 FAQ chunks because PMAY-U 2.0 has 13 large, keyword-rich chunks containing 'benefit', 'scheme', 'eligibility criteria', and 'under the scheme'. Dense-only cosine similarity fails here because term-overlap (MCH Kit) is completely absent from the scheme's tiny corpus.",
+    "TS005 (Aasara Pensions): The source document yielded only 124 words and 1 chunk. The word 'pension' appears prominently in the PM-KISAN exclusion norms document (which explicitly lists 'superannuated/retired pensioners whose monthly pension is Rs.10,000/-'), causing PM-KISAN to outrank Aasara for any pension-related query. The single Aasara chunk lacks the exact word 'aasara' and 'pension' with sufficient density.",
+    "General: Dense-only retrieval with small scheme documents (fewer than 200 words, 1-2 chunks) is vulnerable to embedding mass imbalance - larger richer documents accumulate more embedding space coverage than tiny thin ones. Exact scheme-name matching (MCH Kit, Aasara) is necessary for precise retrieval."
+  ],
+  "recommended_improvements": [
+    "1. Deterministic scheme detection: match query against scheme names/aliases to identify scheme_id before retrieval",
+    "2. ChromaDB metadata filtering: when scheme_id is detected, filter retrieval to that scheme_id only",
+    "3. BM25 keyword retrieval: index processed documents for exact term matching to complement dense similarity",
+    "4. Reciprocal Rank Fusion: merge dense and BM25 rankings for balanced hybrid retrieval",
+    "5. Optional local cross-encoder reranking if hybrid still insufficient"
+  ]
+}

@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Press Release Page | Press Information Bureau
+</title><link href="css/style.css" rel="stylesheet" type="text/css" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="alternate stylesheet" href="css/change.css" media="screen" title="change" /><link rel="alternate stylesheet" href="css/green.css" media="screen" title="green" /><link rel="alternate stylesheet" href="css/yellow.css" media="screen" title="yellow" /><link rel="stylesheet" type="text/css" href="css/prtint.css" media="print" /><link rel="stylesheet" href="css/style3.1.css" type="text/css" />
+
+
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" /><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet" />
+
+      <script type="text/javascript">
+            $(document).ready(function () {
+                  function getParameterByName(name) {
+                        var url = window.location.href;
+                        name = name.replace(/[\[\]]/g, '\\$&');
+                        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                              results = regex.exec(url);
+                        if (!results) return null;
+                        if (!results[2]) return '';
+                        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                  }
+                  // Get the IDs from the current page's URL
+                  let prid = parseInt(getParameterByName('PRID'), 10);
+
+                  if (!isNaN(prid) && prid > 0) {
+                        $.ajax({
+                              type: "POST",
+                              url: "AjaxMethod.aspx/UpdatePRHitCount",
+                              async: false,
+                              data: JSON.stringify({ 'PermId': prid }),
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              success: function (response) {
+                                    console.log(response);
+                              },
+                              error: function (error) {
+                                    console.log("Error in AJAX request", error);
+                              }
+                        });
+                  } else {
+                        console.log("Invalid parameters:", prid);
+                  }
+
+            });
+      </script>
+      <style type="text/css">
+            .table-responsive {
+                  width: 100%;
+                  overflow-x: auto;
+            }
+
+            .banner {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  background-color: #000;
+                  color: #fff;
+                  padding: 20px;
+            }
+
+            full-width {
+                  width: 100%;
+            }
+
+            .logo-left, .logo-center, .countdown {
+                  display: flex;
+                  align-items: center;
+            }
+
+                  .logo-left img, .logo-center img {
+                        height: 70px;
+                  }
+
+            .countdown {
+                  text-align: center;
+                  background-color: #444;
+                  border-radius: 10px;
+                  padding: 10px;
+                  border: 2px solid grey;
+            }
+
+            .firstnumber {
+                  color: #000000;
+                  position: absolute;
+                  top: 50px;
+                  right: 90px;
+                  font-size: 30px;
+            }
+
+            .secondnumber {
+                  position: absolute;
+                  color: #000000;
+                  right: 45px;
+                  top: 50px;
+                  font-size: 30px;
+            }
+
+            .countdown .days {
+                  font-size: 35px;
+                  color: gold;
+            }
+
+            .countdown p {
+                  margin: 0;
+            }
+
+            .countdown .text {
+                  font-size: 16px;
+            }
+
+            a {
+                  word-break: break-all;
+            }
+
+            iframe, img {
+                  max-width: 100%;
+            }
+
+            @media(max-width:1199px) {
+                  .firstnumber {
+                        top: 40px;
+                        right: 72px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 35px;
+                        top: 40px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:990px) {
+                  .firstnumber {
+                        top: 25px;
+                        right: 54px;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 25px;
+                        top: 25px;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:768px) {
+                  .countdown, .days {
+                        font-size: 12px !important;
+                  }
+
+
+                  .firstnumber {
+                        top: 25%;
+                        right: 8%;
+                        font-size: 30px;
+                  }
+
+                  .secondnumber {
+                        right: 4.5%;
+                        top: 25%;
+                        font-size: 30px;
+                  }
+            }
+
+            @media(max-width:475px) {
+                  .countdown, .days {
+                        font-size: 10px !important;
+                        top: 20%;
+                  }
+
+                  .bannerimgdiv {
+                        padding: 0 !important;
+                  }
+
+                  .bannerimg {
+                        width: 108% !important;
+                  }
+            }
+      </style>
+      <script type="text/javascript">
+            $(function () {
+                  $("[id*=printPDF]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+            $(function () {
+                  $("[id*=printPDFEvent]").click(function () {
+                        $("[id*=hfGridHtml]").val($("#PdfDiv").html());
+                  });
+            });
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112591026-1"></script>
+      <script>
+
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag('js', new Date());
+
+
+
+            gtag('config', 'UA-112591026-1');
+
+      </script>
+
+<meta property="og:title" content="Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)" /><meta property="og:url" content="www.pib.gov.in/Pressreleaseshare.aspx?PRID=2053881" /><meta property="og:description" content="The Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved the health coverag" /><meta property="og:image" content="https:/pib.gov.in/images/indian-emblem.png" />
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="C4E7H-KSCMC-422L4-W3EM5-U36MF",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"C4E7H-KSCMC-422L4-W3EM5-U36MF";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="pk2tojfydi3bw2unxjlq-f-604ad4d83-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1825201","ak.ai":parseInt("1215205",10),"ak.ol":"0","ak.cr":4,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"44c0f9e","ak.r":39673,"ak.a2":n,"ak.m":"dscb","ak.n":"ff","ak.cport":60364,"ak.gh":"184.26.54.23","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1787673175","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==PEri7k7ThYDeBONaC4f3XXIjAGmPkOTZ4MSiK2WN1ndjfoyFgb1tDv2QwJVG6igqGrGlpNw+wYUhprla4VYGZOD4C9gDq9I6jr0qz7bfjhzLtbJzKLNNmiiSVjBrTp1KlGmFTFWeFPbYUGhWrNw67lg9pTfDF+WjSxN82l864VA/QSv4uUVgjxGjtjb3ZTfELZUHJHl1PHvRPtHELay7US3tdjjJKjzK5Z9x83B6YS3BBC6EYGS69nsCM1aWzOHeASCYQzT43HIZWi5uMXAbLCpEyUrOSDwJVPBc5SiSrmnUTxxgOUf11qnz6XOCu75UnzY87mukXn0wML/vDosJ6Op+nj4z2BrSNgM0WAacD/Y57eGqNLWI/GPQQOIXyeNThCC+j9j6pp6zoRseDteIShl0gHckjLAxXMkexHssCuk=","ak.pv":"9","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+      <form method="post" action="./PressReleasePage.aspx?PRID=2053881&amp;reg=48&amp;lang=2" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="sc_HiddenField" id="sc_HiddenField" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=b94hX14NMWluUQ9a73g0LYFvtKhY52TK8cbDkYB_F2GuPre4tdh-ebiiI4xuhXnRu6Q5dQjaQA4oN3PEeL0GrtKEyEY1&amp;t=638942408819057530" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=YwOa_0w_u3oCLFqmIIOf-XEz4GWZ1DuyQIpxIA4LVkywj39sZSps12NbK5wNl5XN9JF3m7d-ey7BFDgj6i0380qRQ5IMWCL54sYNVU1IjMmiOWpp0&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=_shmykYI80CxCNR43Ii1nLy9PBGhuSe6SPp3CEYu0wDEuLqDAuIcsXVNhTIgQn0iyiwPorMflXuK31FftDX9GnB0m366MCEoOmY-eKQ3YAO9xRL0gIigzgRbtbVOgSQkJbJpFg2&amp;t=ffffffffecf8d3f2" type="text/javascript"></script>
+<script src="/PressReleasePage.aspx?_TSM_HiddenField_=sc_HiddenField&amp;_TSM_CombinedScripts_=%3b%3bAjaxControlToolkit%2c+Version%3d3.5.7.123%2c+Culture%3dneutral%2c+PublicKeyToken%3d28f01b0e84b6d53e%3aen-US%3a5a4df314-b4a2-4da2-a207-9284f1b1e96c%3ade1feab2%3af2c8e708%3a720a52bf%3af9cec9bc%3a589eaa30%3aa67c2700%3aab09e3fe%3a87104b7c%3a8613aea7%3a3202a5a2%3abe6fb298" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="59B53027" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="WZ40g7X6i/PjpK6hTPkfOk3BjqaV0IVsunxjjxhPaIMkZGRaUf7YWLr0lDlf8pNUa93fB95Vo8yrGnac/cxMls/g1ZSHDwm6Am9P2VRxtH9wpKYWz58DW8Fi/lwiRxCEYLKrbMkCgmetRzgyR0sFj19xQRqjt89StSlxZ6wW+PH/oyJJpMr9uNCN50ULuPHwBcrnoyYwmpbl1zpATd403qIP7lsd+aPpYn71Qq/B7gCvwRc31MgOewftRBEy/dLRSju9//0H3q43W4JOSG12v2B0ieJs3zrrQyBK8l1gRqV3R6LH" />
+</div>
+                              
+            <div id="templateCss"></div>
+            <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('sc', 'form1', ['tupdate12','update12'], [], [], 90, '');
+//]]>
+</script>
+
+            <input type="hidden" name="hfGridHtml" id="hfGridHtml" />
+            <div class="container" style='margin-bottom: 50px;'>
+                  <div id="accessories">
+
+                        
+                        <div class="pull-right" style="display: flex">
+                              <div id="voll"></div>
+                              <div id="vollDT"></div>
+                              
+                              
+<div class="print-icons">
+<input type="image" name="Print1$print" id="Print1_print" aria-label="Print" src="images/printer_icon.png" alt="print page button" style="padding: 5px 10px 5px 10px;" />
+</div>
+                        </div>
+                  </div>
+                  <input type="hidden" name="hydpermid" id="hydpermid" value="2053881" />
+                  
+
+
+
+                  <div class="innner-page-main-about-us-content-right-part">
+
+                        <div id="MinistryName" class="MinistryNameSubhead text-center">
+                              Cabinet
+                        </div>
+                        
+                        <div id="lg_g"><div class='log_oo'>  <img src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2021/aug/ph202183101.png' alt='azadi ka amrit mahotsav' /> </div></div>
+
+
+
+
+
+                        <div class="text-center event-heading-background">
+                              
+                              <h2 id="Titleh2">
+                                    Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)
+                              </h2>
+                              <h3 id="Subtitleh3">
+                                    <span id="ltrSubtitle"><br/>4.5 crore families to be benefitted</span>
+                              </h3>
+                        </div>
+
+                        <div id="PrDateTime" class="ReleaseDateSubHeaddateTime text-center pt20">
+                              Posted On:
+                11 SEP 2024 8:08PM by PIB Delhi
+                        </div>
+                        
+                        <div class='pt20'>
+                        </div>
+                        <input type="hidden" name="hydphotoUrl" id="hydphotoUrl" />
+                        
+                        <p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">The Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved&nbsp;the&nbsp;health coverage to all the senior citizens aged 70 years and above irrespective of income under the flagship scheme Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY).</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">This aims to benefit approximately 4.5 Crore families with six (6) crore senior citizens with 5 Lakh rupees free health insurance cover on a family basis.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">With this approval, all senior citizens of the age 70 years and above irrespective of their socio- economic status would be eligible to avail the benefits of AB PM-JAY. The eligible senior citizens would be issued a new distinct card under AB PM-JAY. The senior citizens of the age 70 years and above belonging to families already covered under AB PM-JAY will get an additional top-up cover upto ₹5 lakh per year for themselves (which they do not have to share with the other members of the family who are below the age of 70 years). All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years and above who are already availing benefits of other public health insurance schemes such as Central Government Health Scheme (CGHS), Ex-Servicemen Contributory Health Scheme (ECHS), Ayushman Central Armed Police Force (CAPF)&nbsp; may either choose their existing scheme or opt for AB PMJAY.&nbsp; It has been clarified that senior citizens of 70 years and above who are under private health insurance policies or&nbsp; Employees&rsquo; State Insurance scheme will be eligible to avail benefits under AB PM-JAY.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp;AB PM-JAY is the world&rsquo;s largest publicly funded health assurance scheme which provides health cover of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization to 55 crore individuals corresponding to 12.34 crore families. All members of the eligible families irrespective of age are covered under the scheme. The scheme has covered 7.37 Crore hospital admissions including 49 percent women beneficiaries. The public has benefited to the extent of over Rs. 1 Lakh crore under the scheme.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp;The expansion of cover to senior citizens of the age of 70 years and above was earlier announced by Hon&rsquo;ble Prime Minister Shri Narendra Modi in April 2024.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp; The&nbsp; AB PM-JAY&nbsp; scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the bottom 40% of India&rsquo;s population were covered under the scheme. Later, the Government of India, in January 2022 revised the beneficiary base under AB PM-JAY from 10.74 crore to 12 crore families considering India&rsquo;s decadal population growth of 11.7 % over 2011 population. The scheme was further expanded to cover 37 lakh ASHAs/AWWs/AWHs working across the country and their families for free healthcare benefits.&nbsp; Taking the mission ahead, AB PM-JAY would now provide free healthcare coverage of Rs 5 lakh to&nbsp; all citizens of the age-group of 70 years and above across the country.</span></span></span></span></p>
+
+<p style="text-align:center"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff"><strong>*****</strong></span></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff"><strong>MJPS/BM</strong></span></span></span></span></p>
+
+
+                        
+                        <div id="reel_pic">
+                        </div>
+
+
+
+                        
+                        <br />
+                        <span id="ReleaseId">(Release ID: 2053881)</span>
+                        <span id="lblViews">Visitor Counter : 58763</span>
+                        <div>
+                              
+                        </div>
+                        
+
+                        <span id="lblRefPhoto"></span>
+
+                        <div class="BackgroundRelease">
+                              
+                        </div>
+                        <div>
+                              
+                        </div>
+                        <div class="ReleaseLang">Read this release in: 
+                        
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053949' target="_blank">
+                                          Assamese </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054221' target="_blank">
+                                          Bengali </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053970' target="_blank">
+                                          Khasi </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053927' target="_blank">
+                                          Urdu </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053957' target="_blank">
+                                          Marathi </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053916' target="_blank">
+                                          हिन्दी </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054044' target="_blank">
+                                          Manipuri </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054064' target="_blank">
+                                          Bengali-TR </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054139' target="_blank">
+                                          Punjabi </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053930' target="_blank">
+                                          Gujarati </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053954' target="_blank">
+                                          Odia </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054099' target="_blank">
+                                          Tamil </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054004' target="_blank">
+                                          Telugu </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2054005' target="_blank">
+                                          Kannada </a>
+                              
+                                    ,
+                              
+                                    
+                                    <a href='https://pib.gov.in/PressReleasePage.aspx?PRID=2053945' target="_blank">
+                                          Malayalam </a>
+                              
+                        </div>
+
+                        <div class="RelTag">
+                              <ul>
+                                    
+                              </ul>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="RelLink" class="RelLink">
+                              <ul>
+                                    
+                                    
+                              </ul>
+                        </div>
+                        <center>
+                              
+                        </center>
+                  </div>
+
+                  <div id="update12">
+	
+                              
+                              <input type="hidden" name="Hidden" id="Hidden" />
+                              <div id="P_CategoryManagement" class="ModalWindow" style="border-width:0px;height:60%;width:60%;overflow:auto;display: none">
+		
+                                    <div>
+                                          <input type="image" name="btnClose" id="btnClose" src="images/close_flat_icon.png" />
+                                    </div>
+                                    <div id="description">
+                                    </div>
+                                    <div class="text-center">
+                                          <h2>
+                                                
+                                                <br>
+                                                
+                                          </h2>
+                                    </div>
+                                    <br />
+                                    <div class="clear">
+                                    </div>
+                                    
+                              
+	</div>
+                        
+</div>
+            </div>
+            
+            <div id="PdfDiv" style="display: none;">
+                  <table width="100%">
+                        <tr>
+                              <td style="font-weight: 200; text-align: center">
+                                    Cabinet
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: center; font-size: 30px;">
+                                          <div style='height:30px;width:100%;'></div>4.5 crore families to be benefitted
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="text-align: center; font-size: 14px;">
+                                          Posted On:
+                        11 SEP 2024 8:08PM by PIB Delhi
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 200; text-align: left; font-size: 16px;">
+                                          <p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">The Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved&nbsp;the&nbsp;health coverage to all the senior citizens aged 70 years and above irrespective of income under the flagship scheme Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY).</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">This aims to benefit approximately 4.5 Crore families with six (6) crore senior citizens with 5 Lakh rupees free health insurance cover on a family basis.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">With this approval, all senior citizens of the age 70 years and above irrespective of their socio- economic status would be eligible to avail the benefits of AB PM-JAY. The eligible senior citizens would be issued a new distinct card under AB PM-JAY. The senior citizens of the age 70 years and above belonging to families already covered under AB PM-JAY will get an additional top-up cover upto ₹5 lakh per year for themselves (which they do not have to share with the other members of the family who are below the age of 70 years). All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years and above who are already availing benefits of other public health insurance schemes such as Central Government Health Scheme (CGHS), Ex-Servicemen Contributory Health Scheme (ECHS), Ayushman Central Armed Police Force (CAPF)&nbsp; may either choose their existing scheme or opt for AB PMJAY.&nbsp; It has been clarified that senior citizens of 70 years and above who are under private health insurance policies or&nbsp; Employees&rsquo; State Insurance scheme will be eligible to avail benefits under AB PM-JAY.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp;AB PM-JAY is the world&rsquo;s largest publicly funded health assurance scheme which provides health cover of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization to 55 crore individuals corresponding to 12.34 crore families. All members of the eligible families irrespective of age are covered under the scheme. The scheme has covered 7.37 Crore hospital admissions including 49 percent women beneficiaries. The public has benefited to the extent of over Rs. 1 Lakh crore under the scheme.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp;The expansion of cover to senior citizens of the age of 70 years and above was earlier announced by Hon&rsquo;ble Prime Minister Shri Narendra Modi in April 2024.</span></span></span></span></p>
+
+<p style="margin-left:0in; margin-right:0in; text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff">&nbsp; The&nbsp; AB PM-JAY&nbsp; scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the bottom 40% of India&rsquo;s population were covered under the scheme. Later, the Government of India, in January 2022 revised the beneficiary base under AB PM-JAY from 10.74 crore to 12 crore families considering India&rsquo;s decadal population growth of 11.7 % over 2011 population. The scheme was further expanded to cover 37 lakh ASHAs/AWWs/AWHs working across the country and their families for free healthcare benefits.&nbsp; Taking the mission ahead, AB PM-JAY would now provide free healthcare coverage of Rs 5 lakh to&nbsp; all citizens of the age-group of 70 years and above across the country.</span></span></span></span></p>
+
+<p style="text-align:center"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff"><strong>*****</strong></span></span></span></span></p>
+
+<p style="text-align:justify"><span style="font-family:Times New Roman,Times,serif"><span style="font-size:16px"><span style="color:#222222"><span style="background-color:#ffffff"><strong>MJPS/BM</strong></span></span></span></span></p>
+
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                                    <div style="font-weight: 100; text-align: left; font-size: 16px;">
+                                          (Release ID: 2053881)
+                                    </div>
+                                    <div style="height: 30px; width: 100%;">
+                                    </div>
+                              </td>
+                        </tr>
+                        <tr>
+                              <td style="font-weight: 200; text-align: center; font-size: 24px;"></td>
+                        </tr>
+                  </table>
+            </div>
+            <div class="clearfix">
+            </div>
+
+            
+
+            <div class="section1">
+                  <div id="frst_t">
+                        <div id="arr_rm"><div class='sticky-social_mb'><ul class='social_mb'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='40' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&text=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='40' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='40' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)&body=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='40' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&title=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='40' /></li></a></ul></div></div>
+                  </div>
+                  <div id="second_t">
+                        <div id="sndr_rm"><div class='sticky-social'><ul class='social'><a href='http://www.facebook.com/share.php?u=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881' target='_blank'><li class='fb_b'   ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/facebook.jpg' alt='Share on facebook'  width='35' /></li></a><a href='https://twitter.com/intent/tweet?url=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&text=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)' target='_blank'><li class='twitter_r'  ><img  src='https://static.pib.gov.in/WriteReadData/specificdocs/photo/2023/aug/ph2023818240601.jpg' alt='Share on twitter' width='35' /> </li></a><a href='https://api.whatsapp.com/send?text=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881' target='_blank'><li class='whatsapp_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/whatsapp1.png' alt='Share on whatsapp' width='35' /></li></a><a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)&body=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&ui=2&tf=1&pli=1' title='Share by Email' target='_blank'><li class='fa-envelope_r' ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/email1.png' alt='Share on email'  width='35' /></li></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https://pib.gov.in/PressReleasePage.aspx?PRID=2053881&title=Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)&summary=My%20favorite%20developer%20program&source=LinkedIn' target='_blank'><li class='fa-linkedin_r'  ><img  src='https://static.pib.gov.in/WriteReadData/userfiles/socialmedianew/linkedin.png' alt='Share on linkedin' width='35' /></li></a></ul></div></div>
+                  </div>
+            </div>
+            <input type="hidden" name="ltrTitlee" id="ltrTitlee" value="Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)" />
+            <input type="hidden" name="ltrSubtitlee" id="ltrSubtitlee" value="&lt;br/>4.5 crore families to be benefitted" />
+            <input type="hidden" name="ltrDescriptionn" id="ltrDescriptionn" value="&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>The Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved&amp;nbsp;the&amp;nbsp;health coverage to all the senior citizens aged 70 years and above irrespective of income under the flagship scheme Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY).&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>This aims to benefit approximately 4.5 Crore families with six (6) crore senior citizens with 5 Lakh rupees free health insurance cover on a family basis.&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>With this approval, all senior citizens of the age 70 years and above irrespective of their socio- economic status would be eligible to avail the benefits of AB PM-JAY. The eligible senior citizens would be issued a new distinct card under AB PM-JAY. The senior citizens of the age 70 years and above belonging to families already covered under AB PM-JAY will get an additional top-up cover upto ₹5 lakh per year for themselves (which they do not have to share with the other members of the family who are below the age of 70 years). All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years and above who are already availing benefits of other public health insurance schemes such as Central Government Health Scheme (CGHS), Ex-Servicemen Contributory Health Scheme (ECHS), Ayushman Central Armed Police Force (CAPF)&amp;nbsp; may either choose their existing scheme or opt for AB PMJAY.&amp;nbsp; It has been clarified that senior citizens of 70 years and above who are under private health insurance policies or&amp;nbsp; Employees&amp;rsquo; State Insurance scheme will be eligible to avail benefits under AB PM-JAY.&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>&amp;nbsp;AB PM-JAY is the world&amp;rsquo;s largest publicly funded health assurance scheme which provides health cover of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization to 55 crore individuals corresponding to 12.34 crore families. All members of the eligible families irrespective of age are covered under the scheme. The scheme has covered 7.37 Crore hospital admissions including 49 percent women beneficiaries. The public has benefited to the extent of over Rs. 1 Lakh crore under the scheme.&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>&amp;nbsp;The expansion of cover to senior citizens of the age of 70 years and above was earlier announced by Hon&amp;rsquo;ble Prime Minister Shri Narendra Modi in April 2024.&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;margin-left:0in; margin-right:0in; text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>&amp;nbsp; The&amp;nbsp; AB PM-JAY&amp;nbsp; scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the bottom 40% of India&amp;rsquo;s population were covered under the scheme. Later, the Government of India, in January 2022 revised the beneficiary base under AB PM-JAY from 10.74 crore to 12 crore families considering India&amp;rsquo;s decadal population growth of 11.7 % over 2011 population. The scheme was further expanded to cover 37 lakh ASHAs/AWWs/AWHs working across the country and their families for free healthcare benefits.&amp;nbsp; Taking the mission ahead, AB PM-JAY would now provide free healthcare coverage of Rs 5 lakh to&amp;nbsp; all citizens of the age-group of 70 years and above across the country.&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:center&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>&lt;strong>*****&lt;/strong>&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+
+&lt;p style=&quot;text-align:justify&quot;>&lt;span style=&quot;font-family:Times New Roman,Times,serif&quot;>&lt;span style=&quot;font-size:16px&quot;>&lt;span style=&quot;color:#222222&quot;>&lt;span style=&quot;background-color:#ffffff&quot;>&lt;strong>MJPS/BM&lt;/strong>&lt;/span>&lt;/span>&lt;/span>&lt;/span>&lt;/p>
+" />
+            <script type="text/javascript">
+                  var mPlayer = document.getElementById("background_music");
+                  var mPlayAction = document.getElementById("playbutton");
+
+                  var isPlaying = false;
+
+                  function playAudio() {
+                        mPlayer.play();
+                        isPlaying = true;
+                        document.getElementById('stopA').style.display = "block";
+                        document.getElementById('playA').style.display = "none";
+                  }
+
+                  function pauseAudio() {
+                        mPlayer.pause();
+                        isPlaying = false;
+                        document.getElementById('playA').style.display = "block";
+                        document.getElementById('stopA').style.display = "none";
+                  }
+                  //function HandleAudio() {
+                  //    if (isPlaying == true) {
+                  //        //Playing already Pause it
+                  //        pauseAudio();
+                  //    } else {
+                  //        //Play the music
+                  //        playAudio();
+                  //    }
+                  //}
+            </script>
+            <script type="text/javascript">
+                  var synth = window.speechSynthesis;
+
+            
+                  function CleanHtml(html) {
+
+                        html = html.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+                        return html;
+                  }
+                  function stripHtml(html) {
+                        let tmp = document.createElement("DIV");
+                        tmp.innerHTML = CleanHtml(html);
+                        return tmp.textContent || tmp.innerText || "";
+                  }
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        //for responsive tables
+                        $("table").each(function () {
+                              if (!$(this).closest(".table-responsive").length) {
+                                    $(this).wrap("<div class='table-responsive'></div>");
+                              }
+                        });
+
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            <script type="text/javascript">
+                  $(document).ready(function () {
+                        var width = $(window).width();
+                        if (width < 768) {
+
+                              // Extra Small Device
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+
+                        } else if (width < 991) {
+                              document.getElementById('frst_t').style.display = "block";
+                              document.getElementById('second_t').style.display = "none";
+                              // Small Device
+
+                        } else if (width < 1199) {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Medium Device
+
+                        } else {
+                              document.getElementById('frst_t').style.display = "none";
+                              document.getElementById('second_t').style.display = "block";
+                              // Large Device
+
+                        }
+                  });
+            </script>
+            
+            <style type="text/css">
+                  @media print {
+                        .sticky-social, .sticky-social_mb, .pull-right, #printPDF {
+                              display: none !important;
+                        }
+                  }
+
+                  .f_vl {
+                        padding-right: 30px;
+                        font-size: 17px;
+                        cursor: pointer;
+                  }
+
+                  .log_oo {
+                        // width: 20%;
+                        display: flex;
+                        justify-content: space-between;
+                  }
+
+                        .log_oo img {
+                              width: 150px;
+                              /*width: 100%;
+                    height: auto;*/
+                        }
+
+                  .sticky-social_mb {
+                        position: fixed;
+                        bottom: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                        width: 100%;
+                  }
+
+                  .social_mb {
+                        list-style: none;
+                        display: flex;
+                        width: 100%;
+                        margin-bottom: -8px;
+                  }
+
+                        .social_mb a {
+                              padding: 8px 0px;
+                              font-size: 30px;
+                              transition: all 0.8s ease-in-out;
+                              width: 20% !important;
+                              text-align: center;
+                        }
+            </style>
+            <style type="text/css">
+                  .section1 {
+                        position: relative;
+                        padding: 10px 0px;
+                        width: 100%;
+                  }
+
+
+
+                  .sticky-social {
+                        position: fixed;
+                        top: 20px;
+                        left: 0px;
+                        padding: 0px;
+                        margin: 0px;
+                  }
+
+                  .social {
+                        list-style: none;
+                  }
+
+                        .social a li {
+                              padding: 8px 12px;
+                              font-size: 25px;
+                              transition: all 0.8s ease-in-out;
+                        }
+
+                              .social a li:hover {
+                                    margin-right: -30px;
+                                    box-shadow: 2px 5px 10px grey;
+                              }
+
+                                    .social a li:hover .fa {
+                                          margin-left: 20px;
+                                    }
+
+                  .fb_b {
+                        /* background-color: rgb(59, 89, 152);*/
+                        background-color: rgba(65,103,178,255);
+                  }
+
+                  .twitter_r {
+                        /* background-color: rgb(29, 161, 242);*/
+                        background-color: #000000;
+                  }
+
+                  .whatsapp_r {
+                        /* background-color: rgb(77, 194, 71);*/
+                        background-color: rgba(13,191,67,255);
+                  }
+
+                  .fa-envelope_r {
+                        /* background-color: rgb(219, 68, 55);*/
+                        background-color: #e2123d;
+                  }
+
+                  .fa-linkedin_r {
+                        background-color: rgb(0, 119, 181);
+                  }
+            </style>
+            <style type="text/css">
+                  @media only screen and (max-device-width: 767px) {
+                        p span img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        p img {
+                              max-width: 90% !important;
+                              height: auto !important;
+                        }
+
+                        h2 {
+                              font-size: 20px !important;
+                              font-weight: 600 !important;
+                        }
+
+                        h3 {
+                              font-size: 18px !important;
+                              font-weight: 600 !important;
+                        }
+                  }
+            </style>
+            <style type="text/css">
+                  /* === Film Roll Badge Styling(IFFI2025 countdown) === */
+                  .film-roll-badge {
+                        position: absolute;
+                        top:82%;
+                        right: 20px;
+                        width: 230px;
+                        height: 70px;
+                        background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 18px, #6e2b8b 18px, #6e2b8b 36px );
+                        border-top: 8px solid #9a2375;
+                        border-bottom: 8px solid #9a2375;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                        animation: moveFilm 8s linear infinite;
+                        z-index: 10;
+                  }
+
+                        /* film sprocket holes */
+                        .film-roll-badge::before,
+                        .film-roll-badge::after {
+                              content: "";
+                              position: absolute;
+                              width: 100%;
+                              height: 10px;
+                              background: repeating-linear-gradient( to right, #9a2375 0px, #9a2375 10px, #fff 10px, #fff 20px );
+                              left: 0;
+                              z-index: 2;
+                        }
+
+                        .film-roll-badge::before {
+                              top: -4px;
+                        }
+
+                        .film-roll-badge::after {
+                              bottom: -4px;
+                        }
+
+                  .film-roll-inner {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation: flicker 2s infinite ease-in-out;
+                  }
+
+                  .countdown-text {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: #fff;
+                        text-shadow: 0 0 6px rgba(255, 255, 255, 0.4), 0 0 10px #000;
+                        white-space: nowrap;
+                  }
+
+                  /* === Animations === */
+                  @keyframes moveFilm {
+                        0% {
+                              background-position: 0 0;
+                        }
+
+                        100% {
+                              background-position: 120px 0;
+                        }
+                  }
+
+                  @keyframes flicker {
+                        0%, 100% {
+                              opacity: 1;
+                        }
+
+                        50% {
+                              opacity: 0.9;
+                        }
+
+                        25% {
+                              opacity: 0.95;
+                        }
+
+                        75% {
+                              opacity: 0.85;
+                        }
+                  }
+
+                  /* === Responsive Adjustments === */
+                  @media (max-width: 1500px) {
+                        .film-roll-badge {
+                              top: 68%;
+                              right: 18px;
+                              /* width: 220px; */
+                              height: 65px;
+                              font-size: 0.85rem;
+                        }
+
+                        .press-section {
+                              margin-top: 35px;
+                        }
+                  }
+
+                  @media (max-width: 992px) {
+                        .film-roll-badge {
+                              top: 52%;
+                              right: 10px;
+                               width: 200px; 
+                              height: 60px;
+                        }
+                  }
+
+                  @media (max-width: 768px) {
+                        .film-roll-badge {
+                              top: 56%;
+                              right: 10px;
+                               width: 124px; 
+                              height: 55px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.9rem;
+                        }
+                  }
+
+                  @media (max-width: 576px) {
+                        .film-roll-badge {
+                              top: 59%;
+                              right: 5px;
+                              /* width: 160px; */
+                              height: 50px;
+                        }
+
+                        .countdown-text {
+                              font-size: 0.85rem;
+                        }
+                  }
+            </style>
+          <script type="text/javascript">
+                const festivalStart = new Date("2025-11-20T00:00:00").getTime();
+                const festivalEnd = new Date("2025-11-28T23:59:59").getTime();
+
+                const countdownElement = document.getElementById("countdown");
+
+                const interval = setInterval(() => {
+                      const now = new Date().getTime();
+
+                      // BEFORE FESTIVAL — show days + hours left
+                      if (now < festivalStart) {
+                            const diff = festivalStart - now;
+                            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                            countdownElement.innerHTML = `
+              ${days} Day${days !== 1 ? 's' : ''} 
+              ${hours} Hour${hours !== 1 ? 's' : ''} to go
+          `;
+
+                      }
+
+                      // DURING FESTIVAL — show 56th IFFI - Day X
+                      else if (now >= festivalStart && now <= festivalEnd) {
+                            const dayNumber = Math.floor((now - festivalStart) / (1000 * 60 * 60 * 24)) + 1;
+                            countdownElement.innerHTML = `56th IFFI - Day ${dayNumber}`;
+                      }
+
+                      // AFTER FESTIVAL — new message
+                      else {
+                            countdownElement.innerHTML = `✨ IFFI closes but never ends…`;
+
+                            // Width change logic
+                            const elements = document.querySelectorAll('.film-roll-badge');
+                            elements.forEach(el => el.style.width = "350px");
+
+                            clearInterval(interval);
+                      }
+
+                }, 1000);
+          </script>
+ <script type="text/javascript">
+
+               const miffStart = new Date("2026-06-15T00:00:00").getTime();
+               const miffEnd = new Date("2026-06-15T23:59:59").getTime();
+
+               const miffElement = document.getElementById("miff");
+
+               if (miffElement) {
+
+                   const miffInterval = setInterval(() => {
+
+                       const now = new Date().getTime();
+
+                       // Before MIFF
+                       if (now < miffStart) {
+
+                           const diff = miffStart - now;
+                           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        
+
+                   /*  miffElement.innerHTML = `${days} Day${days !== 1 ? 's' : ''} ${hours} Hour${hours !== 1 ? 's' : ''} to MIFF`;*/
+                           miffElement.innerHTML = `${days} Day${days === 1 ? '' : 's'} to MIFF ...`;
+
+
+                     }
+
+                       // During MIFF
+                       else if (now >= miffStart && now <= miffEnd) {
+
+                           const dayNumber =
+                               Math.floor((now - miffStart) / (1000 * 60 * 60 * 24)) + 1;
+
+                           miffElement.innerHTML = `19th MIFF - Day ${dayNumber}`;
+                       }
+
+                       // After MIFF
+                       else {
+
+                           miffElement.innerHTML = `✨ MIFF concludes, cinema lives on...`;
+
+                           document.querySelectorAll('.film-roll-badge')
+                               .forEach(el => el.style.width = "350px");
+
+                           clearInterval(miffInterval);
+                       }
+
+                   }, 1000);
+               }
+
+</script>
+
+      
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("sc_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"P_CategoryManagement","dynamicServicePath":"/PressReleasePage.aspx","id":"mpe"}, null, null, $get("Hidden"));
+});
+//]]>
+</script>
+<input type="hidden" name="__ncforminfo" value="OH5lS6Yb0DeQy8cvUtOqdAkg1WhcR6CystABxQGkNwUpSrirFK8sMecWGnuMHtfNNzWN6b0N36bXm6QPcrsmhPfKhKuPDFMImgRURZZl265ZHqqiKcq_bQ=="/></form>
+</body>
+</html>
+

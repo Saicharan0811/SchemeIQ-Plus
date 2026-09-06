@@ -1,0 +1,44 @@
+{
+  "$schema": "CitizenArchetype Input Template for SchemeIQ+ Expert Annotation",
+  "description": "Template file defining citizen archetype profiles for expert relevance judgment. Policy analysts and domain caseworkers populate this file with real/standardized citizen archetypes.",
+  "archetypes": [
+    {
+      "archetype_id": "arch_template_farmer_01",
+      "archetype_name": "Smallholder Rainfed Landowning Farmer",
+      "narrative": "A 42-year-old small farmer residing in rural Telangana with 3 acres of rainfed agricultural land seeking agricultural investment support and crop protection.",
+      "profile": {
+        "age": 42,
+        "state": "Telangana",
+        "district": "Mahabubabad",
+        "residence_type": "rural",
+        "gender": "male",
+        "category": "BC",
+        "annual_income": 140000,
+        "occupation": "farmer",
+        "farmer_status": true,
+        "land_ownership_status": true,
+        "land_acres": 3.0,
+        "pays_income_tax": false,
+        "has_savings_bank_account": true
+      }
+    },
+    {
+      "archetype_id": "arch_template_student_01",
+      "archetype_name": "Low-Income Undergraduate Student",
+      "narrative": "A 20-year-old undergraduate college student in Hyderabad from a low-income family seeking fee reimbursement and post-matric financial assistance.",
+      "profile": {
+        "age": 20,
+        "state": "Telangana",
+        "district": "Hyderabad",
+        "residence_type": "urban",
+        "gender": "female",
+        "category": "SC",
+        "annual_income": 95000,
+        "occupation": "student",
+        "student_status": true,
+        "education_level": "graduate",
+        "has_savings_bank_account": true
+      }
+    }
+  ]
+}

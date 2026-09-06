@@ -1,0 +1,171 @@
+{
+  "corpus_lock_timestamp": "2026-08-26T03:26:16.174841+00:00",
+  "corpus_version": "2.0.0",
+  "total_schemes_registered": 14,
+  "total_schemes_covered": 14,
+  "coverage_percentage": 100.0,
+  "covered_scheme_ids": [
+    "CT001",
+    "CT002",
+    "CT003",
+    "CT004",
+    "CT005",
+    "CT006",
+    "TS001",
+    "TS002",
+    "TS003",
+    "TS004",
+    "TS005",
+    "TS006",
+    "TS007",
+    "TS008"
+  ],
+  "missing_coverage_scheme_ids": [],
+  "raw_corpus_audit": {
+    "raw_directory": "data/documents/raw",
+    "total_raw_files": 25,
+    "metadata_records": 40,
+    "valid_documents": 16,
+    "warning_documents": 6,
+    "duplicate_documents": 3,
+    "invalid_documents": 0,
+    "raw_corpus_read_only_verified": true
+  },
+  "processed_clean_corpus": {
+    "processed_directory": "data/processed/documents",
+    "total_processed_documents": 16,
+    "total_words": 16212,
+    "total_characters": 103007,
+    "processing_version": "v1"
+  },
+  "documents": [
+    {
+      "scheme_id": "CT001",
+      "scheme_name": "PM-KISAN",
+      "processed_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt",
+      "words": 657,
+      "chars": 4643,
+      "recovery": false
+    },
+    {
+      "scheme_id": "CT002",
+      "scheme_name": "Ayushman Bharat PM-JAY",
+      "processed_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.txt",
+      "words": 1130,
+      "chars": 6825,
+      "recovery": true
+    },
+    {
+      "scheme_id": "CT003",
+      "scheme_name": "PMAY-U 2.0",
+      "processed_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt",
+      "words": 1382,
+      "chars": 8779,
+      "recovery": false
+    },
+    {
+      "scheme_id": "CT003",
+      "scheme_name": "PMAY-U 2.0",
+      "processed_filename": "CT003_22_PMAY_U_20_Interest_Subsidy_Scheme_ISS_and_BLC_Oper.txt",
+      "words": 573,
+      "chars": 3779,
+      "recovery": false
+    },
+    {
+      "scheme_id": "CT004",
+      "scheme_name": "Pradhan Mantri Mudra Yojana",
+      "processed_filename": "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.txt",
+      "words": 2498,
+      "chars": 16523,
+      "recovery": false
+    },
+    {
+      "scheme_id": "CT004",
+      "scheme_name": "Pradhan Mantri Mudra Yojana",
+      "processed_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt",
+      "words": 5937,
+      "chars": 34861,
+      "recovery": false
+    },
+    {
+      "scheme_id": "CT005",
+      "scheme_name": "PMEGP",
+      "processed_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt",
+      "words": 1480,
+      "chars": 9542,
+      "recovery": true
+    },
+    {
+      "scheme_id": "CT006",
+      "scheme_name": "Atal Pension Yojana",
+      "processed_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt",
+      "words": 1044,
+      "chars": 7347,
+      "recovery": false
+    },
+    {
+      "scheme_id": "TS001",
+      "scheme_name": "Rythu Bharosa",
+      "processed_filename": "TS001_30_Rythu_Bharosa.txt",
+      "words": 180,
+      "chars": 1252,
+      "recovery": true
+    },
+    {
+      "scheme_id": "TS002",
+      "scheme_name": "Rythu Bhima",
+      "processed_filename": "TS002_30_Rythu_Bima.txt",
+      "words": 176,
+      "chars": 1110,
+      "recovery": true
+    },
+    {
+      "scheme_id": "TS003",
+      "scheme_name": "Cheyutha",
+      "processed_filename": "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.txt",
+      "words": 470,
+      "chars": 3701,
+      "recovery": false
+    },
+    {
+      "scheme_id": "TS004",
+      "scheme_name": "Maha Lakshmi",
+      "processed_filename": "TS004_30_Maha_Lakshmi.txt",
+      "words": 109,
+      "chars": 653,
+      "recovery": true
+    },
+    {
+      "scheme_id": "TS005",
+      "scheme_name": "Aasara Pensions",
+      "processed_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.txt",
+      "words": 124,
+      "chars": 758,
+      "recovery": false
+    },
+    {
+      "scheme_id": "TS006",
+      "scheme_name": "Telangana ePASS Scholarships",
+      "processed_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt",
+      "words": 202,
+      "chars": 1484,
+      "recovery": false
+    },
+    {
+      "scheme_id": "TS007",
+      "scheme_name": "MCH Kit Scheme",
+      "processed_filename": "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.txt",
+      "words": 115,
+      "chars": 839,
+      "recovery": false
+    },
+    {
+      "scheme_id": "TS008",
+      "scheme_name": "Telangana Free Diagnostic Services",
+      "processed_filename": "TS008_35_Telangana_Diagnostics_Official_Government_Subdomai.txt",
+      "words": 135,
+      "chars": 911,
+      "recovery": true
+    }
+  ]
+}

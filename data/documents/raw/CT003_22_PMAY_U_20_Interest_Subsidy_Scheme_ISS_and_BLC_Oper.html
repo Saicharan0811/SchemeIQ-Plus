@@ -1,0 +1,1371 @@
+
+
+<!DOCTYPE html>
+<html>
+<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	PMAY-HFA(Urban)
+</title><link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png" /><link rel="stylesheet" href="assets/css/bootstrap.min.css" /><link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" /><link href="assets/css/bootsnav2.css" rel="stylesheet" /><link href="assets/css/font-awesome.css" rel="stylesheet" /><link href="assets/css/style.css" rel="stylesheet" /><link rel="stylesheet" href="css/owl.carousel.css" /><link href="css/new_style.css" rel="stylesheet" />
+    <style>
+        .section_container {
+            display: flex;
+            flex-direction: row;
+            gap: 1%;
+            margin-top: 30px;
+            align-content: center;
+            justify-content: space-around;
+            position: relative;
+        }
+
+        .firstdiv {
+            background: #fff;
+            border: 1px solid #ccc;
+            position: relative;
+            width: 25%;
+        }
+
+        .flex-bottom {
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+        }
+
+        .pmain {
+            font-size: calc(.5vw + .5vh + .3vmin);
+            padding: 10px;
+            line-height: 25px;
+            text-align: justify;
+        }
+
+        .img-container {
+            width: 60%;
+        }
+
+        .img-container1 {
+            width: 95%;
+            margin-bottom: 10px;
+        }
+
+        .headingone {
+            color: #000;
+            font-size: 14px;
+            background: #EF8D32;
+            margin-bottom: 10px;
+        }
+
+        .headingtwo {
+            color: #000;
+            font-size: 14px;
+            background: #1da0c9;
+            margin-bottom: 10px;
+        }
+
+        .headingthree {
+            color: #000;
+            font-size: 14px;
+            background: #bcc71d;
+            margin-bottom: 10px;
+        }
+
+        .headingfour {
+            color: #000;
+            font-size: 14px;
+            background: #079197;
+            margin-bottom: 10px;
+        }
+
+        .h3-text {
+            text-align: center;
+            font-size: 13px;
+            padding: 20px;
+            margin-top: 0px;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .btn-primary3 {
+            width: 100%;
+            background: #CC561E;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border: none;
+            color: #fff;
+            margin-bottom: 0px;
+            box-shadow: inset 0 0 0 0 #7c3412;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+        }
+
+            .btn-primary3:hover {
+                box-shadow: inset 400px 0 0 0 #7c3412;
+            }
+
+        .align-self {
+            align-items: center;
+        }
+
+        .containernew {
+            display: flex;
+            position: absolute;
+            width: 100%;
+        }
+
+        .flex-center {
+            text-align: center;
+        }
+
+        .section_flex {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: absolute;
+            width: 100%;
+        }
+
+        .btn-light-house {
+            background: #bcc71d;
+            padding: 10px;
+            margin-right: 5px;
+            border: none !important;
+        }
+
+        .btn-enroll {
+            background: #FAC213;
+            padding: 10px;
+            border: none !important;
+        }
+
+        .about_text_justify {
+            text-align: justify;
+            font-size: calc(.5vw + .5vh + .3vmin);
+        }
+
+        .h-20 {
+            height: 55px;
+        }
+
+        .mtb-40 {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .read_icon {
+            height: 15px;
+            width: 15px;
+        }
+
+        .text_underline {
+            text-decoration: underline;
+        }
+
+        .text_neworange {
+            color: #d24728;
+        }
+
+        .third_section {
+            display: flex;
+            gap: 2%;
+            justify-content: space-around;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .new_section {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 0 2px 2px #ccc;
+            border: 1px solid #ccc;
+            height: auto;
+        }
+
+        .newsbox {
+        }
+
+        .newsheader:first-child {
+            background: #6d7d14 !important;
+        }
+
+        .newsheader2 {
+            padding: 20px;
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            color: #fff;
+            font-weight: bold;
+            background: #40bff5;
+        }
+
+        .newsheader1 {
+            background: #5273b8 !important;
+            padding: 20px;
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .newsheader {
+            /*background:yellowgreen;*/
+            padding: 20px;
+            align-self: center;
+            justify-content: center;
+            display: flex;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .news_list li {
+            list-style: url('assets/img/icon/angles-right-solid.svg');
+            line-height: 30px;
+            padding: 10px;
+        }
+
+        .new_section i {
+            padding: 5px 10px;
+        }
+
+        @media (min-width: 269px) and (max-width: 991px) {
+            .section_container {
+                flex-direction: column;
+            }
+
+            .third_section {
+                flex-direction: column;
+            }
+
+            .firstdiv {
+                background: #fff;
+                width: 100%;
+                box-shadow: 0 0 3px 3px #ccc;
+            }
+
+            .btn-light-house {
+                background: #bcc71d;
+                margin-right: 10px;
+                border: none !important;
+                position: absolute;
+            }
+
+            .btn-enroll {
+                background: #FAC213;
+                margin: 0px 5px 20px 0px;
+                border: none !important;
+                position: absolute;
+            }
+
+            .img-container1 {
+                width: 90%;
+                margin-bottom: 10px;
+            }
+
+            .pmain {
+                font-size: calc(.5vw + .5vh + 1.5vmin);
+                padding: 10px;
+                line-height: 25px;
+                text-align: justify;
+            }
+
+            .about_text_justify {
+                text-align: justify;
+                font-size: calc(.5vw + .5vh + 1.3vmin);
+            }
+        }
+    </style>
+    <script>
+
+        var url = window.location.protocol + '//' + window.location.hostname;
+        fetch(url + '/api/PMAY_Services/Get_Ministry_Dashboard_Data')
+            // fetch('https://pmaymis.gov.in/api/PMAY_Services/Get_Ministry_Dashboard_Data')
+            .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    // Examine the text in the response
+                    response.json().then(function (data) {
+                        if (data[0].StatusCode == 1) {
+                            //  console.log(data[0].StatusCode);
+                            var Houses_Sanctioned = data[0].Value[0].Houses_Sanctioned;
+                            var Investment = data[0].Value[0].Investment;
+                            var Central_Assistance_Committed = data[0].Value[0].Central_Assistance_Committed;
+                            var Central_Assistance_Release = data[0].Value[0].Central_Assistance_Release;
+                            var House_Grounded = data[0].Value[0].House_Grounded;
+                            var House_Completed = data[0].Value[0].House_Completed;
+
+                            var span1 = document.getElementById("Houses_Sanctioned").innerHTML;
+                            document.getElementById("Houses_Sanctioned").innerHTML = span1 + Houses_Sanctioned;
+                            var span1 = document.getElementById("Investment").innerHTML;
+                            document.getElementById("Investment").innerHTML = span1 + Investment;
+                            var span1 = document.getElementById("Central_Assistance_Committed").innerHTML;
+                            document.getElementById("Central_Assistance_Committed").innerHTML = span1 + Central_Assistance_Committed;
+
+                            var span1 = document.getElementById("House_Grounded").innerHTML;
+                            document.getElementById("House_Grounded").innerHTML = span1 + House_Grounded;
+                            var span1 = document.getElementById("House_Completed").innerHTML;
+                            document.getElementById("House_Completed").innerHTML = span1 + House_Completed;
+                            var span1 = document.getElementById("Central_Assistance_Release").innerHTML;
+                            document.getElementById("Central_Assistance_Release").innerHTML = span1 + Central_Assistance_Release;
+
+
+
+                            //console.log(Central_Assistance_Release);
+                        }
+                        else {
+                            console.log("error");
+                        }
+                    });
+                }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+    </script>
+
+<link href="App_Themes/ESTPTheme/css.css" type="text/css" rel="stylesheet" /></head>
+
+<body>
+
+
+    <header>
+        
+        <div class="top-bar-section border-bottom">
+            <div class="container">
+                <div class="">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="text-left p-5">
+                            <span>
+                                <img src="assets/img/indian-flag.jpg" />
+                                भारत सरकार | Government of India </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="text-right p-5">
+                            <span><a href="#maincontent">Skip to main content |</a></span>
+                            <button type="button" class="increase">A+</button>
+                            <button type="button" class="resetMe">A</button>
+                            <button type="button" class="decrease">A-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MID HEADER OPEN-->
+        <div class="middel-part__block">
+            <div class="container">
+                <div class="">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left">
+                        <div class="logo">
+                            <a href="https://swachhbharat.mygov.in/" title="Swachh Bharat Mission" target="_blank">
+                                <img src="assets/img/logo/pmay-logo.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                        <div class="logo">
+                            <a href="https://swachhbharat.mygov.in/" title="Ministry of housing & urban affair" target="_blank">
+                                <img src="assets/img/logo/minister-of-housing-logo.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4  col-xs-4 text-right">
+                        <div class="logo">
+                            <a href="https://swachhbharat.mygov.in/" title="Swachh Bharat Mission" target="_blank">
+                                <img src="assets/img/logo/swachh-bharat-logo.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- close container-->
+        </div>
+        
+
+        
+        <div class="main_nav stricky-header__top">
+            <nav class="navbar navbar-default navbar-sticky bootsnav">
+                <div class="container">
+                    <div class="">
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"><i class="fa fa-bars text-gray"></i></button>
+                        </div>
+                        <!-- End Header Navigation -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="navbar-menu">
+                            <div class="row">
+                                <ul class="nav navbar-nav mobile-menu">
+                                    <li><a href="default.aspx"><i class="fa fa-home font-18"></i></a></li>
+                                    <li><a href="">Search Beneficiary <i class="fa fa-angle-down"></i></a>
+
+                                        <ul class="dropdown-menu">
+
+                                            <li><a href="Open/Find_Ben_Fund_Released.aspx">Beneficiary wise funds released</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li class="d-none"><a href="javascript:avoid(0);">Citizen Assessment <i class="fa fa-angle-down"></i></a>
+                                        
+                                        <ul class="dropdown-menu">
+                                            <li><a href="Open/Check_Aadhar_Existence.aspx?comp=a" title="For slum dwellers">Apply Online 
+                              <span class="float-right"><i class="fa fa-angle-right"></i></span></a>
+                                                <ul class="dropdown-menu    ">
+                                                    <li><a href="Open/Check_Aadhar_Existence.aspx?comp=a">In Situ Slum Redevelopment(ISSR)</a> </li>
+                                                    <li><a href="Open/Check_Aadhar_Existence.aspx?comp=b">Affordable Housing in Partnership(AHP)</a></li>
+                                                    <li><a href="Open/Check_Aadhar_Existence.aspx?comp=b">Beneficiary Lead Construction/Enhencement(BLC/BLCE)</a></li>
+                                                    <li><a href="Open/clss.html">Credit Link Subsidy Scheme(CLSS)</a></li>
+                                                </ul>
+
+                                            </li>
+                                            
+                                            <li><a href="Open/Format_A_B_Edit.aspx" title="Edit Assessment Form">Edit Assessment Form</a> </li>
+                                            <li><a href="Open/Print_Application_By_applicationNo.aspx" title="Print Assessment">Print Assessment</a> </li>
+                                            <li><a href="Track_Application_Status.aspx" title="Track Your Assessment Status">Track Your Assessment Status</a> </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    
+                                    <li><a class="custom_btn__block" href="http://dashboard.mohua.gov.in/" target="_blank" title="">Dashboard</a></li>
+                                    
+
+                                    <!-- <li><a class="custom_btn__block" href="#" title="">FAQ</a></li>-->
+
+                                    <li><a class="custom_btn__block" href="assets/pdf/SLNA_List.pdf" target="_blank" title="SLNA List">SLNA List</a></li>
+
+                                    
+                                    <li><a class="custom_btn__block" href="assets/pdf/Disclaimer.pdf" target="_blank" title="">Disclaimer</a></li>
+                                    <li><a class="custom_btn__block" href="https://pmayuclap.gov.in/content/html/Subsidy-Calc.html" target="_blank" title="">Subsidy Calculator</a></li>
+                                    <li><a href="javascript:avoid(0);">FAQ  <i class="fa fa-angle-down"></i></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://pmay-urban.gov.in/FAQ" target="_blank" title="For slum dwellers">PMAY(U) FAQ </a></li>
+                                            <li><a href="https://pmayuclap.gov.in/content/html/clss_faq.html" target="_blank" title="Benefit under other 3 components">CLSS FAQ</a> </li>
+                                            <li><a href="https://pmayuclap.gov.in/content/html/clap_faq.html" target="_blank" title="Edit Assessment Form">CLAP FAQ</a> </li>
+                                            <li><a href="https://pmayuclap.gov.in/content/html/IEC/pdf/CLAP_Manual_web.pdf" target="_blank" title="Print Assessment">CLAP User Manual</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="p-48" href="#" title="">
+                                        <span class="humburger" onclick="openNav()">&#9776; </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a class="mis-login p-login" href="Auth/Login.aspx" title="MIS LOGIN">
+                                            <i class="fa fa-sign-in"></i>MIS LOGIN</a>
+
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!--navbar-collapse -->
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <div class="col-lg-6">
+                <h3 class="text-primary"><u>WebSites</u></h3>
+
+                <ul class="list-style-0">
+                    <li><a href="http://mohua.gov.in/" target="_blank" title="MoHUA" class="font-12"><i class="fa fa-globe"></i>MoHUA </a></li>
+                    <li><a href="https://pmay-urban.gov.in/" target="_blank" title="PmayU" class="font-12"><i class="fa fa-globe"></i>PMAY (URBAN)</a> </li>
+                    <li><a href="https://ghtc-india.gov.in/" target="_blank" title="GHTC India" class="font-12"><i class="fa fa-globe"></i>GHTC INDIA </a></li>
+                    <li><a href="https://pmayuclap.gov.in/" target="_blank" title="CLSS Awas Portal" class="font-12"><i class="fa fa-globe"></i>CLAP PORTAL</a> </li>
+                </ul>
+
+                <h3 class="text-primary"><u>Mobile App</u></h3>
+
+                <ul class="list-style-0">
+                    <li><a href="assets/app/bhuvan_hfa_v2.apk" download title="Bhuvan App" class="font-12"><i class="fa fa-mobile"></i>Bhuvan App </a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=in.nic.surojit.pmayurban&hl=en" title="" class="font-12" download><i class="fa fa-mobile"></i>AHP App</a> </li>
+                    <li><a href="assets/app/ghtc-app.apk" title="GHTC India" class="font-12" download><i class="fa fa-mobile"></i>GHTC-INDIA App </a></li>
+                    <li><a href="https://pmayuclap.gov.in/" target="_blank" title="CLSS Awas Portal" class="font-12"><i class="fa fa-mobile"></i>PMAY(U)</a> </li>
+                </ul>
+
+
+            </div>
+            <div class="col-lg-6">
+                <h3 class="text-primary"><u>OTHERS</u></h3>
+
+                <ul class="list-style-0">
+                    <li><a href="https://get.adobe.com/reader/" target="_blank" title="" class="font-12"><i class="fa fa-download" aria-hidden="true"></i>Download Adobe
+                  Reader </a></li>
+                    <li><a href="https://www.winzip.com/win/en/downwz.html" target="_blank" title="" class="font-12"><i class="fa fa-download" aria-hidden="true"></i>Download Winzip</a>
+                    </li>
+                    <li><a href="https://pmaymis.gov.in/Open/DataReceive.aspx" target="_blank" title="" class="font-12"><i class="fa fa-database"></i>Data Entered </a></li>
+                    <li><a href="#" title="" class="font-12"><i class="fa fa-phone"></i>Contact Us</a></li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Section End Here-->
+    <!--  Main Banner Start Here-->
+    <div class="container-fluid">
+        <div class="row bg-b">
+            <div class="col-lg-4 bg-b">
+                <div class="col-lg-12">
+                    <h2 class="mt-2 text-center">PMAY(Urban) - Progress</h2>
+                    <hr />
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4 card bg-warning1 mr-2">
+                        <img src="assets/img/progress-logo/c1.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><span id="Houses_Sanctioned"></span>Lakhs </b>
+                            
+                            <p class="f-11"><b>Houses Sanctioned</b></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4  card bg-danger1">
+
+                        <img src="assets/img/progress-logo/c2.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><b id="House_Grounded"></b>Lakhs</b>
+                            <p class="f-11"><b>Houses Grounded</b></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4  card bg-danger2">
+                        <img src="assets/img/progress-logo/c3.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><b id="House_Completed"></b>Lakhs</b>
+                            <p class="f-11"><b>Houses Completed</b></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4  card bg-danger3">
+
+                        <img src="assets/img/progress-logo/c4.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><i class="fa fa-rupee"></i><b id="Central_Assistance_Committed"></b>Lakh Cr.</b>
+                            <p class="f-9">
+                                <b>Central Assistance 
+                                <br />
+                                    Commited</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4  card bg-danger4">
+
+                        <img src="assets/img/progress-logo/c5.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><i class="fa fa-rupee"></i><b id="Central_Assistance_Release"></b>Cr.</b>
+                            <p class="f-9">
+                                <b>Central Assistance<br />
+                                    Released</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-4  card bg-danger5">
+                        <img src="assets/img/progress-logo/c6.png" class="wh" />
+                        <div class="text-white float-right mt-5">
+                            <b><i class="fa fa-rupee"></i><b id="Investment"></b>Lakh Cr.</b>
+                            <p class="f-11"><b>Total Investment</b></p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <div class="col-lg-8 p-0">
+
+                
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            
+                            <img src="assets/img/banner/Har_Ghar_Tiranga_2026.jpg" alt="" class="d-block w-100">
+                    
+                        </div>
+                        
+                        
+                        <div class="carousel-item">
+                             <img src="assets/img/banner/PMAY_banner_website_03.jpg" alt="" class="d-block w-100">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main_nav bg-pink">
+        <div class="container-fluid">
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                        <span class="ribbon1">Latest News  :</span>
+                    </div>
+                    <div class="col-lg-10 col-md-9  col-sm-8 col-xs-8">
+                        <marquee class="mark1">
+                            <strong>
+
+                                
+                                <span id="lbl_marquee" class="HeaderCss" style="color:Black;font-weight:bold;">NIC has developed a new module to capture the payments made to the beneficiaries through multiple instalments as per the Mission directions</span>
+
+                            </strong>
+                        </marquee>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Main Banner End Here-->
+
+
+    
+
+
+    <div class="container">
+        <div class="section_container">
+            <div class="firstdiv">
+                <div class="headingone">
+                    <h3 class="h3-text">Pradhan Mantri Aawas Yojna</h3>
+                </div>
+
+                <div class="paragraph">
+                    <p class="pmain">
+                        Pradhan Mantri Awas Yojana – Urban (PMAY-U)(19) a flagship Mission of Government of India being implemented by Ministry of Housing and Urban Affairs (MoHUA), was launched on 25th June 2015. The Mission addresses urban housing shortage among the EWS/LIG and MIG categories including the slum dwellers by ensuring a pucca house to all eligible urban households by the year 2022, when Nation completes 75 years of its Independence.
+							
+                    </p>
+                    <div class="flex-center">
+                        <img src="assets/img/fourcolumn/pmayu.png" class="img-container"></div>
+                </div>
+                <div class="h-20"></div>
+                <div class="flex-bottom">
+                    <a href="https://pmay-urban.gov.in/" target="_blank">
+                        <input type="button" class="btn-primary3" value="Read More">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="firstdiv">
+                <div class="headingfour">
+                    <h3 class="h3-text">Affordable Rental Housing Complexes</h3>
+                </div>
+
+                <div class="paragraph">
+                    <p class="pmain">
+                        Ministry of Housing & Urban Affairs has initiated Affordable Rental Housing Complexes (ARHCs), a sub-scheme under Pradhan Mantri Awas Yojana - Urban (PMAY-U). This will provide ease of living to urban migrants/ poor in Industrial Sector as well as in non-formal urban economy to get access to dignified affordable rental housing close to their workplace.
+                    </p>
+                </div>
+                <div class="flex-center">
+                    <img src="assets/img/fourcolumn/targetbeneficiary.png" class="img-container">
+                </div>
+                <div class="h-20"></div>
+                <div class="flex-bottom">
+                    <a href="http://arhc.mohua.gov.in/" target="_blank">
+                        <input type="button" class="btn-primary3" value="Read More">
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="firstdiv">
+                <div class="headingtwo">
+                    <h3 class="h3-text">Global Housing Technology Challenge – India</h3>
+                </div>
+
+                <div class="paragraph">
+                    <p class="pmain">
+                        MoHUA has initiated the Global Housing Technology Challenge - India (GHTC-India) which aims to identify and mainstream a basket of innovative construction technologies from across the globe for housing construction sector that are sustainable, eco-friendly and disaster-resilient.
+
+
+                    </p>
+                </div>
+                <div class="flex-center">
+                    <img src="assets/img/fourcolumn/TechnoGrahi.png" class="img-container1">
+                </div>
+
+                <div class="section_flex">
+                    <a href="https://ghtc-india.gov.in/Content/LHP.html" class="btn-light-house" target="_blank">Light House Project
+                    </a>
+                    <a href="https://ghtc-india.gov.in/UserHome/index" class="btn-enroll" target="_blank">Enroll as TechnoGrahi
+                    </a>
+                </div>
+                <div class="flex-bottom">
+                    <a href="https://ghtc-india.gov.in/" target="_blank">
+                        <input type="button" class="btn-primary3" value="Read More"></a>
+                </div>
+            </div>
+            <div class="firstdiv">
+                <div class="headingthree">
+                    <h3 class="h3-text">CLSS Awas Portal (CLAP)</h3>
+                </div>
+
+                <div class="paragraph">
+                    <p class="pmain">
+                        A web based monitoring system, CLSS Awas Portal (CLAP) is a common platform where all stakeholders i.e. MoHUA, Central Nodal Agencies, Primary Lending Institutions, Beneficiaries and Citizens are integrated in real time environment. The portal facilitates processing of applications along with tracking of subsidy status by beneficiaries. CLSS tracker has also been incorporated in PMAY(U) mobile App and UMANG platform.
+                        
+							 
+                    </p>
+                    <h2 class="flex-center">CLSS TRACKER</h2>
+                </div>
+                <div class="section_container align-self">
+
+                    <img src="assets/img/fourcolumn/clss.png" class="img-container1">
+                </div>
+                <div class="flex-bottom">
+                    <a href="https://pmayuclap.gov.in/" target="_blank">
+                        <input type="button" class="btn-primary3" value="Read More">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- About Us-->
+    <section>
+        <div class="container mtb-40">
+            <div class="col-lg-12">
+                <h3>Pradhan Mantri Awas Yojana (Urban)-PMAY (U)</h3>
+                <p class="about_text_justify">
+                    Pradhan Mantri Awas Yojana (Urban) Mission launched on 25th June 2015 which intends to provide housing for all in urban areas 
+                                by year 2022. The Mission provides Central Assistance to the implementing agencies through States/Union Territories (UTs) and 
+                                Central Nodal Agencies (CNAs) for providing houses to all eligible families/ beneficiaries against the validated demand for houses for 
+                                about 1.12 cr. As per PMAY(U) guidelines, the size of a house for Economically Weaker Section (EWS) could be upto 30 sq. mt. carpet area, however States/UTs have the flexibility to enhance
+                                 the size of houses in consultation and approval of the Ministry.
+
+                </p>
+                <p class="about_text_justify">
+                    In continuation to this Government’s efforts towards empowerment of women from EWS and LIG unlike earlier schemes, PMAY (U) has made a mandatory provision for the female head of the family
+                             to be the owner or co-owner of the house under this Mission. Verticals of PMAY (Urban) A basket of options is adopted to ensure inclusion of a greater number of people depending on their income, finance and
+                             availability of land through following four options.
+                            <a href="https://pmay-urban.gov.in/" target="_blank" class="text_neworange">
+                                <strong>Read More
+                                    <img src="assets/img/icon/angles-right-solid.svg" class="read_icon text_neworange" alt="Read More" /></strong>
+
+                            </a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <!--News Section-->
+    <section class="p-40">
+
+        <div class="container">
+            <div class="third_section">
+                <div class="new_section">
+                    <div class="newsheader">
+                        <i class="fa fa-newspaper-o"></i>News & Updates
+                    </div>
+                    <div class="new_content">
+                        <marquee direction="up" onhover="stop()">
+                                                        <ul class="news_list">
+                                                           <li>
+                                                                 <a href="assets/pdf/book.pdf" target="_blank">
+                                                                         Urban Transformation through Housing For All 
+                                                                            <img src="assets/img/new.gif">
+                                                                 </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://pmaymis.gov.in/pdf/UserMannual/Disclaimer_HFA.pdf" target="_blank">
+                                                                    Disclaimer
+                                                                </a>
+                                                            </li>
+                                                             <li>
+                                                                <a href="https://pmaymis.gov.in/pdf/UserMannual/CLSS_HelpLine.pdf" target="_blank">
+                                                                    CLSS Toll-Free Helpline
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://pmaymis.gov.in/pdf/UserMannual/PMAY_UserMannual.pdf" target="_blank">
+                                                                    PMAY MIS UserMannual PMAY MIS UserMannual PMAY MIS UserMannual 
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                             <a href="https://pmaymis.gov.in/pdf/MIS_PPT/PMAY_PPT.pptx" target="_blank">
+                                                               PMAY MIS Presentation
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="https://pmaymis.gov.in/pdf/MIS_PPT/PMAY_WorkFlow.pptx" target="_blank">
+                                                                    PMAY MIS Work Flow
+                                                                </a>
+                                                            </li>
+                                                               
+                                                        </ul>
+
+                                                </marquee>
+
+                    </div>
+
+                </div>
+
+                <div class="new_section">
+
+                    <div class="newsheader1">
+                        <i class="fa fa-facebook"></i>Facebook
+                    </div>
+                    <div class="new_content">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpmayurban%2F&amp;tabs=timeline&amp;width=400&amp;height=400&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="100%" height="400px" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+
+                </div>
+
+
+
+                <div class="new_section">
+
+                    <div class="newsheader2">
+                        <i class="fa fa-twitter"></i>Twitter
+                    </div>
+                    <div class="new_content">
+                        <a class="twitter-timeline" href="https://twitter.com/PMAYUrban?ref_src=twsrc%5Etfw" height="400px" width="100%">Tweets by PMAYUrban</a>
+                        <script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--News Section-->
+
+    <!--  thumbnail slider -->
+
+    <div class="container">
+        <div class="pad-t10">
+            <h2>Event Gallery</h2>
+
+            <div class="well">
+                <div id="myCarousel" class="carousel slide">
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/1.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/2.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/3.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/4.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/item-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/5.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/6.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/7.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="assets/img/gallery/8.JPG" alt="Image" class="img-responsive"></a>
+                                </div>
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <!--/item-->
+
+                        <!--/item-->
+                    </div>
+                    <!--/carousel-inner-->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                </div>
+                <!--/myCarousel-->
+            </div>
+            <!--/well-->
+        </div>
+    </div>
+
+
+    <!--   /thumbnail slider -->
+    
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-carousel">
+                <div class="owl-carousel carousel-main">
+                    <div>
+                        <img src="assets/img/client/cp-grams.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/datagov.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/digitalindia.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/ghtc.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/hudco.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/indiagov.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/miety.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/mohua.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/mygov.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/nhb.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/nic.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/pmayuclap.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/sbi.png" class="img-thumbnail thumb-logo">
+                    </div>
+                    <div>
+                        <img src="assets/img/client/righttoinfor.png" class="img-thumbnail thumb-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="sticky-container">
+        <ul class="sticky">
+            <a href="https://facebook.com/pmayurban" target="_blank">
+                <li>
+
+                    <img width="32" height="32" title="facebook" alt="facebook" src="assets/img/social/fb1.png" />
+                    <p>Facebook</p>
+
+                </li>
+            </a>
+            <a href="https://twitter.com/pmayurban" target="_blank">
+                <li>
+
+                    <img width="32" height="32" title="twitter" alt="twitter" src="assets/img/social/tw1.png" />
+                    <p>Twitter</p>
+
+                </li>
+            </a>
+            <a href="https://www.youtube.com/pmayurban" target="_blank">
+                <li>
+
+                    <img width="32" height="32" title="youtube" alt="youtube" src="assets/img/social/yout1.png" />
+                    <p>Youtube</p>
+
+                </li>
+            </a>
+
+
+        </ul>
+    </div>
+    <!--Footer Section Start-->
+
+
+    <footer id="footer" class="container-fluid">
+        <div class="container">
+            <div id="footer-widgets">
+
+                <div class="col-lg-3 col-md-6 col-sm-6  col-xs-12 pad-t10">
+
+                    <div class="widget widget_information">
+                        <h4 class="widget-title"><span>Contact Us</span></h4>
+                        <ul>
+
+                            <li class="phone clearfix"><span class="text-white text-justify">
+                                <i class="fa fa-phone" aria-hidden="true"></i>011-23060484,
+                               <i class="fa fa-phone" aria-hidden="true"></i>011-23063620,<br />
+                                <i class="fa fa-phone" aria-hidden="true"></i>011-23063567,
+                                <i class="fa fa-phone" aria-hidden="true"></i>011-23061827
+                            </span></li>
+                            <li class="email clearfix">
+                                <span class="text">
+                                    <b>MIS : </b>
+                                    <br />
+                                    <a href="https://pmaymis.gov.in/ " target="_blank" class="text-white" title="mohua.gov.in"><i
+                                        class=" fa fa-globe"></i>http://pmaymis[at]gov[dot]in</a>
+                                </span>
+                            </li>
+                            <li class="email clearfix">
+                                <span class="text">
+                                    <b>Email : </b>
+                                    <br />
+
+                                    <i class="fa fa-envelope"></i>grievance-pmay[at]gov[dot]in
+                                </span>
+                            </li>
+                            <li class="email clearfix">
+                                <span class="text">
+                                    <b>Website : </b>
+                                    <br />
+                                    <a href="https://pmay-urban.gov.in/" target="_blank" class="text-white" title="pmaymis.gov.in"><i
+                                        class=" fa fa-globe"></i>https://pmay-urban[at]gov[dot]in </a>
+                                </span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6  col-xs-12 row pad-t10">
+                    <div class="widget widget_links">
+                        <h4 class="widget-title"><span>Address</span></h4>
+                        <ul class="wprt-links clearfix col2">
+                            <li class="address clearfix ">
+                                <span class="text text-danger">
+                                    <strong class="text-warning"><i class="fa fa-map-marker text-danger f-20"></i>Pradhan Mantri Awas Yojana (Urban)<br />
+                                              Ministry of Housing and Urban Affairs,<br />
+                                              Sankalp Bhawan, Kasturba Gandhi Marg,<br />
+                                              New Delhi-110001</strong>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12  pad-t10">
+
+                    <div class="widget widget_information">
+                        <h4 class="widget-title"><span>Visitor Counter</span></h4>
+
+                        <ul>
+                            <li class="address clearfix ">
+                                <div class="text-center bg-primary p-20 border-r5">
+                                    <span id="lbl_Counter" style="color:White;font-size:18px;font-weight:bold;">235188446</span>
+                                </div>
+                                <a href="assets/pdf/Disclaimer-h.pdf" target="_blank">
+                                    <button class="btn btn-warning w-100"><span>Disclaimer</span></button></a>
+
+                            </li>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6  col-xs-12 text-right">
+                    <div class="row">
+                        <div class="widget widget_information">
+                            <h4 class=""><span></span></h4>
+                            <br />
+                            <ul>
+                                <li class="address clearfix">
+                                    <a href="https://www.facebook.com/pmayurban/" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/fb1.png" />
+                                            <span>Facebook</span></button>
+                                    </a>
+                                </li>
+                                <li class="address clearfix">
+                                    <a href="https://twitter.com/pmayurban?lang=en" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/tw1.png" /><span>Twitter</span></button>
+                                    </a>
+                                </li>
+                                <li class="address clearfix">
+                                    <a href="https://www.youtube.com/channel/UCTF2bhpdY5iODJCh3Xlg-Kg" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/yout1.png" /><span>Youtube</span></button>
+                                    </a>
+                                </li>
+
+                                <li class="address clearfix">
+                                    <a href="https://www.mygov.in/campaigns/pmay-urban/?utm_source=mygov_campaign" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/mygov.png" /><span>MyGov</span></button>
+                                    </a>
+                                </li>
+                                <li class="address clearfix">
+                                    <a href="https://pmay-urban.gov.in/umang" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/umang.png" /><span>Umang</span></button>
+                                    </a>
+                                </li>
+                                <li class="address clearfix">
+                                    <a href="https://pmay-urban.gov.in/mobile-application" target="_blank">
+                                        <button class="btn w-50">
+                                            <img src="assets/img/footer-logo/mob.png" /><span>Pmay(U) App</span></button>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="bottom" class="clearfix style-1">
+        <div id="bottom-bar-inner" class="container">
+            <div class="">
+                <div class="bottom-bar-inner-wrap">
+                    <div class="bottom-bar-content">
+                        <div id="copyright" class="col-lg-12">
+                            <div class="col-lg-3">
+                                <img src="assets/img/nic.png" alt="">
+                            </div>
+                            Content Owned & Maintained by Ministry of Housing and Urban
+                    Affairs
+                            <br>
+                            Site is Designed, Developed and Maintained by NIC, GoI. 
+                        </div>
+                        <!-- /#copyright -->
+                    </div>
+                    <!-- /.bottom-bar-content -->
+                    <div class="bottom-bar-menu">
+                        <ul class="bottom-nav">
+
+                            <li><a href="terms.aspx" title="Terms & Conditions">Terms & Conditions</a> </li>
+                            <li><a href="privacy.aspx" title="privacy">Privacy Policy</a> </li>
+                            <li><a href="hyper.aspx" title="Hyperlinking Policy">Hyperlinking Policy</a> </li>
+                            <li><a href="copyright.aspx" title="Copyright Policy">Copyright Policy</a> </li>
+                        </ul>
+                    </div>
+                    <!-- /.bottom-bar-menu -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer Section End-->
+
+
+
+    <style>
+        .text-wh {
+            color: #fff;
+        }
+
+        span {
+            font-size: 14px;
+            font-family: Arial;
+        }
+    </style>
+
+
+
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Nov 20, 2021 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("day").innerHTML = days + "<br/><span>DAYS</span> ";
+            day.style.color = "#000";
+            day.style.backgroundColor = "#fff";
+
+            document.getElementById("hour").innerHTML = hours + " <span>HOURS</span> ";
+            hour.style.color = "#000";
+            hour.style.backgroundColor = "#fff";
+            document.getElementById("min").innerHTML = minutes + "<span> MINUTES </span> ";
+            min.style.color = "#000";
+            min.style.backgroundColor = "#fff";
+
+            document.getElementById("sec").innerHTML = seconds + " <span>SECONDS </span>";
+            sec.style.color = "#000";
+            sec.style.backgroundColor = "#fff";
+
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+
+    <script>
+        $(window).load(function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var originalSize = $('p').css('font-size');
+
+            var incr = 0;
+            var decr = 0;
+            // reset        
+            $(".resetMe").click(function () {
+                incr = 0;
+                decr = 0;
+                $('p').css('font-size', originalSize);
+            });
+
+            // Increase Font Size          
+            $(".increase").click(function () {
+                incr = incr + 1;
+
+                if (incr < 4) {
+
+                    var currentSize = $('p').css('font-size');
+                    var currentSize = parseFloat(currentSize) * 1.1;
+                    $('p').css('font-size', currentSize);
+                }
+                return false;
+            });
+
+            // Decrease Font Size       
+            $(".decrease").click(function () {
+                incr = 0;
+                decr = decr + 1;
+
+                if (decr < 4) {
+
+                    var currentFontSize = $('div').css('font-size');
+                    var currentSize = $('div').css('font-size');
+                    var currentSize = parseFloat(currentSize) * 0.9;
+                    $('div').css('font-size', currentSize);
+                }
+                return false;
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myCarousel').carousel({
+                interval: 3000
+            })
+
+            $('#myCarousel').on('slid.bs.carousel', function () {
+                //alert("slid");
+            });
+
+
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+
+    </script>
+
+    <script src="js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $('.carousel-main').owlCarousel({
+            items: 9,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 1500,
+            margin: 10,
+            nav: true,
+            dots: false,
+            navText: ['<span class="fa fa-chevron-left fa-2x"></span>', '<span class="fa fa-chevron-right fa-2x"></span>'],
+            responsive: {
+                0: {
+                    items: 3,
+                    nav: true
+                },
+                600: {
+                    items: 6,
+                    nav: false
+                },
+                1000: {
+                    items: 9,
+                    nav: true,
+                    loop: true
+                }
+            }
+        })
+    </script>
+    <script>
+        $.noConflict();
+        // Code that uses other library's $ can follow here.
+    </script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

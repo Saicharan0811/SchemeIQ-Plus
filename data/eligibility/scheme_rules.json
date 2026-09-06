@@ -1,0 +1,749 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-08-27T16:05:00Z",
+  "description": "Derived deterministic eligibility rules for SchemeIQ+ official government scheme corpus. Every rule is linked with provenance to locked official source documents or verified scheme metadata.",
+  "schemes": [
+    {
+      "scheme_id": "TS001",
+      "scheme_name": "Rythu Bharosa",
+      "scheme_scope": "State",
+      "category": "Agriculture",
+      "official_url": "https://rythubharosa.telangana.gov.in/",
+      "source_authority": "Rythu Bharosa – Department of Agriculture, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS001_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must reside in or hold agricultural land in the state of Telangana.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS001_30_Rythu_Bharosa.txt",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_excerpt": "Rythu Bharosa - Telangana Department of Agriculture Government of Telangana investment support.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS001_farmer",
+          "field": "farmer_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be an active farmer.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS001_30_Rythu_Bharosa.txt",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_excerpt": "Farmer investment support scheme under Government of Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS001_land_ownership",
+          "field": "land_ownership_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must possess cultivable agricultural land registered in land records.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS001_30_Rythu_Bharosa.txt",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_excerpt": "Assistance provided on per acre cultivable land basis.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS001_unc_01",
+          "description": "Tenant farmer eligibility vs land title owner verification under current departmental guidelines.",
+          "reason_unstructured": "Policy details on tenant inclusion are administered through localized revenue survey and seasonal ground-truthing.",
+          "source_filename": "TS001_30_Rythu_Bharosa.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS002",
+      "scheme_name": "Rythu Bima",
+      "scheme_scope": "State",
+      "category": "Agriculture / Insurance",
+      "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+      "source_authority": "Telangana Agriculture & Farmers Welfare Commission / LIC",
+      "rules": [
+        {
+          "rule_id": "TS002_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be a resident landholding farmer in Telangana.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS002_30_Rythu_Bima.txt",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "source_excerpt": "Rythu Bima scheme is implemented for farmers in the State of Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS002_farmer",
+          "field": "farmer_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be an active farmer with title deeds (pattadar).",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS002_30_Rythu_Bima.txt",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "source_excerpt": "Farmers Group Life Insurance Scheme for enrolled pattadar farmers.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS002_age_min",
+          "field": "age",
+          "operator": "gte",
+          "expected_value": 18,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Farmer must be at least 18 years of age.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS002_30_Rythu_Bima.txt",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "source_excerpt": "Eligible age group for Rythu Bima enrollment starts at 18 years.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS002_age_max",
+          "field": "age",
+          "operator": "lte",
+          "expected_value": 59,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Farmer must not exceed 59 years of age at the time of policy enrollment.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS002_30_Rythu_Bima.txt",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "source_excerpt": "Upper age limit for enrollment under Rythu Bima group life insurance is 59 years.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS002_unc_01",
+          "description": "Pattadar passbook active status in Dharani/C-LaBandhu portal.",
+          "reason_unstructured": "Verification requires direct database match against Telangana revenue passbook records.",
+          "source_filename": "TS002_30_Rythu_Bima.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS003",
+      "scheme_name": "Cheyutha",
+      "scheme_scope": "State",
+      "category": "Healthcare",
+      "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+      "source_authority": "Rajiv Aarogyasri Health Care Trust Telangana",
+      "rules": [
+        {
+          "rule_id": "TS003_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must reside in Telangana.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.txt",
+          "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+          "source_excerpt": "Rajiv Aarogyasri Cheyutha healthcare coverage for citizens of Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS003_income_ceiling",
+          "field": "annual_income",
+          "operator": "lte",
+          "expected_value": 500000,
+          "required": false,
+          "rule_type": "preference",
+          "description": "Family income benchmark for BPL/Aarogyasri card entitlement.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.txt",
+          "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+          "source_excerpt": "Healthcare assistance up to Rs 10 Lakh for economically vulnerable families.",
+          "confidence": "MEDIUM"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS003_unc_01",
+          "description": "Food Security Card / White Ration Card possession.",
+          "reason_unstructured": "Civil Supplies department ration card database mapping is required for hospital admission.",
+          "source_filename": "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS004",
+      "scheme_name": "Maha Lakshmi",
+      "scheme_scope": "State",
+      "category": "Women / Welfare",
+      "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+      "source_authority": "Transport and Civil Supplies Departments, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS004_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary must be a resident of Telangana.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS004_30_Maha_Lakshmi.txt",
+          "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+          "source_excerpt": "Free travel for girls, women of all age groups and transgender persons in TSRTC buses in Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS004_gender",
+          "field": "gender",
+          "operator": "in",
+          "expected_value": ["female", "transgender", "women", "girl"],
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Scheme benefits apply to women, girls, and transgender persons.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS004_30_Maha_Lakshmi.txt",
+          "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+          "source_excerpt": "Maha Lakshmi scheme provides free bus travel, subsidised LPG cylinders, and monthly financial aid to women.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS004_unc_01",
+          "description": "Praja Palana application approval for Rs 2,500 monthly assistance and Rs 500 LPG cylinder.",
+          "reason_unstructured": "Financial assistance component requires verification of female family head status through Praja Palana administrative list.",
+          "source_filename": "TS004_30_Maha_Lakshmi.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS005",
+      "scheme_name": "Aasara Pensions",
+      "scheme_scope": "State",
+      "category": "Social Security",
+      "official_url": "https://www.aasara.telangana.gov.in/",
+      "source_authority": "Panchayat Raj & Rural Development Department, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS005_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must reside in Telangana.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.txt",
+          "official_url": "https://www.aasara.telangana.gov.in/",
+          "source_excerpt": "Comprehensive Guidelines for Administration of Aasara Social Security Pensions in Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS005_vulnerable_category",
+          "field": "pensioner_category",
+          "operator": "in",
+          "expected_value": ["old_age", "widow", "disabled", "weaver", "toddy_tapper", "single_women", "filaria"],
+          "required": false,
+          "rule_type": "domain_match",
+          "description": "Applicant belongs to recognized vulnerable pension category (Old Age, Widow, Disabled, Weaver, Toddy Tapper, Single Women).",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.txt",
+          "official_url": "https://www.aasara.telangana.gov.in/",
+          "source_excerpt": "GO MS No 17 Aasara Pensions covering Old Age, Widow, Disabled, Single Women, Weavers.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS005_unc_01",
+          "description": "Destitute socioeconomic screening and landholding ceiling check (<=3 acres wetland / <=7.5 acres dryland).",
+          "reason_unstructured": "Socioeconomic verification is conducted via Gram Sabha and local municipal ward committees.",
+          "source_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS006",
+      "scheme_name": "Telangana ePASS Scholarships",
+      "scheme_scope": "State",
+      "category": "Education / Scholarship",
+      "official_url": "https://telanganaepass.cgg.gov.in/",
+      "source_authority": "SC, ST, BC, Minority & Disabled Welfare Departments, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS006_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Student must be a resident/domicile of Telangana.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "source_excerpt": "Electronic Payment and Application System of Scholarships for students of Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS006_student",
+          "field": "student_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be a student enrolled in a post-matric or pre-matric recognized course.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "source_excerpt": "Post Matric Scholarships and Pre Matric Scholarships for eligible students.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS006_income_limit",
+          "field": "annual_income",
+          "operator": "lte",
+          "expected_value": 200000,
+          "required": false,
+          "rule_type": "hard_filter",
+          "description": "Parental annual income ceiling (Rs 2,00,000 for SC/ST/BC/EBC/Minority).",
+          "source_type": "official_portal_page",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "source_excerpt": "Income criteria defined under Telangana scholarship guidelines.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS006_unc_01",
+          "description": "75% minimum aggregate attendance and recognized institution affiliation code verification.",
+          "reason_unstructured": "Attendance logs and course fee reimbursement tiers are managed dynamically through college ePASS portals.",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS007",
+      "scheme_name": "MCH Kit Scheme",
+      "scheme_scope": "State",
+      "category": "Healthcare / Women & Child",
+      "official_url": "https://chfw.telangana.gov.in/programmes.html",
+      "source_authority": "Commissionerate of Health and Family Welfare, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS007_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary must reside in Telangana.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.txt",
+          "official_url": "https://chfw.telangana.gov.in/programmes.html",
+          "source_excerpt": "MCH Kit Scheme for pregnant woman and newborns in Telangana.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "TS007_gender",
+          "field": "gender",
+          "operator": "in",
+          "expected_value": ["female", "women"],
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary must be female (pregnant woman / mother).",
+          "source_type": "official_portal_page",
+          "source_filename": "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.txt",
+          "official_url": "https://chfw.telangana.gov.in/programmes.html",
+          "source_excerpt": "MCH Kit: Scheme for pregnant woman and newborns.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS007_unc_01",
+          "description": "Institutional delivery in government hospital and maximum 2 live deliveries limit.",
+          "reason_unstructured": "Delivery tracking is authenticated via Birth Monitoring System (BMS) and ANC registration cards.",
+          "source_filename": "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "TS008",
+      "scheme_name": "Telangana Diagnostics",
+      "scheme_scope": "State",
+      "category": "Healthcare",
+      "official_url": "https://chfw.telangana.gov.in/programmes.html",
+      "source_authority": "Commissionerate of Health and Family Welfare, Government of Telangana",
+      "rules": [
+        {
+          "rule_id": "TS008_state",
+          "field": "state",
+          "operator": "equals_ignore_case",
+          "expected_value": "Telangana",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary must reside in or access public healthcare facilities in Telangana.",
+          "source_type": "official_portal_page",
+          "source_filename": "TS008_35_Telangana_Diagnostics_Official_Government_Subdomai.txt",
+          "official_url": "https://chfw.telangana.gov.in/programmes.html",
+          "source_excerpt": "Telangana Diagnostics: Free Diagnostic Services across government public health facilities.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "TS008_unc_01",
+          "description": "Doctor requisition slip from government primary health centre (PHC), Basti Dawakhana, or district hospital.",
+          "reason_unstructured": "Lab tests are initiated via physician electronic requisition within the T-Diagnostics hub-and-spoke network.",
+          "source_filename": "TS008_35_Telangana_Diagnostics_Official_Government_Subdomai.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT001",
+      "scheme_name": "PM-KISAN",
+      "scheme_scope": "Central",
+      "category": "Agriculture",
+      "official_url": "https://pmkisan.gov.in/",
+      "source_authority": "Ministry of Agriculture & Farmers Welfare, Government of India",
+      "rules": [
+        {
+          "rule_id": "CT001_farmer",
+          "field": "farmer_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be a farmer with cultivable landholding.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt",
+          "official_url": "https://pmkisan.gov.in/",
+          "source_excerpt": "PM-Kisan Samman Nidhi scheme provides income support to all landholding farmer families.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT001_land_ownership",
+          "field": "land_ownership_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Farmer family must own cultivable land in government land records.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt",
+          "official_url": "https://pmkisan.gov.in/",
+          "source_excerpt": "Landholding farmer families with cultivable landholding in their names.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT001_tax_exclusion",
+          "field": "pays_income_tax",
+          "operator": "is_false",
+          "expected_value": false,
+          "required": false,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary or family member who paid income tax in last assessment year is excluded.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt",
+          "official_url": "https://pmkisan.gov.in/",
+          "source_excerpt": "Exclusion Norms: All persons who paid Income Tax in last assessment year are excluded.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT001_unc_01",
+          "description": "Mandatory eKYC, Aadhaar-seeded bank account, and land record physical verification.",
+          "reason_unstructured": "Bank direct benefit transfer requires Aadhaar biometric authentication on PM-KISAN portal.",
+          "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT002",
+      "scheme_name": "Ayushman Bharat PM-JAY",
+      "scheme_scope": "Central",
+      "category": "Healthcare",
+      "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+      "source_authority": "National Health Authority / Ministry of Health and Family Welfare, Government of India",
+      "rules": [
+        {
+          "rule_id": "CT002_age_senior_topup",
+          "field": "age",
+          "operator": "gte",
+          "expected_value": 70,
+          "required": false,
+          "rule_type": "domain_match",
+          "description": "All senior citizens aged 70 years and above are eligible for distinct Rs 5 lakh annual health coverage irrespective of income.",
+          "source_type": "official_press_release",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.txt",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "source_excerpt": "Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of their income.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT002_unc_01",
+          "description": "Socio-Economic Caste Census (SECC 2011) deprivation criteria for citizens under 70 years.",
+          "reason_unstructured": "General non-senior PM-JAY family entitlement is based on predefined SECC deprivation benchmarks (D1-D7).",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT003",
+      "scheme_name": "PMAY-U 2.0",
+      "scheme_scope": "Central",
+      "category": "Housing",
+      "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+      "source_authority": "Ministry of Housing and Urban Affairs (MoHUA), Government of India",
+      "rules": [
+        {
+          "rule_id": "CT003_urban",
+          "field": "residence_type",
+          "operator": "equals_ignore_case",
+          "expected_value": "urban",
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary must reside in a statutory town or notified urban planning area.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_excerpt": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Housing for All in statutory urban towns.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT003_pucca_house",
+          "field": "owns_pucca_house",
+          "operator": "is_false",
+          "expected_value": false,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Beneficiary family must not own a pucca house anywhere in India.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_excerpt": "Eligible families living in urban areas not having a pucca house anywhere in India.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT003_income_ceiling",
+          "field": "annual_income",
+          "operator": "lte",
+          "expected_value": 900000,
+          "required": false,
+          "rule_type": "hard_filter",
+          "description": "Income must fall within EWS (up to Rs 3L), LIG (Rs 3L-6L), or MIG (Rs 6L-9L) bands.",
+          "source_type": "official_portal_guidelines",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_excerpt": "Families belonging to EWS/LIG/MIG segments with annual income up to Rs 9 lakh.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT003_unc_01",
+          "description": "ULB demand survey registration and land title/plot allotment clearance for Beneficiary Led Construction (BLC).",
+          "reason_unstructured": "Vertical-specific operational rules (ISS, BLC, AHP, ARHC) require municipal site-clearance.",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT004",
+      "scheme_name": "Pradhan Mantri Mudra Yojana",
+      "scheme_scope": "Central",
+      "category": "Entrepreneurship / Credit",
+      "official_url": "https://www.mudra.org.in/FAQ",
+      "source_authority": "Department of Financial Services, Ministry of Finance, Government of India",
+      "rules": [
+        {
+          "rule_id": "CT004_business",
+          "field": "business_owner_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": false,
+          "rule_type": "domain_match",
+          "description": "Applicant is engaged in or planning a non-farm income-generating micro/small enterprise.",
+          "source_type": "official_portal_faq",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_excerpt": "MUDRA loans provide refinance and credit support for micro and small business enterprises.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT004_age_min",
+          "field": "age",
+          "operator": "gte",
+          "expected_value": 18,
+          "required": false,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be an adult (18 years or older) competent to contract for a business loan.",
+          "source_type": "official_portal_faq",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_excerpt": "Any Indian citizen having a business plan for non-farm sector income generating activity.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT004_loan_ceiling",
+          "field": "loan_requirement",
+          "operator": "lte",
+          "expected_value": 1000000,
+          "required": false,
+          "rule_type": "preference",
+          "description": "Loan amount required must not exceed Rs 10 Lakh (Shishu: up to 50k, Kishore: 50k-5L, Tarun: 5L-10L).",
+          "source_type": "official_portal_faq",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_excerpt": "MUDRA loans available in three categories: Shishu upto 50,000, Kishore 50,000 to 5 lakh, Tarun 5 to 10 lakh.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT004_unc_01",
+          "description": "Lender commercial underwriting and non-defaulter track record with financial institutions.",
+          "reason_unstructured": "Approval is subject to commercial bank / NBFC / MFI credit policy and business viability appraisal.",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT005",
+      "scheme_name": "PMEGP",
+      "scheme_scope": "Central",
+      "category": "Employment / Entrepreneurship",
+      "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+      "source_authority": "Khadi and Village Industries Commission (KVIC) / Ministry of MSME",
+      "rules": [
+        {
+          "rule_id": "CT005_age_min",
+          "field": "age",
+          "operator": "gte",
+          "expected_value": 18,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Applicant must be at least 18 years of age.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_excerpt": "Any individual above 18 years of age is eligible to apply under PMEGP.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT005_business",
+          "field": "business_owner_status",
+          "operator": "is_true",
+          "expected_value": true,
+          "required": false,
+          "rule_type": "domain_match",
+          "description": "Applicant intends to establish a new micro enterprise in manufacturing or service sector.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_excerpt": "Credit-linked subsidy programme for setting up new micro-enterprises.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT005_project_cost_mfg",
+          "field": "project_cost",
+          "operator": "lte",
+          "expected_value": 5000000,
+          "required": false,
+          "rule_type": "preference",
+          "description": "Maximum project cost admissible under manufacturing sector is Rs 50 Lakh.",
+          "source_type": "official_portal_page",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_excerpt": "Maximum cost of project/unit admissible under manufacturing sector is Rs 50 Lakhs.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT005_unc_01",
+          "description": "Minimum VIII standard pass for projects costing above Rs 10 Lakh in manufacturing or Rs 5 Lakh in service.",
+          "reason_unstructured": "Educational threshold is project-cost conditional and verified via DLTFC.",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt"
+        }
+      ]
+    },
+    {
+      "scheme_id": "CT006",
+      "scheme_name": "Atal Pension Yojana",
+      "scheme_scope": "Central",
+      "category": "Pension / Social Security",
+      "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+      "source_authority": "Pension Fund Regulatory and Development Authority (PFRDA), Government of India",
+      "rules": [
+        {
+          "rule_id": "CT006_age_min",
+          "field": "age",
+          "operator": "gte",
+          "expected_value": 18,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Subscriber must be at least 18 years of age.",
+          "source_type": "official_master_circular",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt",
+          "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+          "source_excerpt": "APY is available to all Indian citizens between the age of 18 and 40 years.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT006_age_max",
+          "field": "age",
+          "operator": "lte",
+          "expected_value": 40,
+          "required": true,
+          "rule_type": "hard_filter",
+          "description": "Subscriber must not exceed 40 years of age at joining.",
+          "source_type": "official_master_circular",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt",
+          "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+          "source_excerpt": "APY is open to all bank account holders aged 18 to 40 years.",
+          "confidence": "HIGH"
+        },
+        {
+          "rule_id": "CT006_tax_exclusion",
+          "field": "pays_income_tax",
+          "operator": "is_false",
+          "expected_value": false,
+          "required": false,
+          "rule_type": "hard_filter",
+          "description": "Any citizen who is or has been an income-tax payer is not eligible to join APY.",
+          "source_type": "official_master_circular",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt",
+          "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+          "source_excerpt": "From 1st October 2022, any citizen who is or has been an income-tax payer shall not be eligible to join APY.",
+          "confidence": "HIGH"
+        }
+      ],
+      "unstructured_criteria": [
+        {
+          "criterion_id": "CT006_unc_01",
+          "description": "Savings bank account with auto-debit facility and mobile number linking.",
+          "reason_unstructured": "Bank branch verification of KYC documents and debit mandate.",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt"
+        }
+      ]
+    }
+  ]
+}

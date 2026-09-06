@@ -1,0 +1,7 @@
+scheme_id,reason_for_recovery,new_url,source_authority,document_title_type
+TS001,Old URL timed out; candidate failed connection,https://rythubharosa.telangana.gov.in/,Official Scheme Portal,Rythu Bharosa Portal
+TS002,Previous download was myscheme.gov.in JS error page,https://rythubandhu.telangana.gov.in/,Official Scheme Portal,Rythu Bandhu & Bima Portal
+TS004,Previous download was myscheme.gov.in JS error page; duplicate of TS003,https://www.transport.telangana.gov.in/html/maha-lakshmi-scheme.html,Transport Dept Telangana,Maha Lakshmi Free Bus Travel Guidelines
+CT002,Old URL timed out; need reliable page,https://nha.gov.in/PM-JAY/about-pm-jay,National Health Authority,PM-JAY About Page
+CT005,Previous download was empty MSME nextjs page,https://dcmsme.gov.in/schemes/PMEGP_guidelines1.pdf,DCMSME,PMEGP Guidelines PDF
+TS002,Approved primary source,https://mahabubabad.telangana.gov.in/scheme/rythu-bima/,Mahabubabad.telangana.gov.in,HTML page

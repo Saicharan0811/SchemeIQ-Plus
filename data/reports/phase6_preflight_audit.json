@@ -1,0 +1,185 @@
+{
+  "timestamp": "2026-08-27T10:33:00.125154+00:00",
+  "phase": "Phase 6 Pre-Flight Audit",
+  "critical_paths": {
+    "data/documents/raw": "OK",
+    "data/documents/raw/metadata.json": "OK",
+    "data/processed": "OK",
+    "data/processed/corpus_manifest.json": "OK",
+    "data/processed/corpus_lock_report.json": "OK",
+    "data/vector_store/chroma_db": "OK",
+    "data/SchemeIQ_Plus_Telangana_Starter_Dataset(1).csv": "OK",
+    "data/documents/source_manifest.csv": "OK",
+    "src/rag/__init__.py": "OK",
+    "src/rag/schemas.py": "OK",
+    "src/rag/document_loader.py": "OK",
+    "src/rag/chunker.py": "OK",
+    "src/rag/embeddings.py": "OK",
+    "src/rag/vector_store.py": "OK",
+    "src/rag/ingest.py": "OK",
+    "src/rag/query_detector.py": "OK",
+    "src/rag/keyword_retriever.py": "OK",
+    "src/rag/hybrid_retriever.py": "OK",
+    "src/rag/evaluate_retrieval.py": "OK",
+    "src/rag/answer_generator.py": "OK",
+    "src/rag/rag_service.py": "OK",
+    "src/rag/test_answer_generation.py": "OK"
+  },
+  "dataset_inspected": {
+    "path": "data\\SchemeIQ_Plus_Telangana_Starter_Dataset(1).csv",
+    "row_count": 14,
+    "columns": [
+      "scheme_id",
+      "scheme_name",
+      "scheme_scope",
+      "category",
+      "applicability",
+      "target_beneficiary",
+      "description",
+      "benefits",
+      "eligibility_criteria",
+      "age_min",
+      "age_max",
+      "income_limit",
+      "official_url",
+      "source_authority"
+    ]
+  },
+  "supported_profile_fields_in_dataset": [
+    {
+      "field": "scheme_id",
+      "filled_count": 14,
+      "sample_values": [
+        "CT003",
+        "CT001",
+        "CT005",
+        "TS004",
+        "TS003"
+      ]
+    },
+    {
+      "field": "scheme_name",
+      "filled_count": 14,
+      "sample_values": [
+        "Ayushman Bharat PM-JAY",
+        "Aasara Pensions",
+        "MCH Kit Scheme",
+        "PMAY-U 2.0",
+        "Pradhan Mantri Mudra Yojana"
+      ]
+    },
+    {
+      "field": "scheme_scope",
+      "filled_count": 14,
+      "sample_values": [
+        "Central",
+        "State"
+      ]
+    },
+    {
+      "field": "category",
+      "filled_count": 14,
+      "sample_values": [
+        "Entrepreneurship",
+        "Education / Scholarship",
+        "Women / Welfare",
+        "Housing",
+        "Employment / Entrepreneurship"
+      ]
+    },
+    {
+      "field": "applicability",
+      "filled_count": 14,
+      "sample_values": [
+        "Telangana",
+        "Telangana applicable"
+      ]
+    },
+    {
+      "field": "target_beneficiary",
+      "filled_count": 14,
+      "sample_values": [
+        "Eligible Indian citizens",
+        "Eligible new micro enterprises and qualifying cases",
+        "Farmers",
+        "Eligible micro-enterprise/income-generating activities",
+        "Eligible pregnant women and newborns"
+      ]
+    },
+    {
+      "field": "source_authority",
+      "filled_count": 14,
+      "sample_values": [
+        "Telangana ePASS portal",
+        "Government of India / myScheme",
+        "Government of India / PMEGP",
+        "Government of India / PMAY-U 2.0",
+        "PFRDA / Government of India"
+      ]
+    }
+  ],
+  "deterministic_evaluable_rules": [],
+  "missing_or_unstructured_criteria": [],
+  "schemes_with_insufficient_structured_criteria": [
+    "TS001",
+    "TS002",
+    "TS003",
+    "TS004",
+    "TS005",
+    "TS006",
+    "TS007",
+    "TS008",
+    "CT001",
+    "CT002",
+    "CT003",
+    "CT004",
+    "CT005",
+    "CT006"
+  ],
+  "derived_rule_layer_necessary": true,
+  "findings": [
+    "Q1: What profile fields are currently supported by data/schemes.csv? -> Columns present are [scheme_id, scheme_name, scheme_scope, category, applicability, target_beneficiary, description, benefits, eligibility_criteria, age_min, age_max, income_limit, official_url, source_authority]. However, numeric fields age_min, age_max, income_limit are empty for all 14 rows.",
+    "Q2: Which eligibility rules can be evaluated deterministically? -> State residency (Telangana vs Central India-wide), broad categorical beneficiary type (Farmers, Women, Students, Senior Citizens, Micro-entrepreneurs), and scheme scope. Numerical and fine-grained criteria exist in the locked official corpus documents but are not structured in the raw CSV.",
+    "Q3: Which criteria are missing or only represented as free text? -> Age limits (e.g. APY age 18-40, Senior Citizen age 70+ in PM-JAY expansion, Aasara age thresholds), income ceilings (e.g. ePASS parental income bands, PMAY-U EWS/LIG bands), project cost limits (e.g. PMEGP ₹50L manufacturing / ₹20L services, MUDRA ₹50k/₹5L/₹10L loan brackets), and landholding criteria.",
+    "Q4: Which schemes have insufficient structured criteria in raw CSV? -> All 14 schemes in the raw CSV store eligibility_criteria purely as summary text without populated numeric fields.",
+    "Q5: Is a new derived eligibility-rule layer necessary? -> YES. A dedicated derived structured rule layer (data/eligibility/scheme_rules.json) must be created. It must model explicit deterministic rules (with operators like gte, lte, eq, in) extracted with exact provenance from the locked official corpus and verified scheme metadata, while categorizing unextractable details as UNKNOWN / UNSTRUCTURED rather than hallucinating."
+  ],
+  "unstructured_fields": [
+    {
+      "field": "description",
+      "filled_count": 14,
+      "avg_len": 45.285714285714285
+    },
+    {
+      "field": "benefits",
+      "filled_count": 14,
+      "avg_len": 63.0
+    },
+    {
+      "field": "eligibility_criteria",
+      "filled_count": 14,
+      "avg_len": 67.35714285714286
+    },
+    {
+      "field": "age_min",
+      "filled_count": 0,
+      "avg_len": 0.0
+    },
+    {
+      "field": "age_max",
+      "filled_count": 0,
+      "avg_len": 0.0
+    },
+    {
+      "field": "income_limit",
+      "filled_count": 0,
+      "avg_len": 0.0
+    },
+    {
+      "field": "official_url",
+      "filled_count": 14,
+      "avg_len": 41.285714285714285
+    }
+  ],
+  "deterministic_evaluable_from_raw_csv_alone": []
+}

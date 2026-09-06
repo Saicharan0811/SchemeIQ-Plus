@@ -1,0 +1,35 @@
+# ==============================================================================
+# Render Blueprint Specification — SchemeIQ+ Backend Web Service (Phase 9B)
+# ==============================================================================
+# Docs: https://render.com/docs/blueprint-spec
+# ==============================================================================
+
+services:
+  - type: web
+    name: schemeiq-plus-backend
+    runtime: python
+    region: oregon # or frankfurt / singapore based on user preference
+    plan: free # or starter
+    buildCommand: pip install -r requirements.txt
+    # Single Gunicorn worker with 4 threads to prevent PyTorch/SentenceTransformer
+    # multi-process memory multiplication beyond Render's 512MB RAM limit.
+    startCommand: gunicorn --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT wsgi:app
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: FLASK_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: WSGI_THREADS
+        value: 4
+      - key: CORS_ALLOWED_ORIGINS
+        value: "*" # Replace with specific frontend URL once frontend is deployed
+      - key: LOG_LEVEL
+        value: INFO
+      - key: EMBEDDING_PROVIDER
+        value: sentence-transformers
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2

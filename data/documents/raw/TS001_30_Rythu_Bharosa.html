@@ -1,0 +1,732 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head><meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+	Rythu Bharosa - Telangana
+</title>
+    <!--Bootstrap Css-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!--Mean menu.css-->
+    <link rel="stylesheet" href="assets/css/meanmenu.css" />
+    <!--Owl carousel-->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
+    <!--Owl Theme-->
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
+    <!--=== Magnific Popup Min CSS ===-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
+    <!--Flat icon-->
+    <link rel="stylesheet" href="assets/css/flaticon.css" /><link rel="stylesheet" href="Styles/all.css" />
+    <!--Remix icon-->
+    <link rel="stylesheet" href="assets/css/remixicon.css" />
+    <!--Odometer-->
+    <link rel="stylesheet" href="assets/css/odometer.min.css" />
+    <!--Aos css-->
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <!--Style css-->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!--Responsive css-->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!--=== Title ===-->
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <style type="text/css">
+        .banner-area {
+            position: relative;
+            width: 100%;
+        }
+
+        .slider-content-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text-rainbow-animation-white {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        .marque-banner p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .text-rainbow-animation-white {
+                font-size: 1.5rem;
+            }
+
+            .marque-banner p {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .text-rainbow-animation-white {
+                font-size: 1.25rem;
+            }
+
+            .marque-banner p {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+    <style type="text/css">
+        .banner-area {
+            position: relative;
+            width: 100%;
+        }
+
+        .slider-content-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text-rainbow-animation-white {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        .marque-banner p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .text-rainbow-animation-white {
+                font-size: 1.5rem;
+            }
+
+            .marque-banner p {
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .text-rainbow-animation-white {
+                font-size: 1.25rem;
+            }
+
+            .marque-banner p {
+                font-size: 0.75rem;
+            }
+        }
+
+        .shadow-black {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+            .popup-content .close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+            .popup-content h2 {
+                margin-top: 0;
+            }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+
+             html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* full height of screen */
+    }
+
+    .content-area {
+        flex: 1; /* takes the remaining space */
+    }
+	
+	
+	
+	/* Floating container */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+}
+
+/* Button Style */
+.whatsapp-float {
+    width: 68px;
+    height: 68px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.35);
+    animation: pulse 1.6s infinite ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover scale effect */
+.whatsapp-float:hover {
+    transform: scale(1.12);
+}
+
+/* WhatsApp icon */
+.whatsapp-icon {
+    width: 42px;
+    height: 42px;
+}
+
+/* Smooth Continuous Pulsating Animation */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, .6); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Tooltip (Desktop only) */
+.whatsapp-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #25d366;
+    padding: 7px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    color: #000;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0,0,0,.25);
+    transition: .3s;
+}
+
+.whatsapp-float:hover .whatsapp-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Welcome bubble with emboss */
+.whatsapp-welcome {
+    background: #228017;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    position: absolute;
+    right: 80px;
+    bottom: 10px;
+    animation: fadeInUp 0.8s ease;
+    white-space: nowrap;
+    transition: opacity .4s ease-in-out;
+
+    /* Emboss Effect */
+    box-shadow:
+        inset 2px 2px 4px rgba(255,255,255,0.6),
+        inset -2px -2px 4px rgba(0,0,0,0.2),
+        0px 4px 10px rgba(0,0,0,0.25);
+}
+
+.close-welcome {
+    cursor: pointer;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Mobile - Move Left + Hide Tooltip */
+@media(max-width: 600px) {
+    .whatsapp-container {
+        right: auto;
+        left: 20px;
+    }
+    .whatsapp-text {
+        display: none;
+    }
+}
+/* Fade animation for blinking text */
+#welcomeText {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+    </style>
+
+</head>
+<body>
+    <form name="ctl01" method="post" action="./" id="ctl01">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="tMPr5DL/9da0W0wRMiVMFM4/XvU0s6vi5yw2RdIDZb9NWCHZ5hSHilZI/KJzsgJGF5H+C/6U77uzZzhSjZZhNUlFiydIO9mhry4r09/MEaMNu5QsGbUaqTYMZPPIcmZo8A9al3//olHjZXd1+qJ6fHciF5qDpeZArqdc7GZ69jo=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5E902ABD" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+         <div class="page-wrapper">
+        <div class="preloader-area">
+            <div class="spinner">
+                <div class="inner">
+                    <div class="disc">
+                        <img src="assets/images/Rythu_loader.png" class="img-fluid" alt="Pre-Loader" style="height: 131px; position: relative; top: 20px; left: 5px;" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader Area -->
+<div class="whatsapp-container">
+    <a href="https://whatsapp.com/channel/0029Vb61tsc59PwZEKYH3A0A" 
+       target="_blank" class="whatsapp-float">
+        <img src="assets/images/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
+        <span class="whatsapp-text">Join our WhatsApp Channel</span>
+    </a>
+
+    <!-- Welcome Message Bubble -->
+    <div class="whatsapp-welcome" id="whatsappWelcome">
+    <span id="welcomeText"></span>
+    <span class="close-welcome" onclick="hideWelcome()">×</span>
+</div>
+</div>
+
+        <!--End start ministers Area-->
+        <section class="ministers py-1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+                        <div class="mb-1 mb-sm-0" style="flex: 1;">
+                            <div class="text-center mx-1">
+                                <img src="assets/images/favicon.png" alt="logo" class="img-fluid" style="max-width: fit-content;" />
+                            </div>
+                        </div>
+                        <div class="mb-2 mb-sm-0" style="flex: 1;">
+
+
+
+                            <div class="text-center mx-2">
+                                <img src="assets/images/cm.png" alt="cm" class="rounded-circle w-100p object-fit-cover shadow-black" />
+                                <p class="text-primary fw-bold m-0">Sri A Revanth Reddy</p>
+                                <p class="text-secondary m-0">Hon’ble Chief Minister</p>
+                            </div>
+                        </div>
+
+                        <div class="header-text text-center d-flex flex-column" style="flex: 1;">
+
+                            <div class="me-2">
+                                <h2 class="text-primary fw-bold shadow-blue font-36 w-100 text-nowrap font-28-mobile">Rythu Bharosa
+                                    <!--| రైతు భరోసా-->
+                                </h2>
+                                <p class="text-secondary m-0 text-nowrap font-weight-600" style="font-size: 20px !important;">Department of Agriculture</p>
+                                <p class="text-secondary m-0 font-weight-600" style="font-size: 16px !important;">Government of Telangana</p>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-2 mb-sm-0" style="flex: 1;">
+                            <div class="text-center mx-2">
+                                <img src="assets/images/minister.png" alt="cm" class="rounded-circle w-100p object-fit-cover shadow-black" style="" />
+                                <p class="text-primary fw-bold m-0">Sri Thummala Nageswara Rao</p>
+                                <p class="text-secondary m-0">Hon'ble Minister for Agriculture</p>
+                            </div>
+                        </div>
+                        <div class="mb-1 mb-sm-0" style="flex: 1;">
+                            <div class="text-center mx-1">
+                                <img src="assets/images/raising.png" alt="logo" class="img-fluid" style="height: 120px; width: 120px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--End Top ministers Area-->
+
+        <!-- Start Navbar Area -->
+         
+
+                          
+     <div class="navbar-area bg-primary" style="background-color: #3d6a7fe0 !important;">
+     <div class="mobile-responsive-nav">
+        <div class="container">
+            <div class="mobile-responsive-menu">
+                <div class="logo">
+                    <a href="home-v1.html">
+                        <img src="assets/images/favicon.png" class="main-logo" alt="logo" style="height: 50px;">
+                    </a>
+                </div>
+
+                
+              <div class="d-flex align-items-center justify-content-between mt-2">
+   
+    
+    <p class="p-0 m-0 font-14 text-white ms-auto">
+        <i class="fas fa-user m-1"></i>
+        <a href="Login.aspx" class="text-white" id="loginBt1">Login</a>
+
+    </p>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+       <div class="desktop-nav">
+           <div class="container p-0 d-flex align-items-center justify-content-between">
+               <div>
+                   <nav class="navbar navbar-expand-md navbar-light">
+
+                       <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                           <ul class="navbar-nav">
+                               <li class="nav-item">
+                                   <a href="Default_Eng.aspx" class="nav-link active">
+                                       <i class="fas fa-home"></i>
+                                   </a>
+                               </li>                             
+                               <li class="nav-item">
+                                   <a href="gos_circulars.aspx" class="nav-link">GOs and Circulars</a>
+                               </li>
+                               <li class="nav-item">
+                                   <a href="ContactUs.aspx" class="nav-link">Contact Us</a>
+                               </li>
+
+                               <li class="nav-item">
+                                   <a href="Forms.aspx" class="nav-link">Forms</a>
+                               </li>
+                           </ul>
+                       </div>
+
+                   </nav>
+               </div>
+
+               <div class="d-flex align-items-center justify-content-end">
+                  
+                
+                   <p class="p-0 m-0 font-14 text-white cursor-pointer">
+                       <i class="fas fa-user m-1"></i>
+                       <a href="Login.aspx" class="text-white" id="loginBt1">Login</a>
+                   </p>
+               </div>
+
+           </div>
+       </div>
+
+   </div>
+
+      
+
+     
+     
+
+        <div id="loginPopup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close" onclick="closeLoginPopup()">&times;</span>
+                <h2>Login</h2>
+                <form action="your-login-endpoint" method="POST">
+                    <div class="form-group">
+                        <label for="username">User Name:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="captcha">Captcha:</label>
+                        <img src="assets/images/captcha.png" alt="క్యాప్చా చిత్రం" style="width: 60px; height: 40px;">
+
+                        <input type="text" id="captcha" name="captcha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+
+
+             <div class="content-area">
+        <!--End Banner Area-->
+        <div class="container-fluid p-0">
+            <div class="d-flex align-items-center bg-lightblue px-3">
+                <p class="m-0 font-22 fw-bold text-nowrap me-3 text-rainbow-animation">Latest News :</p>
+                <marquee width="100%" direction="left" behavior="scroll" scrollamount="4">
+                    <p class="text-black m-0 font-16">Welcome to Rythu Bharosa<strong class="text-black"> |</strong> <span>Welcome to Rythu Bharosa</span></p>
+                </marquee>
+            </div>
+        </div>
+
+
+
+
+        <!--Start Banner Area-->
+        <div class="banner-area">
+            <div class="hero-slider2 style2 owl-carousel owl-theme">
+                <div class="">
+                    <div class="container-fluid1">
+                        <img src="assets/images/banner/1.png" class="img-fluid w-100">
+                    </div>
+                </div>
+
+
+                <div class="">
+                    <div class="container-fluid1">
+                        <img src="assets/images/banner/2.png" class="img-fluid w-100">
+                        <div class="slider-content-center">
+                            <div>
+                                <h3 class="text-white fw-bold text-rainbow-animation-white font-40">Rythu Bharosa  </h3>
+                                <marquee width="60%" direction="up" height="100px" scrollamount="2" class="text-white marque-banner" onmouseover="this.stop();" onmouseout="this.start();">
+                                    <p align="justify"><font color="white">The Government of Telangana launched the Rythu Bharosa Scheme to provide comprehensive support to the agricultural community, ensuring farmers receive timely financial assistance for their needs. This initiative focuses on offering financial aid and access to agricultural resources to empower farmers and improve productivity. The scheme complements other farmer-friendly policies like Crop Loan Waiver and aims to provide working capital to the farmers at the beginning of each crop cycle. By integrating various welfare measures, Rythu Bharosa seeks to enhance the socio-economic conditions of farmers and boost the overall agricultural sector in Telangana, reflecting the government's commitment to rural development and farmer welfare.</font></p>
+                                </marquee>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="container-fluid1">
+                        <img src="assets/images/banner/cm_slider1.png" class="img-fluid w-100">
+                    </div>
+                </div>
+                <div class="">
+                    <div class="container-fluid1">
+                        <img src="assets/images/banner/cm_slider2.png" class="img-fluid w-100">
+                    </div>
+                </div>
+                <div class="">
+                    <div class="container-fluid1">
+                        <img src="assets/images/banner/minister_slider1.png" class="img-fluid w-100">
+                    </div>
+                </div>
+               
+
+              
+
+
+
+            </div>
+        </div>
+        </div>
+
+        <!--Start Copyright Area-->
+
+         
+<div class="copyright-area">
+    <div class="container">
+        <div class="copyright py-3">
+            <div class="row">
+                <div class="col-lg-6 col-md-4">
+                    
+                </div>
+                <div class="col-lg-6 col-md-8">
+                    <div class="social-content text-end">
+                        <ul>
+                            <li>
+                                
+                                <span class="fw-bold">Visitors Count :</span>
+                                <span id="Footer_lblVisitors" style="font-weight: bold;">3,61,53,185</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright-area" style="background-color: #31505e;">
+    <div class="container">
+        <div class="copyright py-3">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="copy d-flex align-items-center justify-content-center flex-column-mobile">
+                        <img src="assets/images/nic-logo.png" alt="Image" class="me-2">
+                        <div>
+                            <p class="text-center m-0">
+                                Copyright © All rights reserved with Agricultire Department <a href="#" target="_blank">
+                                    Govt. of Telangana</a>.</a></p>
+                            <p class="text-center m-0">
+                                © Design & Developed By <a href="#" target="_blank">National Informatics Centre</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+       
+
+
+        <!-- Start Go Top Area -->
+        <div class="go-top">
+            <i class="ri-arrow-up-s-line"></i>
+            <i class="ri-arrow-up-s-line"></i>
+        </div>
+        <!-- End Go Top Area -->
+
+        <!--=== Jquery Min js ===-->
+        <!-- <script data-cfasync="true" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <!--=== Bootstrap bundle Min js ===-->
+        <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--=== MeanMenu js ===-->
+        <script type="text/javascript" src="assets/js/jquery.meanmenu.js"></script>
+        <!--=== Owl Carousel Min js ===-->
+        <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+        <!--=== Owl Carousel Thumbs Min js ===-->
+        <script type="text/javascript" src="assets/js/carousel-thumbs.min.js"></script>
+        <!--=== Magnific popup Min js ===-->
+        <script type="text/javascript" src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- Aos js -->
+        <script type="text/javascript" src="assets/js/aos.js"></script>
+        <!-- Odometer js -->
+        <script type="text/javascript" src="assets/js/odometer.min.js"></script>
+        <!-- Appear js -->
+        <script type="text/javascript" src="assets/js/appear.min.js"></script>
+        <!-- Form Validator js -->
+        <script type="text/javascript" src="assets/js/form-validator.min.js"></script>
+        <!-- Contact Form Script js -->
+        <script type="text/javascript" src="assets/js/contact-form-script.js"></script>
+        <!--=== AjaxChimp js ===-->
+        <script type="text/javascript" src="assets/js/ajaxchimp.min.js"></script>
+        <!--=== Custom js ===-->
+        <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+
+        <!-- JavaScript to Handle Popup -->
+        <script type="text/javascript">
+            document.getElementById('loginBtn').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('loginPopup').style.display = 'block';
+            });
+
+            function closeLoginPopup() {
+                document.getElementById('loginPopup').style.display = 'none';
+            }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const bubble = document.getElementById("whatsappWelcome");
+    const welcomeText = document.getElementById("welcomeText");
+
+    if (!bubble || !welcomeText) return;
+
+    const messages = [
+        "👋 🌾 తెలంగాణ వ్యవసాయ శాఖ అధికారిక వాట్సాప్ ఛానల్",
+        "👋 🌾 Telangana Agriculture Department — Official WhatsApp Channel"
+    ];
+
+    let index = 0;
+    const STORAGE_KEY = "whatsappSeenBlinkV5";
+
+    // If user closed before, don't show again
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+        bubble.style.display = "none";
+        return;
+    }
+
+    // Show always until user closes
+    bubble.style.display = "block";
+    welcomeText.textContent = messages[index];
+
+    // Blink with fade effect
+    const blinkInterval = setInterval(() => {
+        welcomeText.style.opacity = "0";  // fade out
+        setTimeout(() => {
+            index = (index + 1) % messages.length;
+            welcomeText.textContent = messages[index];
+            welcomeText.style.opacity = "1";  // fade in
+        }, 500);
+    }, 2000);
+
+    bubble.dataset.blinkInterval = blinkInterval;
+});
+
+// Close welcome bubble
+function hideWelcome() {
+    const bubble = document.getElementById("whatsappWelcome");
+    if (!bubble) return;
+    clearInterval(bubble.dataset.blinkInterval);
+    bubble.style.display = "none";
+    localStorage.setItem("whatsappSeenBlinkV5", "true");
+}
+</script>
+
+              </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,462 @@
+{
+  "report_timestamp": "2026-08-27T10:38:06.593512+00:00",
+  "retriever": "HybridRetriever (dense + BM25 + RRF)",
+  "llm_provider": "local",
+  "llm_model": "local-template-fallback",
+  "disclaimer": "Grounding status GROUNDED means the answer was derived from retrieved official corpus chunks. It does NOT guarantee factual correctness, currency, or completeness of the underlying source documents.",
+  "summary": {
+    "benchmark_queries": 8,
+    "benchmark_passed": 8,
+    "benchmark_grounded": 8,
+    "benchmark_sources_attached": 8,
+    "insufficient_context_queries": 3,
+    "insufficient_correctly_hedged": 3
+  },
+  "results": [
+    {
+      "query_id": "BQ1",
+      "category": "scheme_specific",
+      "query": "Who is eligible for Rythu Bharosa?",
+      "expected_scheme_id": "TS001",
+      "detected_scheme_id": "TS001",
+      "detected_scheme_name": "Rythu Bharosa",
+      "top_retrieved_scheme": "TS001",
+      "retrieved_scheme_ids": [
+        "TS001"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "document_title": "Rythu Bharosa",
+          "source_filename": "TS001_30_Rythu_Bharosa.html",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "chunk_id": "TS001_TS001_30_000_76a455a2"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.105313+00:00",
+      "answer_length_chars": 2031,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: TS001\nScheme Name: Rythu Bharosa\nOfficial URL: https://rythubharosa.telangana.gov.in/\nSource File: TS001_30_Rythu_Bharosa.h",
+      "passed": true
+    },
+    {
+      "query_id": "BQ2",
+      "category": "scheme_specific",
+      "query": "What health coverage is provided under Ayushman Bharat PM-JAY?",
+      "expected_scheme_id": "CT002",
+      "detected_scheme_id": "CT002",
+      "detected_scheme_name": "Ayushman Bharat PM-JAY",
+      "top_retrieved_scheme": "CT002",
+      "retrieved_scheme_ids": [
+        "CT002"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "document_title": "Cabinet approves health coverage to all senior citizens aged 70 years and above under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "chunk_id": "CT002_CT002_30_000_9a64933b"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.146450+00:00",
+      "answer_length_chars": 2665,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT002\nScheme Name: Ayushman Bharat PM-JAY\nOfficial URL: https://pib.gov.in/PressReleasePage.aspx?PRID=2053881\nSource File: ",
+      "passed": true
+    },
+    {
+      "query_id": "BQ3",
+      "category": "scheme_specific",
+      "query": "What is the maximum project cost under PMEGP?",
+      "expected_scheme_id": "CT005",
+      "detected_scheme_id": "CT005",
+      "detected_scheme_name": "PMEGP",
+      "top_retrieved_scheme": "CT005",
+      "retrieved_scheme_ids": [
+        "CT005"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "document_title": "Prime Minister's Employment Generation Programme (PMEGP) Guidelines and DIC Operational Framework",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.html",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "chunk_id": "CT005_CT005_30_009_8cadcfaa"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.185248+00:00",
+      "answer_length_chars": 2590,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT005\nScheme Name: PMEGP\nOfficial URL: https://wanaparthy.telangana.gov.in/district-industries-center/\nSource File: CT005_3",
+      "passed": true
+    },
+    {
+      "query_id": "BQ4",
+      "category": "scheme_specific",
+      "query": "What subsidy is available under PMEGP?",
+      "expected_scheme_id": "CT005",
+      "detected_scheme_id": "CT005",
+      "detected_scheme_name": "PMEGP",
+      "top_retrieved_scheme": "CT005",
+      "retrieved_scheme_ids": [
+        "CT005"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "document_title": "Prime Minister's Employment Generation Programme (PMEGP) Guidelines and DIC Operational Framework",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.html",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "chunk_id": "CT005_CT005_30_009_8cadcfaa"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.237726+00:00",
+      "answer_length_chars": 2590,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT005\nScheme Name: PMEGP\nOfficial URL: https://wanaparthy.telangana.gov.in/district-industries-center/\nSource File: CT005_3",
+      "passed": true
+    },
+    {
+      "query_id": "BQ5",
+      "category": "scheme_specific",
+      "query": "What are the loan categories under MUDRA?",
+      "expected_scheme_id": "CT004",
+      "detected_scheme_id": "CT004",
+      "detected_scheme_name": "Pradhan Mantri Mudra Yojana",
+      "top_retrieved_scheme": "CT004",
+      "retrieved_scheme_ids": [
+        "CT004"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 2,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.html",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "chunk_id": "CT004_CT004_24_016_fe1eb758"
+        },
+        {
+          "source_id": "2",
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "document_title": "Pradhan Mantri MUDRA Yojana (PMMY) Master Scheme Guidelines & Product Offerings",
+          "source_filename": "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.txt",
+          "official_url": "https://www.mudra.org.in/Offerings",
+          "chunk_id": "CT004_CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui_004_3e0dd8da"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.295532+00:00",
+      "answer_length_chars": 2681,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT004\nScheme Name: Pradhan Mantri Mudra Yojana\nOfficial URL: https://www.mudra.org.in/FAQ\nSource File: CT004_24_MUDRA_Loan_",
+      "passed": true
+    },
+    {
+      "query_id": "BQ6",
+      "category": "scheme_specific",
+      "query": "Who can apply for Telangana ePASS scholarships?",
+      "expected_scheme_id": "TS006",
+      "detected_scheme_id": "TS006",
+      "detected_scheme_name": "Telangana ePASS Scholarships",
+      "top_retrieved_scheme": "TS006",
+      "retrieved_scheme_ids": [
+        "TS006"
+      ],
+      "retrieval_count": 4,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "document_title": "Telangana Electronic Payment and Application System of Scholarships Portal",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.html",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "chunk_id": "TS006_TS006_12_000_1fc0bb29"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.341125+00:00",
+      "answer_length_chars": 2692,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: TS006\nScheme Name: Telangana ePASS Scholarships\nOfficial URL: https://telanganaepass.cgg.gov.in/\nSource File: TS006_12_Tela",
+      "passed": true
+    },
+    {
+      "query_id": "BQ7",
+      "category": "scheme_specific",
+      "query": "What benefits are provided under the MCH Kit Scheme?",
+      "expected_scheme_id": "TS007",
+      "detected_scheme_id": "TS007",
+      "detected_scheme_name": "MCH Kit Scheme",
+      "top_retrieved_scheme": "TS007",
+      "retrieved_scheme_ids": [
+        "TS007"
+      ],
+      "retrieval_count": 4,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "TS007",
+          "scheme_name": "MCH Kit Scheme",
+          "document_title": "Maternal and Child Health (MCH/KCR Kit) Program Guidelines and Entitlement Schedule",
+          "source_filename": "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.html",
+          "official_url": "https://chfw.telangana.gov.in/programmes.html",
+          "chunk_id": "TS007_TS007_13_000_0b302fdd"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.390422+00:00",
+      "answer_length_chars": 2049,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: TS007\nScheme Name: MCH Kit Scheme\nOfficial URL: https://chfw.telangana.gov.in/programmes.html\nSource File: TS007_13_Materna",
+      "passed": true
+    },
+    {
+      "query_id": "BQ8",
+      "category": "scheme_specific",
+      "query": "What pension is available under Aasara?",
+      "expected_scheme_id": "TS005",
+      "detected_scheme_id": "TS005",
+      "detected_scheme_name": "Aasara Pensions",
+      "top_retrieved_scheme": "TS005",
+      "retrieved_scheme_ids": [
+        "TS005"
+      ],
+      "retrieval_count": 2,
+      "context_chunks_used": 2,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 1,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "TS005",
+          "scheme_name": "Aasara Pensions",
+          "document_title": "G.O. Ms. No. 17 PR&RD Dept - Comprehensive Guidelines for Administration of Aasara Social Security Pensions",
+          "source_filename": "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.html",
+          "official_url": "https://www.aasara.telangana.gov.in/",
+          "chunk_id": "TS005_TS005_09_000_90e18dc4"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.444505+00:00",
+      "answer_length_chars": 1535,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: TS005\nScheme Name: Aasara Pensions\nOfficial URL: https://www.aasara.telangana.gov.in/\nSource File: TS005_09_GO_Ms_No_17_PRR",
+      "passed": true
+    },
+    {
+      "query_id": "IQ1",
+      "category": "insufficient_context",
+      "query": "What is the exact deadline to apply for every scheme?",
+      "expected_scheme_id": null,
+      "detected_scheme_id": null,
+      "detected_scheme_name": null,
+      "top_retrieved_scheme": "CT003",
+      "retrieved_scheme_ids": [
+        "CT003",
+        "CT004",
+        "TS002"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 3,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.html",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "chunk_id": "CT004_CT004_24_042_63caa696"
+        },
+        {
+          "source_id": "2",
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "chunk_id": "CT003_CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche_001_cf2d9ddb"
+        },
+        {
+          "source_id": "3",
+          "scheme_id": "TS002",
+          "scheme_name": "Rythu Bhima",
+          "document_title": "Rythu Bima",
+          "source_filename": "TS002_30_Rythu_Bima.txt",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "chunk_id": "TS002_TS002_30_Rythu_Bima_001_9d0bd0e1"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.486248+00:00",
+      "answer_length_chars": 2597,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT004\nScheme Name: Pradhan Mantri Mudra Yojana\nOfficial URL: https://www.mudra.org.in/FAQ\nSource File: CT004_24_MUDRA_Loan_",
+      "passed": null
+    },
+    {
+      "query_id": "IQ2",
+      "category": "insufficient_context",
+      "query": "Which scheme will give me 1 crore rupees?",
+      "expected_scheme_id": null,
+      "detected_scheme_id": null,
+      "detected_scheme_name": null,
+      "top_retrieved_scheme": "CT002",
+      "retrieved_scheme_ids": [
+        "CT002",
+        "CT003",
+        "TS003",
+        "TS004"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 2,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "TS003",
+          "scheme_name": "Cheyutha",
+          "document_title": "Telangana Government Initiatives: Rajiv Aarogyasri Cheyutha Healthcare",
+          "source_filename": "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.html",
+          "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+          "chunk_id": "TS003_TS003_06_004_3a191af8"
+        },
+        {
+          "source_id": "2",
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "document_title": "Cabinet approves health coverage to all senior citizens aged 70 years and above under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.txt",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "chunk_id": "CT002_CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit_006_3550d283"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.535148+00:00",
+      "answer_length_chars": 2125,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: TS003\nScheme Name: Cheyutha\nOfficial URL: https://www.telangana.gov.in/Government-Initiatives/\nSource File: TS003_06_Telang",
+      "passed": null
+    },
+    {
+      "query_id": "IQ3",
+      "category": "insufficient_context",
+      "query": "What will be the government schemes released next year?",
+      "expected_scheme_id": null,
+      "detected_scheme_id": null,
+      "detected_scheme_name": null,
+      "top_retrieved_scheme": "CT003",
+      "retrieved_scheme_ids": [
+        "CT003",
+        "CT004"
+      ],
+      "retrieval_count": 5,
+      "context_chunks_used": 3,
+      "grounding_status": "PARTIALLY_GROUNDED",
+      "grounding_note": "This answer was produced by the offline template fallback (no LLM API key). It presents raw retrieved context, not a language-model-generated response. Configure OPENAI_API_KEY for full RAG answer generation.",
+      "sources_attached": true,
+      "source_count": 3,
+      "sources": [
+        {
+          "source_id": "1",
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "chunk_id": "CT003_CT003_21_005_09359656"
+        },
+        {
+          "source_id": "2",
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "chunk_id": "CT004_CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory_005_cabc0048"
+        },
+        {
+          "source_id": "3",
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "document_title": "Pradhan Mantri MUDRA Yojana (PMMY) Master Scheme Guidelines & Product Offerings",
+          "source_filename": "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.txt",
+          "official_url": "https://www.mudra.org.in/Offerings",
+          "chunk_id": "CT004_CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui_001_c2cc60fd"
+        }
+      ],
+      "model_name": "local-template-fallback",
+      "provider_name": "local",
+      "generation_timestamp": "2026-08-27T10:38:06.592827+00:00",
+      "answer_length_chars": 2672,
+      "answer_preview": "[OFFLINE FALLBACK — No LLM API key configured]\n\nThe following is the raw official government source context retrieved for your query. No language model has processed or summarised this. Please configure OPENAI_API_KEY in .env for full answer generation.\n\n[Source 1]\nScheme ID: CT003\nScheme Name: PMAY-U 2.0\nOfficial URL: https://pmaymis.gov.in/pmaymis2_2024/\nSource File: CT003_21_Pradhan_Mantri_Awas",
+      "passed": null
+    }
+  ]
+}

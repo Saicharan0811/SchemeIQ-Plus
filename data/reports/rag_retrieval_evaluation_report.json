@@ -1,0 +1,1022 @@
+{
+  "timestamp": "2026-08-27T10:39:17.653819+00:00",
+  "evaluation_config": {
+    "total_queries": 8,
+    "top_k_checked": 10,
+    "hybrid_config": {
+      "dense_candidates": 20,
+      "keyword_candidates": 20,
+      "rrf_k": 60,
+      "final_top_k": 10
+    }
+  },
+  "dense_only_baseline": {
+    "metrics": {
+      "top1_accuracy": 0.75,
+      "top1_count": 6,
+      "top3_recall": 0.75,
+      "top3_count": 6,
+      "mrr": 0.75,
+      "total_queries": 8
+    },
+    "per_query": [
+      {
+        "query_id": "Q1",
+        "query": "Who is eligible for Rythu Bharosa?",
+        "expected_scheme_id": "TS001",
+        "top1_scheme_id": "TS001",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "similarity_score": 0.5696,
+            "chunk_id": "TS001_TS001_30_000_76a455a2",
+            "text_preview": "Rythu Bharosa - Telangana Join our WhatsApp Channel × Sri A Revanth Reddy Hon’ble Chief Minister Rythu Bharosa Department of Agriculture Government of"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "similarity_score": 0.5318,
+            "chunk_id": "TS001_TS001_30_001_a0cf21bf",
+            "text_preview": "× Login User Name: Password: Captcha: Latest News : Welcome to Rythu Bharosa | Welcome to Rythu Bharosa Rythu Bharosa The Government of Telangana laun"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "TS002",
+            "scheme_name": "Rythu Bhima",
+            "similarity_score": 0.4895,
+            "chunk_id": "TS002_TS002_30_000_a9ab3a8f",
+            "text_preview": "RYTHU BIMA | District Mahabubabad, Government of Telangana | India Home SchemesRYTHU BIMA X RYTHU BIMA Date : 14/08/2018 - | Sector: AGRICULTURE RYTHU"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.4067,
+            "chunk_id": "CT004_CT004_24_009_2a961e26",
+            "text_preview": "साथ ही, ज़मीनी स्तर पर वितरण चैनल का विकास तथा विस्तार करने की भी आवश्यकता है। इस सन्दर्भ में, कंपनियों, न्यासों, समितियों, संघों तथा अन्य नेटवर्कों क"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.3993,
+            "chunk_id": "CT004_CT004_24_047_193adba2",
+            "text_preview": "35.\tIS HANDICAPPED PERSONS ALSO ELIGIBLE FOR PMMY LOANS? ३५. कई जगहों पर सभी बैंक प्रतिभूति/संपार्श्विक प्रतिभूति के लिए दबाव डाल रहे हैं। प्रधानमंत्र"
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "What health coverage is provided under Ayushman Bharat PM-JAY?",
+        "expected_scheme_id": "CT002",
+        "top1_scheme_id": "CT002",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.7647,
+            "chunk_id": "CT002_CT002_30_000_9a64933b",
+            "text_preview": "Press Release Page | Press Information Bureau Cabinet Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespecti"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.7286,
+            "chunk_id": "CT002_CT002_30_005_b39cf31c",
+            "text_preview": "***** MJPS/BM (Release ID: 2053881) Visitor Counter : 58763 Read this release in: Assamese , Bengali , Khasi , Urdu , Marathi , हिन्दी , Manipuri , Be"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.6702,
+            "chunk_id": "CT002_CT002_30_004_dc5251a2",
+            "text_preview": "The  AB PM-JAY  scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the "
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.6691,
+            "chunk_id": "CT002_CT002_30_010_6febe89d",
+            "text_preview": "The  AB PM-JAY  scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the "
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.6617,
+            "chunk_id": "CT002_CT002_30_003_625abe09",
+            "text_preview": "AB PM-JAY is the world’s largest publicly funded health assurance scheme which provides health cover of Rs. 5 lakh per family per year for secondary a"
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "What is the maximum project cost under PMEGP?",
+        "expected_scheme_id": "CT005",
+        "top1_scheme_id": "CT005",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "similarity_score": 0.5961,
+            "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+            "text_preview": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP): A Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.5129,
+            "chunk_id": "CT003_CT003_21_001_30d616dd",
+            "text_preview": "the urban areas. The Government assistance under PMAY-U 2.0 will be upto 2.50 lakh per unit. In pursuance of the Hon’ble Prime Minister’s vision, PMAY"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "similarity_score": 0.4979,
+            "chunk_id": "CT005_CT005_30_010_58fb7900",
+            "text_preview": "5% 95% 25% 35% Eligibility Criteria: Any individual, above 18 Years No Income Ceiling For New Projects/units only Existing Units and the units that ha"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4783,
+            "chunk_id": "CT003_CT003_21_005_09359656",
+            "text_preview": "ISS XXX BIHAR Sensitization Programme on New Construction Technologies for Mass Housing... 27th November 2024 Read More National Workshop on PMAY-U 2."
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4732,
+            "chunk_id": "CT003_CT003_21_000_2ee6a8ec",
+            "text_preview": "PMAY-HFA PMAY-U 2.0 Statistics MOU Signed No.XXX Cities | Towns Covered No.XXX Provisional Sanctioned Houses No.XXX Demand Entered No.XXX BLC No: XXX "
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "What subsidy is available under PMEGP?",
+        "expected_scheme_id": "CT005",
+        "top1_scheme_id": "CT005",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "similarity_score": 0.6292,
+            "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+            "text_preview": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP): A Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.6213,
+            "chunk_id": "CT004_CT004_24_028_024f2f52",
+            "text_preview": "२० लाख से कम होनी चाहिए। 19.IS THERE ANY SUBSIDY UNDER PMMY? IF SO, DETAILS THEREOF? १९. मुद्रा ऋण लेने के लिए व्यक्तियों की पात्रता क्या है? There is"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.5329,
+            "chunk_id": "CT003_CT003_21_003_4bb166e0",
+            "text_preview": "to the Eligibility beneficiaries of EWS category Affordable Rental Housing (ARH) ARH will promote creation of adequate rental housing for EWS/LIG bene"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.5025,
+            "chunk_id": "CT003_CT003_21_005_09359656",
+            "text_preview": "ISS XXX BIHAR Sensitization Programme on New Construction Technologies for Mass Housing... 27th November 2024 Read More National Workshop on PMAY-U 2."
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.5011,
+            "chunk_id": "CT003_CT003_21_000_2ee6a8ec",
+            "text_preview": "PMAY-HFA PMAY-U 2.0 Statistics MOU Signed No.XXX Cities | Towns Covered No.XXX Provisional Sanctioned Houses No.XXX Demand Entered No.XXX BLC No: XXX "
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "What are the loan categories under MUDRA?",
+        "expected_scheme_id": "CT004",
+        "top1_scheme_id": "CT004",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.732,
+            "chunk_id": "CT004_CT004_24_016_fe1eb758",
+            "text_preview": "MUDRA loans are available in three categories. For small business, loans upto 50,000/- is available under the 'Shishu' category and beyond 50,000/- an"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.7128,
+            "chunk_id": "CT004_CT004_23_005_423c1410",
+            "text_preview": "Purpose of MUDRA loan Mudra loan is extended for a variety of purposes which result in income generation and employment creation. The loans are extend"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.6759,
+            "chunk_id": "CT004_CT004_24_014_b33e0f13",
+            "text_preview": "८. मेरा कागज़ के सामान का एक छोटा-सा व्यवसाय है। क्या मुद्रा मेरी सहायता कर सकता है? MUDRA loan is available through Banks/NBFCs/MFIs for such activit"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.6556,
+            "chunk_id": "CT004_CT004_24_051_1354e84a",
+            "text_preview": "कोई भी व्यक्ति, स्त्री या पुरुष, स्वामित्व-आधारित प्रतिष्ठान, भागीदारी फर्म, प्राइवेट लिमिटेड कंपनी अथवा अन्य निकाय प्रधानमंत्री मुद्रा योजना के अंतर्"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "similarity_score": 0.6553,
+            "chunk_id": "CT004_CT004_24_026_739a2336",
+            "text_preview": "20 lakh The primary requirement for availing a MUDRA loan is to be an income generating activity under manufacturing, processing, trading and service "
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Who can apply for Telangana ePASS scholarships?",
+        "expected_scheme_id": "TS006",
+        "top1_scheme_id": "TS006",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "similarity_score": 0.7097,
+            "chunk_id": "TS006_TS006_12_000_1fc0bb29",
+            "text_preview": "Welcome Menu About Us Scholarships Schemes & Policies Link Contact Us Awards RTI Manual Telangana Rising-2047 Official Login Dashboard Login A+ A A- A"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "similarity_score": 0.6931,
+            "chunk_id": "TS006_TS006_12_001_769be378",
+            "text_preview": "Reports Know Your Application No. Bank Remittance Details Scholarship Trans ID Details Grievances Redressal Feedback Post Matric Scholarship Services "
+          },
+          {
+            "rank": 3,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "similarity_score": 0.5232,
+            "chunk_id": "TS001_TS001_30_002_6ead2d2e",
+            "text_preview": "Visitors Count : 3,61,53,185 Copyright © All rights reserved with Agricultire Department Govt. of Telangana. © Design & Developed By National Informat"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "similarity_score": 0.5145,
+            "chunk_id": "CT005_CT005_30_002_c7332db2",
+            "text_preview": "The Telangana Government has enacted the “Telangana State Industrial Project Approval and Self-Certification System (TSiPASS) Act, 2014 (Act No.3 of 2"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "TS008",
+            "scheme_name": "Telangana Free Diagnostic Services",
+            "similarity_score": 0.507,
+            "chunk_id": "TS008_TS008_35_001_56cce951",
+            "text_preview": "Privacy Policy Developed by Neumeric Technologies This is the main portal for Telangana Diagnostics Program administered by Commissioner, Health & Fam"
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "What benefits are provided under the MCH Kit Scheme?",
+        "expected_scheme_id": "TS007",
+        "top1_scheme_id": "CT003",
+        "top1_correct": false,
+        "top3_recall": false,
+        "correct_rank": null,
+        "mrr": 0.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4087,
+            "chunk_id": "CT003_CT003_21_009_ebb6c7f9",
+            "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4074,
+            "chunk_id": "CT003_CT003_21_006_c8c2e53f",
+            "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4074,
+            "chunk_id": "CT003_CT003_21_007_c8c2e53f",
+            "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.4074,
+            "chunk_id": "CT003_CT003_21_008_c8c2e53f",
+            "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pu"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT003",
+            "scheme_name": "PMAY-U 2.0",
+            "similarity_score": 0.3903,
+            "chunk_id": "CT003_CT003_21_005_09359656",
+            "text_preview": "ISS XXX BIHAR Sensitization Programme on New Construction Technologies for Mass Housing... 27th November 2024 Read More National Workshop on PMAY-U 2."
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "What pension is available under Aasara?",
+        "expected_scheme_id": "TS005",
+        "top1_scheme_id": "CT001",
+        "top1_correct": false,
+        "top3_recall": false,
+        "correct_rank": null,
+        "mrr": 0.0,
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT001",
+            "scheme_name": "PM-KISAN",
+            "similarity_score": 0.522,
+            "chunk_id": "CT001_CT001_18_006_97195e92",
+            "text_preview": "(Excluding Multi Tasking Staff /Class IV/Group D employees) All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more (Excludin"
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT006",
+            "scheme_name": "Atal Pension Yojana",
+            "similarity_score": 0.518,
+            "chunk_id": "CT006_CT006_27_003_ac7f7ecb",
+            "text_preview": "Gallery Image Gallery Video Gallery Publicity Material Contest Hackathon Financial Literacy Pension Sanchay Subscriber Education Retirement Planner Sc"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT006",
+            "scheme_name": "Atal Pension Yojana",
+            "similarity_score": 0.4871,
+            "chunk_id": "CT006_CT006_27_002_1baaf0d8",
+            "text_preview": "NPS Non-Government Sector About NPS All Citizen Model Superannuation Funds Corporate NPS Lite NPS Vatsalya Unified Pension Scheme (UPS) Atal Pension Y"
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT006",
+            "scheme_name": "Atal Pension Yojana",
+            "similarity_score": 0.4841,
+            "chunk_id": "CT006_CT006_27_006_66d1d376",
+            "text_preview": "Return of the pension wealth to the nominee of the subscriber: After the demise of both the subscriber and the spouse, the nominee of the subscriber s"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "similarity_score": 0.4703,
+            "chunk_id": "CT002_CT002_30_002_fa3a394a",
+            "text_preview": "All other senior citizens of the age 70 years and above will get a cover upto ₹5 lakh per year on a family basis. Senior citizens of the age 70 years "
+          }
+        ]
+      }
+    ]
+  },
+  "hybrid_retrieval": {
+    "metrics": {
+      "top1_accuracy": 1.0,
+      "top1_count": 8,
+      "top3_recall": 1.0,
+      "top3_count": 8,
+      "mrr": 1.0,
+      "total_queries": 8
+    },
+    "per_query": [
+      {
+        "query_id": "Q1",
+        "query": "Who is eligible for Rythu Bharosa?",
+        "expected_scheme_id": "TS001",
+        "top1_scheme_id": "TS001",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "TS001",
+          "matched_alias": "rythu bharosa"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.5696,
+            "bm25_score": null,
+            "chunk_id": "TS001_TS001_30_000_76a455a2",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 16.1345,
+            "chunk_id": "TS001_TS001_30_Rythu_Bharosa_000_76a455a2",
+            "text_preview": "Rythu Bharosa - Telangana\nJoin our WhatsApp Channel\n×\nSri A Revanth Reddy\nHon’ble Chief Minister\nRythu Bharosa\nDepartment of Agriculture\nGovernment of"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.5318,
+            "bm25_score": null,
+            "chunk_id": "TS001_TS001_30_001_a0cf21bf",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 14.8828,
+            "chunk_id": "TS001_TS001_30_Rythu_Bharosa_001_cbcc1f38",
+            "text_preview": "in\n×\nLogin\nUser Name:\nPassword:\nCaptcha:\nLatest News :\nWelcome to Rythu Bharosa | Welcome to Rythu Bharosa\nRythu Bharosa\nThe Government of Telangana l"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "TS001",
+            "scheme_name": "Rythu Bharosa",
+            "rrf_score": 0.015873,
+            "dense_rank": 3,
+            "keyword_rank": null,
+            "dense_score": 0.195,
+            "bm25_score": null,
+            "chunk_id": "TS001_TS001_30_002_6ead2d2e",
+            "text_preview": ""
+          }
+        ]
+      },
+      {
+        "query_id": "Q2",
+        "query": "What health coverage is provided under Ayushman Bharat PM-JAY?",
+        "expected_scheme_id": "CT002",
+        "top1_scheme_id": "CT002",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "CT002",
+          "matched_alias": "ayushman bharat"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.7647,
+            "bm25_score": null,
+            "chunk_id": "CT002_CT002_30_000_9a64933b",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 23.8688,
+            "chunk_id": "CT002_CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit_000_9a64933b",
+            "text_preview": "Press Release Page | Press Information Bureau\nCabinet\nCabinet approves health coverage to all senior citizens of the age 70 years and above irrespecti"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.7286,
+            "bm25_score": null,
+            "chunk_id": "CT002_CT002_30_005_b39cf31c",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 20.773,
+            "chunk_id": "CT002_CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit_005_26f8e1f8",
+            "text_preview": "s of the age-group of 70 years and above across the country.\n*****\nMJPS/BM\n(Release ID: 2053881)\nVisitor Counter : 58763\nRead this release in:\nAssames"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT002",
+            "scheme_name": "Ayushman Bharat PM-JAY",
+            "rrf_score": 0.015873,
+            "dense_rank": 3,
+            "keyword_rank": null,
+            "dense_score": 0.6702,
+            "bm25_score": null,
+            "chunk_id": "CT002_CT002_30_004_dc5251a2",
+            "text_preview": ""
+          }
+        ]
+      },
+      {
+        "query_id": "Q3",
+        "query": "What is the maximum project cost under PMEGP?",
+        "expected_scheme_id": "CT005",
+        "top1_scheme_id": "CT005",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "CT005",
+          "matched_alias": "pmegp"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.5961,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 17.4475,
+            "chunk_id": "CT005_CT005_30_Prime_Ministers_Employment_Generation_Programme_PM_009_2bf148f8",
+            "text_preview": "and monitoring the proper utilization of these raw materials.\nPRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP):\nA Centrally sponsored scheme, "
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.4979,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_010_58fb7900",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 7.1136,
+            "chunk_id": "CT005_CT005_30_Prime_Ministers_Employment_Generation_Programme_PM_008_2cb82e25",
+            "text_preview": "Machinery cost (1st Generation Entrepreneurs)\n50% Reimbursement of the cost involved in Skill up-gradation and Training\n100% Subsidy on Quality Certif"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.015873,
+            "dense_rank": 3,
+            "keyword_rank": null,
+            "dense_score": 0.4188,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_006_07a2d763",
+            "text_preview": ""
+          }
+        ]
+      },
+      {
+        "query_id": "Q4",
+        "query": "What subsidy is available under PMEGP?",
+        "expected_scheme_id": "CT005",
+        "top1_scheme_id": "CT005",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "CT005",
+          "matched_alias": "pmegp"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.6292,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 9.4048,
+            "chunk_id": "CT005_CT005_30_Prime_Ministers_Employment_Generation_Programme_PM_009_2bf148f8",
+            "text_preview": "and monitoring the proper utilization of these raw materials.\nPRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP):\nA Centrally sponsored scheme, "
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.4802,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_008_f767f310",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 8.6425,
+            "chunk_id": "CT005_CT005_30_Prime_Ministers_Employment_Generation_Programme_PM_008_2cb82e25",
+            "text_preview": "Machinery cost (1st Generation Entrepreneurs)\n50% Reimbursement of the cost involved in Skill up-gradation and Training\n100% Subsidy on Quality Certif"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT005",
+            "scheme_name": "PMEGP",
+            "rrf_score": 0.015873,
+            "dense_rank": 3,
+            "keyword_rank": null,
+            "dense_score": 0.4636,
+            "bm25_score": null,
+            "chunk_id": "CT005_CT005_30_007_8d32ba39",
+            "text_preview": ""
+          }
+        ]
+      },
+      {
+        "query_id": "Q5",
+        "query": "What are the loan categories under MUDRA?",
+        "expected_scheme_id": "CT004",
+        "top1_scheme_id": "CT004",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "CT004",
+          "matched_alias": "mudra"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.732,
+            "bm25_score": null,
+            "chunk_id": "CT004_CT004_24_016_fe1eb758",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 6.9248,
+            "chunk_id": "CT004_CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui_004_3e0dd8da",
+            "text_preview": "FIs\nDifferent banks like Commercial Banks, Regional Rural Banks, Small Finance Banks, Urban Co-operative Banks and NBFCs\nare eligible to avail refinan"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.7128,
+            "bm25_score": null,
+            "chunk_id": "CT004_CT004_23_005_423c1410",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 5.1837,
+            "chunk_id": "CT004_CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory_023_28281fa1",
+            "text_preview": "d RO water plant installation, on a business mode, are eligible activities under MUDRA loan, if the loan amount is up to\n20 lakh The primary requireme"
+          },
+          {
+            "rank": 5,
+            "scheme_id": "CT004",
+            "scheme_name": "Pradhan Mantri Mudra Yojana",
+            "rrf_score": 0.015873,
+            "dense_rank": 3,
+            "keyword_rank": null,
+            "dense_score": 0.6759,
+            "bm25_score": null,
+            "chunk_id": "CT004_CT004_24_014_b33e0f13",
+            "text_preview": ""
+          }
+        ]
+      },
+      {
+        "query_id": "Q6",
+        "query": "Who can apply for Telangana ePASS scholarships?",
+        "expected_scheme_id": "TS006",
+        "top1_scheme_id": "TS006",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "TS006",
+          "matched_alias": "epass scholarships"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.7097,
+            "bm25_score": null,
+            "chunk_id": "TS006_TS006_12_000_1fc0bb29",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 8.4242,
+            "chunk_id": "TS006_TS006_12_Telangana_Electronic_Payment_and_Application_Syste_000_1fc0bb29",
+            "text_preview": "Welcome\nMenu\nAbout Us\nScholarships\nSchemes & Policies\nLink\nContact Us\nAwards\nRTI Manual\nTelangana Rising-2047\nOfficial Login\nDashboard Login\nA+\nA\nA-\nA"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.6931,
+            "bm25_score": null,
+            "chunk_id": "TS006_TS006_12_001_769be378",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "TS006",
+            "scheme_name": "Telangana ePASS Scholarships",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": 5.6968,
+            "chunk_id": "TS006_TS006_12_Telangana_Electronic_Payment_and_Application_Syste_001_0ec6e257",
+            "text_preview": "pted along with Nationalized bank in scholarships application.\nReports\nKnow Your Application No.\nBank Remittance Details\nScholarship Trans ID Details\n"
+          }
+        ]
+      },
+      {
+        "query_id": "Q7",
+        "query": "What benefits are provided under the MCH Kit Scheme?",
+        "expected_scheme_id": "TS007",
+        "top1_scheme_id": "TS007",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "TS007",
+          "matched_alias": "mch kit scheme"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS007",
+            "scheme_name": "MCH Kit Scheme",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.2115,
+            "bm25_score": null,
+            "chunk_id": "TS007_TS007_13_000_0b302fdd",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS007",
+            "scheme_name": "MCH Kit Scheme",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 9.4537,
+            "chunk_id": "TS007_TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide_000_0b302fdd",
+            "text_preview": "CHFW, Telangana\nCommissionerate of Health and Family Welfare\nMCH Kit\nScheme for pregnant woman and newborns\nTelangana Diagnostics\nFree Diagnostic Serv"
+          },
+          {
+            "rank": 3,
+            "scheme_id": "TS007",
+            "scheme_name": "MCH Kit Scheme",
+            "rrf_score": 0.016129,
+            "dense_rank": 2,
+            "keyword_rank": null,
+            "dense_score": 0.0236,
+            "bm25_score": null,
+            "chunk_id": "TS007_TS007_13_001_a23b9307",
+            "text_preview": ""
+          },
+          {
+            "rank": 4,
+            "scheme_id": "TS007",
+            "scheme_name": "MCH Kit Scheme",
+            "rrf_score": 0.016129,
+            "dense_rank": null,
+            "keyword_rank": 2,
+            "dense_score": null,
+            "bm25_score": null,
+            "chunk_id": "TS007_TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide_001_c35c0e56",
+            "text_preview": "Health\nE-Sanjeevani\nTele Consultation Service\nSickle cell\nNational Sickle Cell Anaemia Elimination Mission\n© 2017 CHFW .\nAll rights reserved | Designe"
+          }
+        ]
+      },
+      {
+        "query_id": "Q8",
+        "query": "What pension is available under Aasara?",
+        "expected_scheme_id": "TS005",
+        "top1_scheme_id": "TS005",
+        "top1_correct": true,
+        "top3_recall": true,
+        "correct_rank": 1,
+        "mrr": 1.0,
+        "scheme_detection": {
+          "detected": true,
+          "scheme_id": "TS005",
+          "matched_alias": "aasara"
+        },
+        "top5_results": [
+          {
+            "rank": 1,
+            "scheme_id": "TS005",
+            "scheme_name": "Aasara Pensions",
+            "rrf_score": 0.016393,
+            "dense_rank": 1,
+            "keyword_rank": null,
+            "dense_score": 0.4008,
+            "bm25_score": null,
+            "chunk_id": "TS005_TS005_09_000_90e18dc4",
+            "text_preview": ""
+          },
+          {
+            "rank": 2,
+            "scheme_id": "TS005",
+            "scheme_name": "Aasara Pensions",
+            "rrf_score": 0.016393,
+            "dense_rank": null,
+            "keyword_rank": 1,
+            "dense_score": null,
+            "bm25_score": 8.6367,
+            "chunk_id": "TS005_TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for_000_90e18dc4",
+            "text_preview": "LoginPage\nHome\nGOs\nGO MS No 23 - Amendment\nGO-MS No 17 Aasara Pensions\nGO MS No 29 - Amendment\nGO MS No 38 - Amendment\nGO MS No 75 - Amendment\nGO 25 -"
+          }
+        ]
+      }
+    ]
+  },
+  "improvement": {
+    "top1_delta": 2,
+    "top3_delta": 2,
+    "mrr_delta": 0.25
+  },
+  "targets": {
+    "top1_accuracy_8_8": true,
+    "top3_recall_8_8": true,
+    "mch_kit_rank_1": true,
+    "aasara_rank_1": true,
+    "all_targets_met": true
+  },
+  "status": "PASS"
+}

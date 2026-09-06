@@ -1,0 +1,984 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="TS-Fonts/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="Scripts/css/bootstrap_5.3.2.min.css" rel="stylesheet" type="text/css" />
+<head id="Head1">
+    <style type="text/css">
+        .loginBg
+        {
+            width: 100% !important;
+            height: 475px !important;
+            position: relative;
+            background: #00ac5f !important;
+        }
+        .imgCaption
+        {
+            position: absolute;
+            left: 5%;
+            right: 5%;
+            bottom: 60px;
+            z-index: 20;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+            background: rgba(20,89,121,0.6);
+        }
+        .imgCaption a
+        {
+            color: #fff;
+            text-decoration: none;
+        }
+        .imgCaption a:hover
+        {
+            color: #fff;
+            text-decoration: underline;
+        }
+        html
+        {
+            height: 100%;
+        }
+        body
+        {
+            font: 400 14px/20px 'Open Sans' , sans-serif !important;
+            color: #3f3580 !important;
+            background: #00ac5f;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .bg_page
+        {
+            background: #00ac5f !important;
+        }
+        .container
+        {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .content
+        {
+            clear: both;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+        }
+        .loginCol
+        {
+            width: 24% !important;
+            height: 560px;
+            background: #00ac5f url(images/dna-bg.jpg) no-repeat center center / cover !important;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper
+        {
+            overflow: hidden;
+            padding: 0;
+            height: 100%;
+        }
+        .header
+        {
+            height: 130px !important;
+            background: #fff url(images/header-bg.jpg) repeat !important;
+        }
+        .navbtm { background:#00ac5f; }
+        .navbtm .nav li a {color:#fff; font-weight:400;}
+        .logo
+        {
+            display: block;
+            font-size: 30px;
+            color: #fff;
+            text-align: left !important;
+            line-height: 30px;
+            text-decoration: none;
+            padding-top: 2px !important;
+            padding-left: 4px;
+            float: left;
+        }
+        .ts-leaders
+        {
+            /*float: right;
+            width:35%;*/
+            margin: 15px 0 0 0;
+        }
+        .copyright
+        {
+            color: #fff;
+            display: inline-block;
+            font-size: 10px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 100%;
+        }
+        .footer p
+        {
+            color: #fff;
+            font-size: 13px;
+            text-align: left;
+            font-weight: 400;
+        }
+        .login_IV
+        {
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+        .login_IV b
+        {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+        }
+        #Login1 .title_loginbox, #Login1
+        {
+            width: 100%;
+        }
+        .loginForm .getPswdBox .rfdSkinnedButton .rfdDecorated, .loginForm #Login2 .title_loginbox #Login2_LoginButton, .loginForm #Login2 .rfdSkinnedButton .rfdDecorated, #Login1 .title_loginbox #Login1_LoginButton,.rfdSkinnedButton #LoginButton.rfdDecorated
+        {
+            background: #3f3580 !important;
+            line-height: 20px !important;
+            color: #fff !important;
+            padding: 5px 20px !important;
+            height: auto !important;
+        }
+        .loginForm #Login2 .title_loginbox #Login2_LoginButton, #Login1 .title_loginbox .rfdSkinnedButton
+        {
+            background-image: none;
+            height: auto !important;
+            cursor: pointer;
+        }
+        #form1
+        {
+            height: 100%;
+        }
+        .loginForm ul > li
+        {
+            margin-bottom: 10px;
+        }
+        .loginForm .pwd_reset.rfdDecorated, .loginForm #Login2 .title_loginbox input[type="text"], .loginForm #Login2 .title_loginbox input[type="password"], #form1 #Login1 .title_loginbox input[type="text"], #form1 #Login1 .title_loginbox input[type="password"]
+        {
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+            border-bottom: 1px solid #3f3580 !important;
+            width: 96% !important;
+        }
+        .loginForm #Login2 label, #Login1 .title_loginbox label
+        {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #3f3580 !important;
+        }
+        .mandatory
+        {
+            width: 10px;
+        }
+        .content .loginBg
+        {
+            position: relative;
+            
+        }
+        .loginBanner
+        {
+            position: absolute;
+            left: 0;
+            top: 100px;
+            z-index: 100;
+            width: 100%;
+        }
+        .loginBanner i
+        {
+            font-size: 58px;
+            margin: 5px 0 0 0;
+        }
+        .loginBanner h2
+        {
+            font-family: 'Open Sans' , sans-serif;
+            font-size: 51px;
+            line-height: 51px;
+            font-weight: 600;
+            color: #2a79b4;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 68px 0 35px;
+        }
+        .loginBanner ul
+        {
+            list-style: none;
+            margin: 0 20px;
+            padding: 0;
+        }
+        .loginBanner ul li
+        {
+            display: inline-block;
+            width: 28%;
+            padding: 10px 19px;
+            margin: 0 5px;
+            background-color: #2a79b4;
+            border-radius: 5px;
+        }
+        .loginBanner ul li:nth-child(2)
+        {
+            background-color: #49b865;
+        }
+        .loginBanner ul li:nth-child(3)
+        {
+            background-color: #e1554e;
+        }
+        .loginBanner ul li:nth-child(4)
+        {
+            background-color: #3f3580;
+        }
+        .loginBanner ul li:nth-child(5)
+        {
+            background-color: #e1554e;
+        }
+        .loginBanner ul li:nth-child(6)
+        {
+            background-color: #2a79b4;
+        }
+        .loginBanner ul li span
+        {
+            float: left;
+            width: 76px;
+            height: 76px;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .loginBanner ul li strong b span
+        {
+            float: none;
+        }
+        .loginBanner ul li strong
+        {
+            float: right;
+            width: 67%;
+            color: #fff;
+            font-size: 12px;
+            text-align: left;
+            font-weight: 400;
+            padding-top: 13px;
+        }
+        .loginBanner ul li strong > b
+        {
+            display: block;
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 700;
+        }
+        .loginSlideBtn
+        {
+            position: fixed;
+            right: 0;
+            top: 105px;
+            width: 80px;
+            background: #3f3580;
+            border-radius: 5px 0 0 5px;
+            transition: all 0.3s ease-in-out;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px;
+            display:none;
+        }
+        .loginSlideBtn:hover
+        {
+            width: 80px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .loginForm
+        {
+            position: fixed;
+            right: 0;
+            top: 155px;
+            z-index: 101;
+            width: 320px;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px 0 0 5px;
+            margin-right: 0;
+            /*margin-right: -360px;*/
+            transition: all 0.3s ease-in-out;
+            padding: 20px;
+        }
+        .loginForm.slideClass
+        {
+            right: 0;
+            margin-right: 0;
+        }
+        .fbClose
+        {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #000;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: all 0.5s ease-in-out;
+            text-decoration: none;
+        }
+        .fbClose:hover, .fbClose:focus
+        {
+            color: #f26f29;
+            outline: none;
+            text-decoration: none;
+        }
+        .loginForm .title_loginbox
+        {
+            list-style: none;
+            display: inline-block;
+            width: 100%;
+        }
+        .loginForm .title_loginbox li
+        {
+            position: relative;
+        }
+        .title_loginbox li .mandatory, .mandatory
+        {
+            position: absolute;
+            right: 14px;
+            top: 7px;
+            width: 4px;
+        }
+        .loginForm .rfdLoginControl
+        {
+            width: 100%;
+        }
+        .loginForm .login_IV
+        {
+            margin: 0;
+            font-size: 20px;
+            color: #3f3580;
+            font-weight: 700;
+        }
+        .loginForm .forgot
+        {
+            float: left;
+            line-height: 30px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .loginForm .rfdSkinnedButton
+        {
+            float: right;
+            margin: 0 !important;
+            background: none !important;
+        }
+        .loginForm .btnBox
+        {
+            display: inline-block;
+            width: 100%;
+            margin-top: 0;
+        }
+        .getPswdBox ul
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .getPswdBox li
+        {
+            list-style: none;
+        }
+        #Login2_PasswordRecovery1
+        {
+            width: 100%;
+        }
+        #Login2_PasswordRecovery1 p
+        {
+            margin: 0;
+        }
+        .pwdResetBox
+        {
+            display: inline-block;
+            width: 150px;
+            position: relative;
+        }
+        .pwdResetBox .mandatory
+        {
+            right: 20px !important;
+        }
+        .loginForm #Login1 .title_loginbox .pwdResetBox input[type="text"]
+        {
+            width: 90% !important;
+        }
+        .rfdSkinnedButton #LoginButton.rfdDecorated { background-image: none;cursor:pointer;}
+        .getPswdBox li p
+        {
+            margin: 0;
+        }
+        .getPswdBox table
+        {
+            width: 100%;
+        }
+        .enterUserName
+        {
+            color: #3f3580;
+            font-weight: 600;
+            
+        }
+        
+        /* slider css */
+        .carouselSlide .carousel-inner .carousel-item img { height:485px; }
+        
+       .carouselSlide .carousel-control-prev img,.carouselSlide .carousel-control-next img {opacity:0.1; width:48px !important; height:48px !important; transition:all 0.3s ease-in-out;}
+       .carouselSlide:hover .carousel-control-prev img,.carouselSlide:hover .carousel-control-next img {opacity:1;}
+       /*/ slider css */
+       .footer {font-size:11px; line-height:16px; background-color: darkslategray;color: rgba(255,255,255,0.9);}
+       .footer p { font-size:11px; line-height:16px; }
+       .footer a { color:#fff; }
+        .wrapper { overflow-y: auto !important; }
+    </style>
+    
+
+    <script src="Scripts/jquery.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="Scripts/jquery.min-3.7.1.js"></script>
+    <script type="text/javascript" src="Scripts/popper.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap_5.3.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".loginSlideBtn").on('click', function() {
+                debugger;
+                if ($(".loginForm")[0].className == "loginForm slideClass") {
+                    $(".loginForm").removeClass('slideClass');
+                }
+                else {
+                    $(".loginForm").addClass('slideClass');
+                }
+            });
+            $(".fbClose").on('click', function() {
+                $(".loginForm").removeClass('slideClass');
+            });
+            //            $(".loginForm .rfdSkinnedButton").click(function() {
+            //                $(".loginForm").addClass('slideClass');
+            //            });
+        });
+        //        
+
+    </script>
+    <script type="text/javascript">
+    function encryptMessage(txtpassword) {
+            //            var encryptedMessage = CryptoJS.AES.encrypt(messageToencrypt, secretkey);
+            //            return encryptedMessage.toString();
+            var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+            var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+
+            var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtpassword), key,
+                {
+                    keySize: 128 / 8,
+                    iv: iv,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+            return encryptedpassword.toString();
+        }
+        function decryptMessage(encryptedMessage, secretkey) {
+            var decryptedBytes = CryptoJS.AES.decrypt(encryptedMessage, secretkey);
+            var decryptedMessage = decryptedBytes.toString(CryptoJS.enc.Utf8);
+
+            return decryptedMessage;
+        }
+
+        function logInClick() {
+            return false;
+           // GetEncrypt();
+        }
+
+        function GetEncrypt() {
+            alert('hgjghj');
+            var text = encryptMessage($('#Password').val());
+            $('#Password')[0].value = text;
+            $.ajax
+              ({
+                  type: "POST",
+                  url: "LogIn.aspx/Encrypt",
+                  data: "{'plainText':'" + $('#Password').val() + "'}",
+                  contentType: "application/json;charset=utf-8",
+                  dataType: "json",
+                  success: function(result) {
+                  alert('success');
+                      $('#Password1')[0].value = result.d;
+                  },
+                  error: function(err) {
+                      console.log(err);
+                  }
+              });
+        }
+        </script>
+<link href="App_Themes/NewSkin/Editor.NewSkin.css" type="text/css" rel="stylesheet" /><link href="/Telerik.Web.UI.WebResource.axd?compress=1&amp;_TSM_CombinedScripts_=%3b%3bNtc.Emr.Common.HimsIndiaSkin%3aen-US%3abf06c00c-bc11-45b4-861a-413326da7631%3ad9a1adf3%3bTelerik.Web.UI%2c+Version%3d2011.1.519.35%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-US%3ae7f771a0-3dfe-454b-b8df-735a93f806f5%3aef4a543" type="text/css" rel="stylesheet" /><title>
+	 Login
+</title></head>
+<body class="bg_page">
+
+    <script type="text/javascript">
+
+        //     function HashPwdwithSalt() {
+        //         debugger;
+        //         salt = document.getElementById("hdn_Value").value;
+        //         if (document.getElementById("Password").value != "") {
+
+        //             document.getElementById("Password").value = hex_md5(document.getElementById("Password").value);
+
+        //             document.getElementById("Password").value = hex_md5(document.getElementById("Password").value + salt);
+
+        //         }
+        //     }
+        $(function() {
+            // GetcountsforDashBoard();
+            $('*').attr("autocomplete", "off");
+            $('#Password').attr("type", "password");
+            $('#Password').on('change', function() {
+                // $('#Password')[0].value = $('#Password1')[0].value
+                GetEncrypt();
+            });
+            //            $('input[id$=Password]').keyup(function() {
+            //                GetEncrypt();
+            //            });
+
+            $('#AnswerNew').on('change', function() {
+                // $('#Password')[0].value = $('#Password1')[0].value
+                var text = encryptMessage($('#AnswerNew').val());
+                $('#AnswerNew')[0].value = text;
+            });
+
+        });
+        
+        function GetEncrypt() {
+            debugger;
+            $.ajax
+              ({
+                  type: "POST",
+                  url: "LogInNew.aspx/Encrypt",
+                  data: "{'plainText':'" + $('#Password').val() + "'}",
+                  contentType: "application/json;charset=utf-8",
+                  dataType: "json",
+                  success: function(result) {
+                  debugger;
+                  document.getElementById("hdn_LoginValue").value = 1;
+                      $('#hdnhash').val(result.d);
+                      $('#Password')[0].value = result.d;
+                  },
+                  error: function(err) {
+                      console.log(err);
+                  }
+              });
+        }
+        function MyFunction(a) {
+            debugger;
+            $('#Password')[0].value = a;
+        }
+        function GetcountsforDashBoard() {
+            $.ajax
+              ({
+                  type: "POST",
+                  url: "TestStats.aspx/GetCountsForDashBoard",
+                  data: '',
+                  contentType: "application/json;charset=utf-8",
+                  dataType: "json",
+                  success: function(result) {
+                      var objresultvo = result.d;
+                      document.getElementById("lbl_NoofSamplesCollected").innerHTML = objresultvo.NoofSamplesCollected;
+                      document.getElementById("lbl_NoofSamplesReceived").innerHTML = objresultvo.NoOfSamplesReceivedtoLab;
+                      document.getElementById("lbl_NoofSamplesDamaged").innerHTML = objresultvo.NoOfSamplesDamaged;
+                      document.getElementById("lbl_NoofSamplesProcessed").innerHTML = objresultvo.NoOfSamplesProcessed;
+                      document.getElementById("lbl_NoofSamplesReportsGenerated").innerHTML = objresultvo.NoOfReportsGenerated;
+                      document.getElementById("lbl_NoofFacilities").innerHTML = objresultvo.NoOfPhcs;
+                      document.getElementById("lbl_NoofSamplesNotYetProcessed").innerHTML = objresultvo.NoOfSamplesNotYetProcessed;
+                  },
+                  error: function(err) {
+                      console.log(err);
+                  }
+              });
+        }
+    </script>
+
+    <form name="form1" method="post" action="login.aspx?AspxAutoDetectCookieSupport=1" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div>
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="stylemanager_TSSM" id="stylemanager_TSSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUINDUzNDQyMzAPZBYCAgEPZBYEAgcPD2QWAh4Fc3R5bGUFDWRpc3BsYXk6bm9uZTtkAgkPZBYCAhMPZBYCZg8PFgIeB1Zpc2libGVnZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFBUxvZ2lu4kME+ng4t0mPm5ZXgr965XGKdQ4=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=Cb_scAwohulWXJl1M-mx1DAcou5iPg2lFGzTree9dDVSJRHTAuE4ispY68uVB7l5LVcdEgGGNcVG1eFCJistV5dKRR41&amp;t=638250834012702229" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=da33dm0t0rnkGJoB4mTCMxDBHDMpuVu09W03oEUM0hV-Ar4ZZMURCvjjMHPug2SA9sdluzPdgXgIcSNh2tu00ZocoRnxz1ND4kJPGsAbyiGXDK-eU4t9GBRxabd1skWZSe23y2xHbtAlv2i7WLIvFHdW8Hg1&amp;t=3a32137b" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=uUkIpso6gfPBJXr7iOarpJxoz8MhuGBmnQ2yg1UcfzpzINZpmQIFRwJDuvgaqlo6qKZToUy9atZ6gBPddIwWMO67zbsHTEa46bF5EyQSLCCn28_R73jO6uB72h5dxYrWhZgShhrzeTkQjJzdqNlLnLJrivsLvry2QIBEGlCT1U21IWOr0&amp;t=3f4a792d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=AeghaK2xu2TGXu_sEoO4E7v-XGH3Ikhw1-mjVcBhbGPBYJw3utpdYvitRKFgMvhni4zxxrw0vXLDILeR0ZEHgdxGaDXBV11zo3OyxeX4imqme2WEJjNzwej_Mhn3-lJNDwehaVMqpiwxHXYsh8P6lYQ5WVGcG7utvfYrmcFZc60BHFQk0&amp;t=3f4a792d" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=VTGeL16WMmHUEXTp6ODFxqW53ru0qYEc5McGnGcL4TUyc8oF2Bq-6lCVYxukCmgVr9UaLIiJFep7V-oYn3S02umHdGlvn67Q6U0RlnjxLECihTRNnh7Bs3G6uaObXPGZbymU8bPXENh6cGaN4z-69UGn4VxoV8A7g6Cjy-3-zgwFDmjLYFLboLz_4k0OaeLMSJiPDg2" type="text/javascript"></script>
+<script src="/WebResource.axd?d=YFlNf4cOE1xB9hgxiMFTSXjSAbHO96PFPIOsGak6QuM--lBSiCB7qC_Ql24awee8hcYfXJ4FdgulRbvQt9g8t6ZfonM1&amp;t=638250834012702229" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAK+/6nhBALth83bBwKvruq2CALSxeCRDwLO9JqEDQL+jNCfDwLM1sHnCgK8lteMCgifz7K2tpwu6d8ahN4LuF/Ph/Zx" />
+</div>
+    
+   <input type="hidden" name="hdn_LoginValue" id="hdn_LoginValue" value="0" />
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+    
+    <div id="Login" class="RadFormDecorator" style="display:none;">
+	<!-- 2011.1.519.35 --><script type="text/javascript">
+//<![CDATA[
+if (typeof(WebForm_AutoFocus) != 'undefined')
+{
+	var old_WebForm_AutoFocus = WebForm_AutoFocus;
+	WebForm_AutoFocus = function(arg)
+	{
+		Sys.Application.add_load(function()
+		{
+			old_WebForm_AutoFocus(arg);
+			WebForm_AutoFocus = old_WebForm_AutoFocus;
+		});
+	}
+}
+if (typeof(Telerik) != 'undefined')
+{
+	if (Telerik.Web.UI.RadFormDecorator)
+	{
+		Telerik.Web.UI.RadFormDecorator.initializePage("Login", "", "NewSkin", 65535);
+	}
+}
+//]]>
+</script><input id="Login_ClientState" name="Login_ClientState" type="hidden" />
+</div>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container-fluid">
+                <div class="row">
+                     <div class="col-sm-1 col-md-1">
+                        <a class="logo">
+                            <img class="d-block mx-auto" src="Images/ts-logo.png" style="width: 90px; height: 86px;margin-top:4px;" />
+                        </a>
+                    </div>
+                    <div class="col-sm-3 col-md-3" style="padding-top: 3px;">
+                        <img class="d-block mx-auto" src="Images/TD-Name.png" style="width:300px;height: auto;" />
+                    </div>
+                    <div class="col-sm-2 col-md-2" style="padding-top: 3px;">
+                        <img class="d-block ml-auto" src="Images/TD-logo1.png" style="width:96px;height: auto;" />
+                    </div>
+                     <div class="col-sm-22 col-md-2" style="padding-top: 3px;">
+                        <img class="d-block ml-au3o" src="Images/Telangana1.jpeg" style="width:96px;height:90px;" />
+                    </div>
+                    <div class="ts-leaders col-sm-4 col-md-4 mx-0">
+                        <img class="float-right" src="Images/TG-leaders.png"/>
+                    </div>
+                    <div class="col-sm-12 navbtm">
+                        <ul class="nav justify-content-left">
+                        <li class="nav-item">
+                                <a class="nav-link" href="Login.aspx">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="AboutUs.aspx">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Scope.aspx">Scope</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link" href="Gallery.aspx">Gallery</a>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <form>
+            <div class="container-fluid">
+            <div class="row">
+                <a class="loginSlideBtn" href="#">Login</a>
+                <div id="LoginForm1" class="loginForm">
+                    
+                    <p class="login_IV">
+                        SECURE LOGIN</p>
+                    <table id="Login1" width="100%">
+                        <tr>
+                            <td class="title_loginbox">
+                                <label for="UserName" id="UserNameLabel" style="color:White;">Username</label>
+                            </td>
+                            <td>
+                                <input name="UserName" type="text" id="UserName" class="login_textfiled" style="width:100%;" />
+                                <span class="mandatory">
+                                    <span id="UserNameRequired" title="User Name is required." style="color:Red;visibility:hidden;">*</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title_loginbox">
+                                <label for="Password" id="PasswordLabel" style="color:White;">Password</label>
+                            </td>
+                            <td>
+                                
+                                <input name="Password" type="password" id="Password" class="login_pwd" style="width:100%;" />
+                                <input name="Password1" type="password" id="Password1" class="login_pwd" style="width:100%;display: none" />
+                                <span class="mandatory">
+                                    <span id="PasswordRequired" title="Password is required." style="color:Red;visibility:hidden;">*</span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="errorMsg" colspan="2" class="error_bhishakIV">
+                                <span id="FailureText" style="color:Red;"></span>
+                                
+                                <input type="submit" name="LoginButton" value="Log In" onclick="return GetEncrypt();" id="LoginButton" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title_loginbox" colspan="2">
+                                <div class="btnBox">
+                                    <a href="#" class="forgot">Forgot Your Password?</a>
+                                  
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="getPswdBox">
+                        <table id="PasswordRecovery1" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;">
+	<tr>
+		<td>
+                                <ul>
+                                    <li class="content_loginbox">
+                                        <p class="enterUserName">
+                                            Enter your User Name to receive your password.</p>
+                                    </li>
+                                    <li>
+                                        <div class="pwdResetBox">
+                                            <input name="PasswordRecovery1$UserNameContainerID$UserName" type="text" id="PasswordRecovery1_UserNameContainerID_UserName" class="pwd_reset" style="width:80%;" />
+                                            <span class="mandatory">
+                                                <span id="PasswordRecovery1_UserNameContainerID_UserNameRequired" title="User Name is required." style="color:Red;visibility:hidden;">*</span>
+                                            </span>
+                                        </div>
+                                        <input type="submit" name="PasswordRecovery1$UserNameContainerID$SubmitButton" value="Get Password" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;PasswordRecovery1$UserNameContainerID$SubmitButton&quot;, &quot;&quot;, true, &quot;PasswordRecovery1&quot;, &quot;&quot;, false, false))" id="PasswordRecovery1_UserNameContainerID_SubmitButton" />
+                                    </li>
+                                    <li style="color: #fbba3c;">
+                                        
+                                    </li>
+                                </ul>
+                            </td>
+	</tr>
+</table>
+                    </div>
+                </div>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <div class="loginBg">
+                                <!--<img src="images/banner-img.jpg" alt="Telangana Diagnostics">-->
+                                
+                                  <div class="carouselSlide">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+                                      
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                          <img class="d-block w-100" src="images/Banner16.jpg" alt="First slide">
+                                        </div>
+
+                                        <!-- <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner6.jpg" alt="First slide">
+                                        </div>
+
+                                         <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner8.jpg" alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner9.jpg" alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner10.jpg" alt="Third slide">
+                                        </div>
+                                        
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner11.jpg" alt="Third slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner12.jpg" alt="Third slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner13.jpg" alt="Third slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                          <img class="d-block w-100" src="images/Banner14.jpg" alt="Third slide">
+                                        </div>-->
+                                       
+                                      </div>
+                                      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <img src="images/cs-arrow-left.png" />
+                                      </a>
+                                      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <img src="images/cs-arrow-right.png" />
+                                      </a>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="loginBanner" style="display: none">
+                                    <ul>
+                                        <li><span><i class="fa fa-user" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesCollected"></span></b> No. Of Samples Collected</strong>
+                                            
+                                        </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesReceived"></span></b> No. Of Samples Received at Central lab</strong> </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesDamaged"></span></b> No. Of Samples Damaged</strong> </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesProcessed"></span></b> No. Of Samples Processed</strong> </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesReportsGenerated"></span></b> No. Of Samples Reports Generated</strong> </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofSamplesNotYetProcessed"></span></b> No. Of Samples Not Yet Processed</strong> </li>
+                                        <li><span><i class="fa fa-check-circle" aria-hidden="true"></i></span><strong><b>
+                                            <span id="lbl_NoofFacilities"></span></b> No. Of PHC/UPH's onboard</strong> </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                        <td colspan="0" class="loginCol" valign="top" style="padding-left: 15px;">
+                            <table>
+                                <tr>
+                                    <td align="left">
+                                        <!--<strong style="display:block;text-transform: uppercase;color:#fff;border-bottom: 1px solid #fff;">Latest Updates</strong>-->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        
+                                        <!--<marquee style="color:#fff;height:400px;margin-top:10px;" scrollamount="2" direction="up" loop="true"><p>A scrolling text created with HTML Marquee element.</p><p>A scrolling text created with HTML Marquee element.</p><p>A scrolling text created with HTML Marquee element.</p><p>A scrolling text created with HTML Marquee element.</p><p>A scrolling text created with HTML Marquee element.</p><p>A scrolling text created with HTML Marquee element.</p></marquee>-->
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+            </form>
+        </div>
+        <div class="footer py-2">
+            <div class="container-fluid">
+                <div class="col-sm-12 pt-2"><span class="float-left pb-2">All Copy Rights Reserved by Commissioner, Health & Family Welfare Department, Government of Telangana &copy; 2018 &nbsp &nbsp &nbsp   <a  href="PrivacyPolicy.aspx"><strong>Privacy Policy</strong></a> </span> <span class="float-right pb-2">Developed by <a target="_blank" href="http://www.ntc-us.com/"><strong>Neumeric Technologies</strong></a></span></div>
+                <div class="clearfix"></div>
+                <div class="col-sm-12 mt-1 pt-1 border-top" >
+                    <p>This is the main portal  for Telangana Diagnostics Program administered by <b style="color:aqua;">Commissioner, Health & Family Welfare Department, Government of Telangana</b>. This portal provides a single window access to all citizen services related information under Telangana Diagnostics Program and related information. This portal is designed, deployed and maintained in collaboration with <b style="color:aqua;">ITE&C Department, Government of Telangana</b>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("UserNameRequired"), document.getElementById("PasswordRequired"), document.getElementById("PasswordRecovery1_UserNameContainerID_UserNameRequired"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var UserNameRequired = document.all ? document.all["UserNameRequired"] : document.getElementById("UserNameRequired");
+UserNameRequired.controltovalidate = "UserName";
+UserNameRequired.errormessage = "User Name is required.";
+UserNameRequired.validationGroup = "Login1";
+UserNameRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+UserNameRequired.initialvalue = "";
+var PasswordRequired = document.all ? document.all["PasswordRequired"] : document.getElementById("PasswordRequired");
+PasswordRequired.controltovalidate = "Password";
+PasswordRequired.errormessage = "Password is required.";
+PasswordRequired.validationGroup = "Login1";
+PasswordRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PasswordRequired.initialvalue = "";
+var PasswordRecovery1_UserNameContainerID_UserNameRequired = document.all ? document.all["PasswordRecovery1_UserNameContainerID_UserNameRequired"] : document.getElementById("PasswordRecovery1_UserNameContainerID_UserNameRequired");
+PasswordRecovery1_UserNameContainerID_UserNameRequired.controltovalidate = "PasswordRecovery1_UserNameContainerID_UserName";
+PasswordRecovery1_UserNameContainerID_UserNameRequired.errormessage = "User Name is required.";
+PasswordRecovery1_UserNameContainerID_UserNameRequired.validationGroup = "PasswordRecovery1";
+PasswordRecovery1_UserNameContainerID_UserNameRequired.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+PasswordRecovery1_UserNameContainerID_UserNameRequired.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        ;(function() {
+                        function loadHandler() {
+                            var hf = $get('stylemanager_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Ntc.Emr.Common.HimsIndiaSkin:en-US:bf06c00c-bc11-45b4-861a-413326da7631:d9a1adf3;Telerik.Web.UI, Version=2011.1.519.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:e7f771a0-3dfe-454b-b8df-735a93f806f5:ef4a543';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();WebForm_AutoFocus('UserName');Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadFormDecorator, {"clientStateFieldID":"Login_ClientState","decoratedControls":65535,"enableRoundedCorners":false,"enabled":true,"skin":"NewSkin"}, null, null, $get("Login"));
+});
+
+document.getElementById('UserNameRequired').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('UserNameRequired'));
+}
+
+document.getElementById('PasswordRequired').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PasswordRequired'));
+}
+
+document.getElementById('PasswordRecovery1_UserNameContainerID_UserNameRequired').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('PasswordRecovery1_UserNameContainerID_UserNameRequired'));
+}
+//]]>
+</script>
+</form>
+    
+</body>
+ 
+</html>

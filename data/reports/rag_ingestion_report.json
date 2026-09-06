@@ -1,0 +1,446 @@
+{
+  "ingestion_timestamp": "2026-08-27T10:38:39.994501+00:00",
+  "source_directory": "C:\\Users\\CHIKITHA\\OneDrive\\SchemeIQ-Plus\\data\\processed\\documents",
+  "documents_expected": 16,
+  "documents_loaded": 16,
+  "scheme_coverage_expected": 14,
+  "scheme_coverage_indexed": 14,
+  "total_chunks_created": 166,
+  "total_chunks_embedded": 0,
+  "total_chunks_skipped": 166,
+  "total_empty_chunks_rejected": 0,
+  "duplicate_chunk_ids": 0,
+  "failed_chunks": 0,
+  "vector_store": {
+    "provider": "ChromaDB",
+    "collection_name": "schemeiq_official_schemes",
+    "persist_directory": "C:\\Users\\CHIKITHA\\OneDrive\\SchemeIQ-Plus\\data\\vector_store\\chroma_db",
+    "total_stored_vectors": 166
+  },
+  "embedding": {
+    "provider": "sentence-transformers",
+    "model": "all-MiniLM-L6-v2",
+    "dimension": 384
+  },
+  "integrity_status": "PASS",
+  "per_document_chunks": {
+    "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.txt": 7,
+    "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.txt": 11,
+    "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.txt": 13,
+    "CT003_22_PMAY_U_20_Interest_Subsidy_Scheme_ISS_and_BLC_Oper.txt": 6,
+    "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.txt": 26,
+    "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.txt": 57,
+    "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.txt": 15,
+    "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.txt": 11,
+    "TS001_30_Rythu_Bharosa.txt": 3,
+    "TS002_30_Rythu_Bima.txt": 2,
+    "TS003_06_Telangana_Government_Initiatives_Rajiv_Aarogyasri_.txt": 7,
+    "TS004_30_Maha_Lakshmi.txt": 1,
+    "TS005_09_GO_Ms_No_17_PRRD_Dept_Comprehensive_Guidelines_for.txt": 1,
+    "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.txt": 2,
+    "TS007_13_Maternal_and_Child_Health_MCHKCR_Kit_Program_Guide.txt": 2,
+    "TS008_35_Telangana_Diagnostics_Official_Government_Subdomai.txt": 2
+  },
+  "per_scheme_chunks": {
+    "CT001": 7,
+    "CT002": 11,
+    "CT003": 19,
+    "CT004": 83,
+    "CT005": 15,
+    "CT006": 11,
+    "TS001": 3,
+    "TS002": 2,
+    "TS003": 7,
+    "TS004": 1,
+    "TS005": 1,
+    "TS006": 2,
+    "TS007": 2,
+    "TS008": 2
+  },
+  "smoke_tests": [
+    {
+      "query_id": 1,
+      "query_text": "Who is eligible for Rythu Bharosa?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "TS001_TS001_30_000_76a455a2",
+          "similarity_score": 0.5696,
+          "distance": 0.4304,
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "source_filename": "TS001_30_Rythu_Bharosa.html",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_authority": "Rythu Bharosa – Department of Agriculture, Government of Telangana",
+          "document_title": "Rythu Bharosa",
+          "text_preview": "Rythu Bharosa - Telangana Join our WhatsApp Channel × Sri A Revanth Reddy Hon’ble Chief Minister Rythu Bharosa Department of Agriculture Government of Telang...",
+          "text": "Rythu Bharosa - Telangana\nJoin our WhatsApp Channel\n×\nSri A Revanth Reddy\nHon’ble Chief Minister\nRythu Bharosa\nDepartment of Agriculture\nGovernment of Telangana\nSri Thummala Nageswara Rao\nHon'ble Minister for Agriculture\nLogin\nLogin\n×\nLogin\nUser Name:\nPassword:\nCaptcha:\nLatest News :\nWelcome to Rythu Bharosa | Welcome to Rythu Bharosa\nRythu Bharosa"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "TS001_TS001_30_001_a0cf21bf",
+          "similarity_score": 0.5318,
+          "distance": 0.4682,
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "source_filename": "TS001_30_Rythu_Bharosa.html",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_authority": "Rythu Bharosa – Department of Agriculture, Government of Telangana",
+          "document_title": "Rythu Bharosa",
+          "text_preview": "× Login User Name: Password: Captcha: Latest News : Welcome to Rythu Bharosa | Welcome to Rythu Bharosa Rythu Bharosa The Government of Telangana launched th...",
+          "text": "×\nLogin\nUser Name:\nPassword:\nCaptcha:\nLatest News :\nWelcome to Rythu Bharosa | Welcome to Rythu Bharosa\nRythu Bharosa\nThe Government of Telangana launched the Rythu Bharosa Scheme to provide comprehensive support to the agricultural community, ensuring farmers receive timely financial assistance for their needs. This initiative focuses on offering financial aid and access to agricultural resources to empower farmers and improve productivity. The scheme complements other farmer-friendly policies like Crop Loan Waiver and aims to provide working capital to the farmers at the beginning of each crop cycle. By integrating various welfare measures, Rythu Bharosa seeks to enhance the socio-economic conditions of farmers and boost the overall agricultural sector in Telangana, reflecting the government's commitment to rural development and farmer welfare."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "TS002_TS002_30_000_a9ab3a8f",
+          "similarity_score": 0.4895,
+          "distance": 0.5105,
+          "scheme_id": "TS002",
+          "scheme_name": "Rythu Bhima",
+          "source_filename": "TS002_30_Rythu_Bima.html",
+          "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+          "source_authority": "Telangana State Government – Mahabubabad District",
+          "document_title": "Rythu Bima",
+          "text_preview": "RYTHU BIMA | District Mahabubabad, Government of Telangana | India Home SchemesRYTHU BIMA X RYTHU BIMA Date : 14/08/2018 - | Sector: AGRICULTURE RYTHU BIMA T...",
+          "text": "RYTHU BIMA | District Mahabubabad, Government of Telangana | India\nHome SchemesRYTHU BIMA\nX\nRYTHU BIMA\nDate : 14/08/2018 -\n|\nSector: AGRICULTURE\nRYTHU BIMA\nThe Government of Telangana have introduced prestigious Scheme of “ Rythu Bandhu Farmer Group Life  Insurance Scheme for Farmers” for the welfare of farming community in the state from 14.08.2018.\nObjective:"
+        }
+      ]
+    },
+    {
+      "query_id": 2,
+      "query_text": "What health coverage is provided under Ayushman Bharat PM-JAY?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT002_CT002_30_000_9a64933b",
+          "similarity_score": 0.7647,
+          "distance": 0.2353,
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "source_authority": "Press Information Bureau, Government of India / Union Cabinet",
+          "document_title": "Cabinet approves health coverage to all senior citizens aged 70 years and above under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+          "text_preview": "Press Release Page | Press Information Bureau Cabinet Cabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of i...",
+          "text": "Press Release Page | Press Information Bureau\nCabinet\nCabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)\n4.5 crore families to be benefitted\nPosted On:\n11 SEP 2024 8:08PM by PIB Delhi\nThe Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved the health coverage to all the senior citizens aged 70 years and above irrespective of income under the flagship scheme Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY).\nThis aims to benefit approximately 4.5 Crore families with six (6) crore senior citizens with 5 Lakh rupees free health insurance cover on a family basis."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT002_CT002_30_005_b39cf31c",
+          "similarity_score": 0.7286,
+          "distance": 0.2714,
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "source_authority": "Press Information Bureau, Government of India / Union Cabinet",
+          "document_title": "Cabinet approves health coverage to all senior citizens aged 70 years and above under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+          "text_preview": "***** MJPS/BM (Release ID: 2053881) Visitor Counter : 58763 Read this release in: Assamese , Bengali , Khasi , Urdu , Marathi , हिन्दी , Manipuri , Bengali-T...",
+          "text": "*****\nMJPS/BM\n(Release ID: 2053881)\nVisitor Counter : 58763\nRead this release in:\nAssamese\n,\nBengali\n,\nKhasi\n,\nUrdu\n,\nMarathi\n,\nहिन्दी\n,\nManipuri\n,\nBengali-TR\n,\nPunjabi\n,\nGujarati\n,\nOdia\n,\nTamil\n,\nTelugu\n,\nKannada\n,\nMalayalam\nCabinet\nCabinet approves health coverage to all senior citizens of the age 70 years and above irrespective of income under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)\n4.5 crore families to be benefitted\nPosted On:\n11 SEP 2024 8:08PM by PIB Delhi\nThe Union Cabinet, chaired by the Prime Minister Shri Narendra Modi, has approved the health coverage to all the senior citizens aged 70 years and above irrespective of income under the flagship scheme Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT002_CT002_30_004_dc5251a2",
+          "similarity_score": 0.6702,
+          "distance": 0.3298,
+          "scheme_id": "CT002",
+          "scheme_name": "Ayushman Bharat PM-JAY",
+          "source_filename": "CT002_30_Cabinet_approves_health_coverage_to_all_senior_cit.html",
+          "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+          "source_authority": "Press Information Bureau, Government of India / Union Cabinet",
+          "document_title": "Cabinet approves health coverage to all senior citizens aged 70 years and above under Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+          "text_preview": "The  AB PM-JAY  scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the bottom ...",
+          "text": "The  AB PM-JAY  scheme has witnessed continuous expansion of the beneficiary base. Initially, 10.74 crore poor and vulnerable families comprising the bottom 40% of India’s population were covered under the scheme. Later, the Government of India, in January 2022 revised the beneficiary base under AB PM-JAY from 10.74 crore to 12 crore families considering India’s decadal population growth of 11.7 % over 2011 population. The scheme was further expanded to cover 37 lakh ASHAs/AWWs/AWHs working across the country and their families for free healthcare benefits.  Taking the mission ahead, AB PM-JAY would now provide free healthcare coverage of Rs 5 lakh to  all citizens of the age-group of 70 years and above across the country.\n*****\nMJPS/BM\n(Release ID: 2053881)\nVisitor Counter : 58763"
+        }
+      ]
+    },
+    {
+      "query_id": 3,
+      "query_text": "What is the maximum project cost under PMEGP?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+          "similarity_score": 0.5961,
+          "distance": 0.4039,
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.html",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_authority": "District Industries Centre (DIC) / Department of Industries and Commerce, Government of Telangana",
+          "document_title": "Prime Minister's Employment Generation Programme (PMEGP) Guidelines and DIC Operational Framework",
+          "text_preview": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP): A Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an opport...",
+          "text": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP):\nA Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an opportunity for unemployed youth to set up New Industrial Units in Rural & Urban areas of Telangana State by inviting the applications through online website Link: www.kviconline.gov.in (or) PMEGP e-portal.\nThe permissible maximum cost of the Project/Unit:\nManufacturing Sector\n::\nRs.50.00 Lakhs\nService Sector\n::\nRs.20.00 Lakhs\nDetails of Margin Money (Subsidy):\nCategories of Beneficiaries\nBeneficiary’s Contribution\n(of Project Cost)\nBank Loan\nRate of Subsidy (of Project Cost)\nUrban\nRural\nGeneral\n10%\n90%\n15%\n25%\nWomen/SC/ST/BC/ Minority/PHC/ Ex-Servicemen\n5%\n95%\n25%\n35%\nEligibility Criteria:\nAny individual, above 18 Years\nNo Income Ceiling"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT003_CT003_21_001_30d616dd",
+          "similarity_score": 0.5129,
+          "distance": 0.4871,
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_authority": "Ministry of Housing and Urban Affairs (MoHUA) GoI",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "text_preview": "the urban areas. The Government assistance under PMAY-U 2.0 will be upto 2.50 lakh per unit. In pursuance of the Hon’ble Prime Minister’s vision, PMAY-U 2.0,...",
+          "text": "the urban areas. The Government assistance under PMAY-U 2.0 will be upto 2.50 lakh per unit.\nIn pursuance of the Hon’ble Prime Minister’s vision, PMAY-U 2.0, with an investment of ₹ 10\nlakh crore, will address the housing needs of one crore families, ensuring that every\ncitizen leads a better quality of life. The central assistance of 2.50 lakh crore ₹ will be\nprovided under the Scheme.\nThe contours of PMAY-U 2.0 have been designed on the basis of learnings of PMAY-U scheme,\nglobal best practices/ benchmarks and outcomes of series of consultations with multiple\nstakeholders including States/UTs, Banks, Housing Finance Companies, Private Sector etc.\nBeneficiary Led Construction (BLC)\nBeneficiary Led Construction (BLC)"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT005_CT005_30_010_58fb7900",
+          "similarity_score": 0.4979,
+          "distance": 0.5021,
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.html",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_authority": "District Industries Centre (DIC) / Department of Industries and Commerce, Government of Telangana",
+          "document_title": "Prime Minister's Employment Generation Programme (PMEGP) Guidelines and DIC Operational Framework",
+          "text_preview": "5% 95% 25% 35% Eligibility Criteria: Any individual, above 18 Years No Income Ceiling For New Projects/units only Existing Units and the units that have alre...",
+          "text": "5%\n95%\n25%\n35%\nEligibility Criteria:\nAny individual, above 18 Years\nNo Income Ceiling\nFor New Projects/units only\nExisting Units and the units that have already availed Govt. Subsidy under any other scheme of Govt. of India or State Govt. is Not\nEducational Qualifications: 8th Class pass for setting up of Project cost above Rs.10 Lakhs in the Manufacturing Sector and above Rs. 5 Lakhs in the Service Sector.\nTARGET ALLOCATION AND ACHIEVEMENTS:\n1. TS IPASS:"
+        }
+      ]
+    },
+    {
+      "query_id": 4,
+      "query_text": "What subsidy is available under PMEGP?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT005_CT005_30_009_8cadcfaa",
+          "similarity_score": 0.6292,
+          "distance": 0.3708,
+          "scheme_id": "CT005",
+          "scheme_name": "PMEGP",
+          "source_filename": "CT005_30_Prime_Ministers_Employment_Generation_Programme_PM.html",
+          "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+          "source_authority": "District Industries Centre (DIC) / Department of Industries and Commerce, Government of Telangana",
+          "document_title": "Prime Minister's Employment Generation Programme (PMEGP) Guidelines and DIC Operational Framework",
+          "text_preview": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP): A Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an opport...",
+          "text": "PRIME MINISTER’S EMPLOYMENT GENERATION PROGRAMME (PMEGP):\nA Centrally sponsored scheme, Prime Minister’s Employment Generation Programme (PMEGP) is an opportunity for unemployed youth to set up New Industrial Units in Rural & Urban areas of Telangana State by inviting the applications through online website Link: www.kviconline.gov.in (or) PMEGP e-portal.\nThe permissible maximum cost of the Project/Unit:\nManufacturing Sector\n::\nRs.50.00 Lakhs\nService Sector\n::\nRs.20.00 Lakhs\nDetails of Margin Money (Subsidy):\nCategories of Beneficiaries\nBeneficiary’s Contribution\n(of Project Cost)\nBank Loan\nRate of Subsidy (of Project Cost)\nUrban\nRural\nGeneral\n10%\n90%\n15%\n25%\nWomen/SC/ST/BC/ Minority/PHC/ Ex-Servicemen\n5%\n95%\n25%\n35%\nEligibility Criteria:\nAny individual, above 18 Years\nNo Income Ceiling"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT004_CT004_24_028_024f2f52",
+          "similarity_score": 0.6213,
+          "distance": 0.3787,
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.html",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_authority": "Department of Financial Services Ministry of Finance GoI",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "text_preview": "२० लाख से कम होनी चाहिए। 19.IS THERE ANY SUBSIDY UNDER PMMY? IF SO, DETAILS THEREOF? १९. मुद्रा ऋण लेने के लिए व्यक्तियों की पात्रता क्या है? There is no sub...",
+          "text": "२० लाख से कम होनी चाहिए।\n19.IS THERE ANY SUBSIDY UNDER PMMY? IF SO, DETAILS THEREOF?\n१९. मुद्रा ऋण लेने के लिए व्यक्तियों की पात्रता क्या है?\nThere is no subsidy for the loan given under PMMY. However, if the loan proposal is linked to some Government scheme, wherein the Govt. if providing capital subsidy, it will be eligible under PMMY also\nभारत का कोई भी नागरिक जिसकी गैर-कृषि क्षेत्र की आय-अर्जक गतिविधि जैसे विनिर्माण, प्रसंस्करण, व्यापार अथवा सेवा क्षेत्र के वाली व्यवसाय योजना हो और जिसकी ऋण-आवश्यकता"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT003_CT003_21_003_4bb166e0",
+          "similarity_score": 0.5329,
+          "distance": 0.4671,
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_authority": "Ministry of Housing and Urban Affairs (MoHUA) GoI",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "text_preview": "to the Eligibility beneficiaries of EWS category Affordable Rental Housing (ARH) ARH will promote creation of adequate rental housing for EWS/LIG beneficiari...",
+          "text": "to the Eligibility beneficiaries of EWS category\nAffordable Rental Housing (ARH)\nARH will promote creation of adequate rental housing for EWS/LIG beneficiaries including\nurban migrants/ homeless/ destitute/ industrial workers/ working women/ construction\nworkers/, urban poor (street vendors, rickshaw pullers, other service providers etc.),\nmigrants working with market/ trade associations, educational/ health institutions,\nhospitality sector, / contractual employees/ amongst others.\nInterest Subsidy Scheme (ISS)\nUnder the Interest Subsidy Scheme (ISS) vertical of PMAY-U 2.0, the subsidy will be provided\non home loans sanctioned and disbursed on 01.09.2024 or after to Eligibility beneficiaries\nof EWS/LIG and MIG for purchase/ repurchase/construction of houses. Households belonging to"
+        }
+      ]
+    },
+    {
+      "query_id": 5,
+      "query_text": "What are the loan categories under MUDRA?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT004_CT004_24_016_fe1eb758",
+          "similarity_score": 0.732,
+          "distance": 0.268,
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.html",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_authority": "Department of Financial Services Ministry of Finance GoI",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "text_preview": "MUDRA loans are available in three categories. For small business, loans upto 50,000/- is available under the 'Shishu' category and beyond 50,000/- and upto ...",
+          "text": "MUDRA loans are available in three categories. For small business, loans upto\n50,000/- is available under the 'Shishu' category and beyond\n50,000/- and upto `5 lakh under the 'Kishor' category. It also offers loans beyond\n5 lakh and upto\n10 lakh under the Tarun category and beyond\n10 lakh and upto `20 lakh under the Tarun Plus category (for those entrepreneurs who have availed and successfully repaid previous loans under the ‘Tarun’ category). Depending on the nature of business and project requirement you can access finance from one of the intermediaries of MUDRA as per the norms.\nमुद्रा ऋण चार श्रेणियों में उपलब्ध है। 'शिशु' श्रेणी के अंतर्गत\n५०,००० तक के छोटे ऋण तथा 'किशोर' श्रेणी के अंतर्गत\n५०,००० से अधिक और\n५ लाख तक के ऋण उपलब्ध कराता है। 'तरुण' श्रेणी के अंतर्गत यह\n५ लाख से अधिक और"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT004_CT004_23_005_423c1410",
+          "similarity_score": 0.7128,
+          "distance": 0.2872,
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "source_filename": "CT004_23_Pradhan_Mantri_MUDRA_Yojana_PMMY_Master_Scheme_Gui.html",
+          "official_url": "https://www.mudra.org.in/Offerings",
+          "source_authority": "Micro Units Development & Refinance Agency (MUDRA) GoI",
+          "document_title": "Pradhan Mantri MUDRA Yojana (PMMY) Master Scheme Guidelines & Product Offerings",
+          "text_preview": "Purpose of MUDRA loan Mudra loan is extended for a variety of purposes which result in income generation and employment creation. The loans are extended main...",
+          "text": "Purpose of MUDRA loan\nMudra loan is extended for a variety of purposes which result in income generation and employment creation. The loans are extended mainly for:\nBusiness loan for Vendors, Traders, Shopkeepers and other Service Sector activities\nWorking capital loan through MUDRA Cards\nEquipment Finance for Micro Units\nTransport Vehicle loans for commercial use only\nLoans for agri-allied non-farm income generating activities, e.g. pisciculture. bee keeping, poultry farming, etc.\nTractors, tillers as well as two wheelers used for commercial purposes only.\nFollowing is an illustrative list of the activities that can be covered under MUDRA loans:\n1) Transport Vehicle"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT004_CT004_24_014_b33e0f13",
+          "similarity_score": 0.6759,
+          "distance": 0.3241,
+          "scheme_id": "CT004",
+          "scheme_name": "Pradhan Mantri Mudra Yojana",
+          "source_filename": "CT004_24_MUDRA_Loan_FAQs_and_Lending_Institution_Directory.html",
+          "official_url": "https://www.mudra.org.in/FAQ",
+          "source_authority": "Department of Financial Services Ministry of Finance GoI",
+          "document_title": "MUDRA Loan FAQs and Lending Institution Directory",
+          "text_preview": "८. मेरा कागज़ के सामान का एक छोटा-सा व्यवसाय है। क्या मुद्रा मेरी सहायता कर सकता है? MUDRA loan is available through Banks/NBFCs/MFIs for such activities. Al...",
+          "text": "८. मेरा कागज़ के सामान का एक छोटा-सा व्यवसाय है। क्या मुद्रा मेरी सहायता कर सकता है?\nMUDRA loan is available through Banks/NBFCs/MFIs for such activities. All kind of manufacturing, trading and service sector activities can get MUDRA loan. Loans are categorised into Shishu, Kishor Tarun and Tarun Plus. These products have been designed to cater to customers operating at the lower end of the enterprise spectrum. The loans will be extended through MFIs, NBFCs, Banks, etc."
+        }
+      ]
+    },
+    {
+      "query_id": 6,
+      "query_text": "Who can apply for Telangana ePASS scholarships?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "TS006_TS006_12_000_1fc0bb29",
+          "similarity_score": 0.7097,
+          "distance": 0.2903,
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.html",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "source_authority": "SC ST BC Minority & Disabled Welfare Departments Telangana",
+          "document_title": "Telangana Electronic Payment and Application System of Scholarships Portal",
+          "text_preview": "Welcome Menu About Us Scholarships Schemes & Policies Link Contact Us Awards RTI Manual Telangana Rising-2047 Official Login Dashboard Login A+ A A- A A Kaly...",
+          "text": "Welcome\nMenu\nAbout Us\nScholarships\nSchemes & Policies\nLink\nContact Us\nAwards\nRTI Manual\nTelangana Rising-2047\nOfficial Login\nDashboard Login\nA+\nA\nA-\nA\nA\nKalyana Lakshmi,\nScheme for SC, ST,BC\nand EBC\nScholarships\nOffered\nWho are\nEligible?\nCourses Eligible?\nColleges\nEligible\nFee\nStructure\nTime\nLine\nReasons for Rejection\nFAQs\n/ Instructions\nNPCI Request for Aadhaar Seeding of SC Application https://www.npci.org.in/\nand\nClick Here for Procedure\nFlash News\nFor Bio-Metric Aadhar Authentication Please visit your nearest Mee Seva Centre Along With Your Application Id.\nFor BC and EBC Students, Register Your Grievances Online.\nIndia Postal payment bank account number is accepted along with Nationalized bank in scholarships application.\nReports\nKnow Your Application No.\nBank Remittance Details"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "TS006_TS006_12_001_769be378",
+          "similarity_score": 0.6931,
+          "distance": 0.3069,
+          "scheme_id": "TS006",
+          "scheme_name": "Telangana ePASS Scholarships",
+          "source_filename": "TS006_12_Telangana_Electronic_Payment_and_Application_Syste.html",
+          "official_url": "https://telanganaepass.cgg.gov.in/",
+          "source_authority": "SC ST BC Minority & Disabled Welfare Departments Telangana",
+          "document_title": "Telangana Electronic Payment and Application System of Scholarships Portal",
+          "text_preview": "Reports Know Your Application No. Bank Remittance Details Scholarship Trans ID Details Grievances Redressal Feedback Post Matric Scholarship Services Pre Mat...",
+          "text": "Reports\nKnow Your Application No.\nBank Remittance Details\nScholarship Trans ID Details\nGrievances Redressal\nFeedback\nPost Matric\nScholarship Services\nPre Matric\nScholarship Services\nCorporateAdmissions\nOverseas Scholarship Services\nSkill Upgradation(GRE,GMAT,TOEFL,IELTS)\nKalyana Lakshmi\nShaadi Mubarak\nMarriage\nIncentive Awards\nAdvocates Stipend\nContact Us\nFor Postmatric Technical Issues  :  040-23120311\n(Calls answered between 10:30 A.M to 5 P.M on Working Days)\nNational Portal Links\nNational Scholarship Portal\nNational Portal\nRelated Web Sites\nTG-SCCFC\nScheduled Castes Hostel\nMonitoring System\nTelangana State Portal\nDesigned and Developed by CGG. Content owned, maintained and updated by Social Welfare Department, Government of Telangana."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "TS001_TS001_30_002_6ead2d2e",
+          "similarity_score": 0.5232,
+          "distance": 0.4768,
+          "scheme_id": "TS001",
+          "scheme_name": "Rythu Bharosa",
+          "source_filename": "TS001_30_Rythu_Bharosa.html",
+          "official_url": "https://rythubharosa.telangana.gov.in/",
+          "source_authority": "Rythu Bharosa – Department of Agriculture, Government of Telangana",
+          "document_title": "Rythu Bharosa",
+          "text_preview": "Visitors Count : 3,61,53,185 Copyright © All rights reserved with Agricultire Department Govt. of Telangana. © Design & Developed By National Informatics Centre",
+          "text": "Visitors Count :\n3,61,53,185\nCopyright © All rights reserved with Agricultire Department\nGovt. of Telangana.\n© Design & Developed By National Informatics Centre"
+        }
+      ]
+    },
+    {
+      "query_id": 7,
+      "query_text": "What benefits are provided under the MCH Kit Scheme?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT003_CT003_21_009_ebb6c7f9",
+          "similarity_score": 0.4087,
+          "distance": 0.5913,
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_authority": "Ministry of Housing and Urban Affairs (MoHUA) GoI",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca hou...",
+          "text": "What is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nWhat is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nFacilitating Citizens for demand survey\nAwareness Camps on PMAY-U 2.0:"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT003_CT003_21_007_c8c2e53f",
+          "similarity_score": 0.4074,
+          "distance": 0.5926,
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_authority": "Ministry of Housing and Urban Affairs (MoHUA) GoI",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca hou...",
+          "text": "What is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nWhat is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nWhat is the eligibility criteria for seeking benefit under the scheme?"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT003_CT003_21_008_c8c2e53f",
+          "similarity_score": 0.4074,
+          "distance": 0.5926,
+          "scheme_id": "CT003",
+          "scheme_name": "PMAY-U 2.0",
+          "source_filename": "CT003_21_Pradhan_Mantri_Awas_Yojana_Urban_20_PMAY_U_20_Sche.html",
+          "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+          "source_authority": "Ministry of Housing and Urban Affairs (MoHUA) GoI",
+          "document_title": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) Scheme Guidelines: Housing for All",
+          "text_preview": "What is the eligibility criteria for seeking benefit under the scheme? Families belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca hou...",
+          "text": "What is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nWhat is the eligibility criteria for seeking benefit under the scheme?\nFamilies belonging to EWS/LIG/MIG segments, living in urban areas, having no pucca house either in his / her name or in the name of any member of his / her family anywhere in the country are eligible to purchase/construct or rent a house under PMAY-U 2.0.\nWhat is the eligibility criteria for seeking benefit under the scheme?"
+        }
+      ]
+    },
+    {
+      "query_id": 8,
+      "query_text": "What pension is available under Aasara?",
+      "top_matches": [
+        {
+          "rank": 1,
+          "chunk_id": "CT001_CT001_18_006_97195e92",
+          "similarity_score": 0.522,
+          "distance": 0.478,
+          "scheme_id": "CT001",
+          "scheme_name": "PM-KISAN",
+          "source_filename": "CT001_18_PM_KISAN_Portal_and_Mandatory_eKYC_Exclusion_Norms.html",
+          "official_url": "https://pmkisan.gov.in/",
+          "source_authority": "Ministry of Agriculture & Farmers Welfare Government of India",
+          "document_title": "PM-KISAN Portal and Mandatory eKYC / Exclusion Norms Directory",
+          "text_preview": "(Excluding Multi Tasking Staff /Class IV/Group D employees) All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more (Excluding Multi...",
+          "text": "(Excluding Multi Tasking Staff /Class IV/Group D employees)\nAll superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more\n(Excluding Multi Tasking Staff / Class IV/Group D employees) of above category\nAll Persons who paid Income Tax in last assessment year\nProfessionals like Doctors, Engineers, Lawyers, Chartered Accountants, and Architects registered with Professional bodies and carrying out profession by undertaking practices.\nBharati"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "CT006_CT006_27_003_ac7f7ecb",
+          "similarity_score": 0.518,
+          "distance": 0.482,
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+          "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+          "source_authority": "Pension Fund Regulatory and Development Authority (PFRDA)",
+          "document_title": "Atal Pension Yojana (APY) Master Circular & Operational Guidelines",
+          "text_preview": "Gallery Image Gallery Video Gallery Publicity Material Contest Hackathon Financial Literacy Pension Sanchay Subscriber Education Retirement Planner Scheme Tr...",
+          "text": "Gallery\nImage Gallery Video Gallery Publicity Material\nContest Hackathon\nFinancial Literacy\nPension Sanchay Subscriber Education Retirement Planner Scheme Trainings NPS PRIDE - DISHA\nGrievance\nAbout Grievance Pension Sahayak - Lodge Grievance Track Grievance\nAtal Pension Yojana (APY)\nAtal Pension Yojana (APY) Overview\nThe Government of India has introduced a pension scheme called the Atal Pension Yojana (APY), with effect from 1st June, 2015, pursuant to the announcement in the budget for 2015-16 on creating a universal social security system for all Indians, especially the poor, the under-privileged and the workers in the unorganised sector.\nEligibility & Administration\nAPY is available to all Indian citizens with savings bank account in banks or Department of Posts."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "CT006_CT006_27_002_1baaf0d8",
+          "similarity_score": 0.4871,
+          "distance": 0.5129,
+          "scheme_id": "CT006",
+          "scheme_name": "Atal Pension Yojana",
+          "source_filename": "CT006_27_Atal_Pension_Yojana_APY_Master_Circular_Operationa.html",
+          "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+          "source_authority": "Pension Fund Regulatory and Development Authority (PFRDA)",
+          "document_title": "Atal Pension Yojana (APY) Master Circular & Operational Guidelines",
+          "text_preview": "NPS Non-Government Sector About NPS All Citizen Model Superannuation Funds Corporate NPS Lite NPS Vatsalya Unified Pension Scheme (UPS) Atal Pension Yojana (...",
+          "text": "NPS Non-Government Sector\nAbout NPS All Citizen Model Superannuation Funds Corporate NPS Lite\nNPS Vatsalya Unified Pension Scheme (UPS) Atal Pension Yojana (APY)\nIntermediaries\nRegistered Intermediaries\nNPS Trust Central Recordkeeping Agency Pension Funds Trustee Bank Custodian Point of Presence Retirement Advisors\nEmpaneled Entities\nAnnuity Service Provider\nResearch\nPension Bulletin\nStatistics\nHandbook Statistical Data\nResearch\nDevelopment Research Group External Data Request\nConsultation Papers Working Papers Research & Publications Annual Reports Newsletters IRCP\nMedia\nPress Releases\nChairperson's Interviews\nChairperson's Video Chairperson's Speeches\nGallery\nImage Gallery Video Gallery Publicity Material\nContest Hackathon\nFinancial Literacy"
+        }
+      ]
+    }
+  ]
+}

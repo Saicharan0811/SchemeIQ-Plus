@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	LoginPage
+</title><link rel="icon" type="image/png" href="../../Images/serp_logo.png" /><link href="../../Styles/jqueryslidemenu[1].css" rel="stylesheet" type="text/css" /><link href="../../Styles/style.css" rel="stylesheet" type="text/css" />
+    <script src="../../JS/jquery.min.js" type="text/javascript"></script>
+    <script src="../../JS/jqueryslidemenu.js" type="text/javascript"></script>
+    <script src="../../JS/jssor.core.js" type="text/javascript"></script>
+    <script src="../../JS/jssor.slider.js" type="text/javascript"></script>
+    <script src="../../JS/jssor.utils.js" type="text/javascript"></script>
+
+    <script src="../../Scripts/aes.js"></script>
+    <script language="javascript">
+        jQuery(document).ready(function ($) {
+            var _CaptionTransitions = [
+            //CLIP|LR
+            {$Duration: 900, $Clip: 3, $Easing: $JssorEasing$.$EaseInOutCubic },
+            //CLIP|TB
+            {$Duration: 900, $Clip: 12, $Easing: $JssorEasing$.$EaseInOutCubic },
+
+            //ZMF|10
+            {$Duration: 600, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 },
+
+            //ZML|R
+            {$Duration: 600, $Zoom: 11, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+            //ZML|B
+            {$Duration: 600, $Zoom: 11, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+            //ZMS|B
+            {$Duration: 700, $Zoom: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+            //RTT|10
+            {$Duration: 700, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInExpo, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+            //RTTL|R
+            {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+            //RTTL|B
+            {$Duration: 700, $Zoom: 11, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} },
+
+            //RTTS|R
+            {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleHorizontal: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+            //RTTS|B
+            {$Duration: 700, $Zoom: 1, $Rotate: 1, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInQuad, $Zoom: $JssorEasing$.$EaseInQuad, $Rotate: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseOutQuad }, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 1.2} },
+
+            //R|IB
+            {$Duration: 900, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInOutBack }, $ScaleHorizontal: 0.6, $Opacity: 2 },
+            //B|IB
+            {$Duration: 900, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInOutBack }, $ScaleVertical: 0.6, $Opacity: 2 },
+
+            ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 0,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(parentWidth, 675));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+    <script type="text/javascript">
+       
+        function SubmitsEncry() {  
+  
+            debugger;  
+            var txtUserName = document.getElementById("txtUserName").value.trim();  
+            var txtpassword = document.getElementById("txtPassword").value.trim();  
+  
+            if (txtUserName == "") {  
+                alert('Please enter UserName');  
+                return false;  
+            }  
+            else if (txtpassword == "") {  
+                alert('Please enter Password');  
+                return false;  
+            }  
+            else {  
+                var key = CryptoJS.enc.Utf8.parse('8080808080808080');  
+                var iv = CryptoJS.enc.Utf8.parse('8080808080808080');  
+  
+                var encryptedlogin = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtUserName), key,  
+                {  
+                    keySize: 128 / 8,  
+                    iv: iv,  
+                    mode: CryptoJS.mode.CBC,  
+                    padding: CryptoJS.pad.Pkcs7  
+                });  
+  
+                document.getElementById("hdn_flag").value = encryptedlogin;  
+  
+                var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtpassword), key,  
+                {  
+                    keySize: 128 / 8,  
+                    iv: iv,  
+                    mode: CryptoJS.mode.CBC,  
+                    padding: CryptoJS.pad.Pkcs7  
+                });  
+  
+                document.getElementById("hdn_flag").value = encryptedpassword;
+                document.getElementById("txtPassword").value = encryptedpassword;
+  
+                 
+            }  
+        } 
+        function getMACID() {
+            debugger;
+            try {
+
+                var locator = new ActiveXObject("WbemScripting.SWbemLocator");
+                //  var locator = new ActiveXObject("http://localhost:64183/UserInterface/Portal/LoginPage.aspx");
+                var service = locator.ConnectServer(".");
+                //Get properties of the network devices with an active IP address
+                //var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration" + " WHERE IPEnabled=TRUE AND DHCPEnabled = True");
+                var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration" + " WHERE IPEnabled=TRUE");
+                var e = new Enumerator(properties);
+                //Take first item from the list and return MACAddress
+                for (var ct = 0; ct <= e.item.length; ct++) {
+                    var p = e.item(0);
+                    if (p != undefined && p != null) {
+                        var strmac = p.MACAddress;
+                        if (strmac != undefined && strmac != null && strmac != 'Nothing' && strmac != '00:00:00:00:00:00') {
+                            document.getElementById("hdnData").value = strmac;
+                            return;
+
+                        }
+                    }
+                }
+            }
+            catch (exception) {
+
+            }
+
+        }
+        function SETOTPFIELDS() {
+            debugger;
+             document.getElementById("bengenerateOTP").style.display = "none";
+                     document.getElementById("lblpassuname").style.display = "block";
+                    document.getElementById("txtPassword").style.display = "block";
+                     document.getElementById("btnStateLogin").style.display = "block";
+        }
+        function DISABLEOTPFIELDSATLOADING() {
+           // debugger;
+            document.getElementById("bengenerateOTP").style.display = "none";
+        }
+        function OTPFIELDS() {
+            try {
+                debugger;
+                var url = window.location.href;
+                var newurl = url.toLowerCase();
+                if ( url.toLowerCase() == 'https://www.cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx' || url.toLowerCase() == 'http://cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx' || url.toLowerCase() == 'http://www.cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx') {
+                    var x = document.getElementById("txtUserName").value;
+                    var a = x.split('_');
+                    if (a[0].toUpperCase() == "DRDO" || a[0].toUpperCase() == "APO" || x.toUpperCase() == "DRO_HYD") {
+                        //if (document.getElementById("hdn_password_flg").value == "password") {
+                        //      document.getElementById("bengenerateOTP").style.display = "none";
+                        //document.getElementById("lblpassuname").innerHTML = "Password :-";
+                        // document.getElementById("lblpassuname").style.display = "block";
+                        //document.getElementById("txtPassword").style.display = "block";
+                        // document.getElementById("btnStateLogin").style.display = "block";
+                        //}
+                        //else {
+                        document.getElementById("lblpassuname").style.display = "none";
+                        document.getElementById("txtPassword").style.display = "none";
+                        document.getElementById("btnStateLogin").style.display = "none";
+                        document.getElementById("bengenerateOTP").style.display = "block";
+                        //}
+
+                    }
+                    else {
+                        document.getElementById("bengenerateOTP").style.display = "none";
+                        document.getElementById("lblpassuname").innerHTML = "Password :-";
+                        document.getElementById("lblpassuname").style.display = "block";
+                        document.getElementById("txtPassword").style.display = "block";
+                        document.getElementById("btnStateLogin").style.display = "block";
+
+                    }
+                }
+            }
+            catch (exception) {
+
+            }
+        }
+        function SHOWOTPFIELD() {
+            try {
+               // debugger;
+                var x = document.getElementById("txtUserName").value;
+                var a = x.split('_');
+                if (a[0].toUpperCase() == "DRDO" || a[0].toUpperCase() == "APO" || x.toUpperCase() == "DRO_HYD") {
+                    if (document.getElementById("hdn_password_flg").value == "password") {
+                        document.getElementById("bengenerateOTP").style.display = "none";
+                        document.getElementById("lblpassuname").innerHTML = "Password :-";
+                        document.getElementById("lblpassuname").style.display = "block";
+                        document.getElementById("txtPassword").style.display = "block";
+                        document.getElementById("btnStateLogin").style.display = "block";
+                    }
+                    else {
+                        document.getElementById("lblpassuname").style.display = "block";
+                        document.getElementById("txtPassword").style.display = "block";
+                        document.getElementById("btnStateLogin").style.display = "block";
+                        document.getElementById("bengenerateOTP").style.display = "none";
+                    }
+                    // document.getElementById
+                }
+                else {
+                    document.getElementById("bengenerateOTP").style.display = "none";
+                     document.getElementById("lblpassuname").style.display = "block";
+                    document.getElementById("txtPassword").style.display = "block";
+                     document.getElementById("btnStateLogin").style.display = "block";
+                   
+                }
+            }
+            catch (exception) {
+
+            }
+        }
+    </script>
+    <script language="javascript" type="text/javascript">
+         $(document).keypress(
+  function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
+});
+         function SETOTPFIELDS() {
+             debugger;
+             if (document.getElementById("hdn_password_flg").value == "password") {
+                 document.getElementById("bengenerateOTP").style.display = "none";
+             }
+             else {           
+                 document.getElementById("bengenerateOTP").style.display = "block";
+                 }
+                     document.getElementById("lblpassuname").style.display = "block";
+                    document.getElementById("txtPassword").style.display = "block";
+                     document.getElementById("btnStateLogin").style.display = "block";
+        }
+        function DISABLEOTPFIELDSATLOADING() {
+           // debugger;
+            document.getElementById("bengenerateOTP").style.display = "none";
+        }
+        function OTPFIELDS() {
+            try {
+                debugger;
+                var newurl = window.location.href;
+                var  url= newurl.toLowerCase();
+                if ( url == 'https://www.cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx' || url=='http://cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx' || url=='http://www.cheyutha.telangana.gov.in/ssptg/userinterface/portal/loginpage.aspx') {
+                    var x = document.getElementById("txtUserName").value;
+                    var a = x.split('_');
+                    if (a[0].toUpperCase() == "DRDO" || a[0].toUpperCase() == "APO" || x.toUpperCase() == "DRO_HYD") {
+                        //    if (document.getElementById("hdn_password_flg").value == "password") {
+                        //        document.getElementById("bengenerateOTP").style.display = "none";
+                        //    document.getElementById("lblpassuname").innerHTML = "Password :-";
+                        //     document.getElementById("lblpassuname").style.display = "block";
+                        //    document.getElementById("txtPassword").style.display = "block";
+                        //     document.getElementById("btnStateLogin").style.display = "block";
+                        //    }
+                        //else {
+                        document.getElementById("lblpassuname").style.display = "none";
+                        document.getElementById("txtPassword").style.display = "none";
+                        document.getElementById("btnStateLogin").style.display = "none";
+                        document.getElementById("bengenerateOTP").style.display = "block";
+                        // }
+
+                    }
+                    else {
+                        document.getElementById("bengenerateOTP").style.display = "none";
+                        document.getElementById("lblpassuname").innerHTML = "Password :-";
+                        document.getElementById("lblpassuname").style.display = "block";
+                        document.getElementById("txtPassword").style.display = "block";
+                        document.getElementById("btnStateLogin").style.display = "block";
+
+                    }
+                }
+            }
+            catch (exception) {
+
+            }
+        }
+         function SHOWOTPFIELD() {
+            try {
+               // debugger;
+                var x = document.getElementById("txtUserName").value;
+                var a = x.split('_');
+                if (a[0].toUpperCase() == "DRDO" || a[0].toUpperCase() == "APO" || x.toUpperCase() == "DRO_HYD") {
+                    if (document.getElementById("hdn_password_flg").value == "password") {
+                         document.getElementById("bengenerateOTP").style.display = "none";
+                     document.getElementById("lblpassuname").style.display = "block";
+                    document.getElementById("txtPassword").style.display = "block";
+                     document.getElementById("btnStateLogin").style.display = "block";
+                    }
+                    else {
+                        document.getElementById("lblpassuname").style.display = "block";
+                        document.getElementById("txtPassword").style.display = "block";
+                        document.getElementById("btnStateLogin").style.display = "block";
+                        document.getElementById("bengenerateOTP").style.display = "block";
+                    }
+                    // document.getElementById
+                }
+                else {
+                    document.getElementById("bengenerateOTP").style.display = "none";
+                     document.getElementById("lblpassuname").style.display = "block";
+                    document.getElementById("txtPassword").style.display = "block";
+                     document.getElementById("btnStateLogin").style.display = "block";
+                   
+                }
+            }
+            catch (exception) {
+
+            }
+        }
+          function DisplayConfirmationMessage() {
+            debugger;
+             OTPFIELDS();
+            if (confirm("Please update your mobile number")) {
+            
+                var url = window.location.href;             
+                var y = url.split('Portal');
+                if (y.length == 1)
+                    y = url.split('portal');
+              
+                //<a href="AccessDenied.aspx">AccessDenied.aspx</a>
+               // window.location.href = y[0] + "PD/EmpServiceDetails.aspx?FROM=LOGIN";
+                //Response.redirect("../PD/EmpServiceDetails.aspx");
+
+            }
+            else {
+               window.location.href = "../LoginPage.aspx";
+            }
+       
+        }
+        //Added by ADITYA.T for getting system MAC Address on 12 Jan 2015
+        function DisplayConfirmationMessage() {
+            debugger;
+             OTPFIELDS();
+            if (confirm("Please update your mobile number")) {
+            
+                var url = window.location.href;             
+                var y = url.split('Portal');
+                if (y.length == 1)
+                    y = url.split('portal');
+              
+                //<a href="AccessDenied.aspx">AccessDenied.aspx</a>
+               // window.location.href = y[0] + "PD/EmpServiceDetails.aspx?FROM=LOGIN";
+                //Response.redirect("../PD/EmpServiceDetails.aspx");
+
+            }
+            else {
+               window.location.href = "../LoginPage.aspx";
+            }
+       
+        }
+        function validate() {
+            if (document.getElementById("txtUserName").value == "") {
+                alert("Please enter user name");
+                document.getElementById("txtUserName").focus();
+                return false;
+            }
+
+            if (document.getElementById("txtPassword").value == "") {
+                alert("Please enter password");
+                document.getElementById("txtPassword").focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="form1" method="post" action="./loginpage.aspx" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTI5MTE2MjA0MA9kFgICAw9kFggCIw9kFgQCAQ8PFgIeBFRleHQFIEp1bHksMjAyMiBQYXlhYmxlIGluIEF1Z3VzdCwyMDIyZGQCAw88KwARAwAPFgQeC18hRGF0YUJvdW5kZx4LXyFJdGVtQ291bnQCAWQBEBYAFgAWAAwUKwAAFgJmD2QWAgIBD2QWAmYPZBYYZg8VARBhbHRlcm5hdGVSb3dkYXNoZAIBDw8WAh8ABQcxNjM2NjA0ZGQCAw8PFgIfAAUGNTE0NDIyZGQCBQ8PFgIfAAUHMTU3MzA1MGRkAgcPDxYCHwAFBTM3Mjk2ZGQCCQ8PFgIfAAUFNjU2NjhkZAILDw8WAh8ABQUzNjM5NmRkAg0PDxYCHwAFBTE4MDQxZGQCDw8PFgIfAAUGNDI0ODM0ZGQCEQ8PFgIfAAUGMTQzNDU2ZGQCEw8PFgIfAAUHNDQ0OTc2N2RkAhUPFgIeBVZhbHVlBQYyMDIyMDhkAiUPD2QWAh4MYXV0b2NvbXBsZXRlBQNvZmZkAikPD2QWAh8EBQNvZmZkAi8PDxYCHwBlZGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFDWJ0blN0YXRlTG9naW4FDmJlbmdlbmVyYXRlT1RQBQRndkRCDzwrAAwBCAIBZGCR3jcWmpT8cc9ZxHeSdubSNs+z7mWpxci3i1OA1TFq" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F749760B" />
+</div>
+    <div>
+        <input type="hidden" name="hdnData" id="hdnData" />
+        <table width="1002" border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+                <td align="left" valign="top" style="background-image: url(../../Images/head_img.png);
+                    background-repeat: repeat-x; height: 82px;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                              <td width="30%" align="center" valign="middle">
+                                <img alt="" src="../../Images/govt_logo.png" width="72" height="74" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <img alt="" src="../../Images/TGOneyear.jpg" width="72" height="74" />
+                            </td>
+                            <td width="55%" height="82" align="center" valign="middle">
+                                <img alt="" src="../../Images/heading_title.png" />
+                            </td>
+                            <td width="15%" align="center" valign="middle">
+                                <img alt="" src="../../Images/serp_logo.png" width="88" height="67" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="middle" colspan="3" style="background-image: url(../../Images/but_bg.png);
+                                background-repeat: repeat-x; height: 32px;">
+                                <div id="myslidemenu" class="jqueryslidemenu">
+                                    <ul>
+                                        <li><a href="#">Home</a></li>
+                                        
+                                        <li><a href="#">GOs</a>
+                                            <ul>
+                                                <li>
+                                                    <a id="lnkbtn_GOMS_23_Amendment" href="javascript:__doPostBack(&#39;lnkbtn_GOMS_23_Amendment&#39;,&#39;&#39;)">GO MS No 23 - Amendment</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lnkbtn_GOMS_17_Aasara" href="javascript:__doPostBack(&#39;lnkbtn_GOMS_17_Aasara&#39;,&#39;&#39;)">GO-MS No 17 Aasara Pensions</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton1" href="javascript:__doPostBack(&#39;LinkButton1&#39;,&#39;&#39;)">GO MS No 29 - Amendment</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton2" href="javascript:__doPostBack(&#39;LinkButton2&#39;,&#39;&#39;)">GO MS No 38 - Amendment</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton3" href="javascript:__doPostBack(&#39;LinkButton3&#39;,&#39;&#39;)">GO MS No 75 - Amendment</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton4" href="javascript:__doPostBack(&#39;LinkButton4&#39;,&#39;&#39;)">GO 25 -NFBS (Rs.20000)</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton5" href="javascript:__doPostBack(&#39;LinkButton5&#39;,&#39;&#39;)">GO MS No. 27 Single Women</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton6" href="javascript:__doPostBack(&#39;LinkButton6&#39;,&#39;&#39;)" style="height: 26px!important;">Go Ms No. 28 BW(Family Members-Aasara)</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton7" href="javascript:__doPostBack(&#39;LinkButton7&#39;,&#39;&#39;)" style="height: 26px!important;">GO Ms No.34  BW(Family Members-EPF)</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton8" href="javascript:__doPostBack(&#39;LinkButton8&#39;,&#39;&#39;)">GO Ms.No.35 - Filaria</a>
+                                                </li>
+                                                <li>
+                                                    <a id="LinkButton9" href="javascript:__doPostBack(&#39;LinkButton9&#39;,&#39;&#39;)">GO Ms.No.34 - Enhancements</a>
+                                                </li>
+                                                <li>
+                                                    <a id="lnkbtn_WidowPension" href="javascript:__doPostBack(&#39;lnkbtn_WidowPension&#39;,&#39;&#39;)" style="height: 26px!important;">Widow Pension - Submission of Death Certificate</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                           <li><a href="#">Cheyutha Application Forms</a>
+                                            <ul>
+                                                 <li>
+                                                    <a id="lnkbtnapplicationengformat" href="javascript:__doPostBack(&#39;lnkbtnapplicationengformat&#39;,&#39;&#39;)">Cheyutha Application Form - English Format</a>
+                                                </li> 
+                                                <li>
+                                                    <a id="lnkbtnapplicationteluguformat" href="javascript:__doPostBack(&#39;lnkbtnapplicationteluguformat&#39;,&#39;&#39;)">Cheyutha Application Form - Telugu Format</a>
+                                                </li> <li>
+                                                    <a id="lnkbtninstruction" href="javascript:__doPostBack(&#39;lnkbtninstruction&#39;,&#39;&#39;)">Data Entry Instructions</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Quick Search</a>
+                                            <ul>
+                                                <li><a href="../../UserInterface/Portal/GeneralSearch.aspx">Search Pensioner Details</a></li>
+                                                <li><a href="../../UserInterface/Portal/SSPdigitalsearchNew.aspx">SS Digital Search Screen - Indvidual</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li><a href="../../UserInterface/Portal/APOsContactDetails.aspx">APOs Contact Details</a></li>
+                                       
+                                    </ul>
+                                    <br style="clear: left" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr >
+                
+                <td height="100" align="left" valign="top" bgcolor="#fff" >
+                   
+                    
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" bgcolor="#FFFFFF">
+                    <table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="2" height="8">
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td width="5" align="left" valign="top">
+                                &nbsp;
+                            </td>
+                            <td width="300" align="center" valign="top">
+                                <table width="350" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="left" valign="top" class="login_bg" style="padding-top: 10px; padding-bottom: 10px;">
+                                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="login_whitebg">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td height="40" align="left" valign="middle" bgcolor="#fc9320" class="loginheadtext">
+                                                                    Login
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top">
+                                                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                        <tr>
+                                                                            <td height="24" colspan="2" align="left" valign="middle" class="loginfont">
+                                                                                Username :-
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td height="25" colspan="2">
+                                                                                
+                                                                                <input name="txtUserName" type="text" id="txtUserName" tabindex="1" OnChange="OTPFIELDS()" autocomplete="off" style="width:254px;" />&nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td height="24" colspan="2" align="left" valign="middle" class="loginfont">
+                                                                               <span id="lblpassuname">Password :-</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="2">
+                                                                                
+                                                                                <input name="txtPassword" type="password" id="txtPassword" tabindex="2" autocomplete="off" style="width:254px;" />&nbsp;
+                                                                            </td>
+                                                                        </tr>
+                                                                         <tr>
+                                                                            <td colspan="1" height="36" align="center" valign="middle" style="border-style: none;">
+                                                                                
+                                                                                 <input type="image" name="btnStateLogin" id="btnStateLogin" AutoPostBack="true" src="../../Images/login_but.png" onclick="return SubmitsEncry();" style="border-style:None;border-width:0px;" />
+                                                                                
+                                                                               
+                                                                            </td>
+                                                                             <td colspan="1" height="36" align="center" valign="middle" style="border-style: none;">
+                                                                                
+                                                                                  
+                                                                                <input type="image" name="bengenerateOTP" id="bengenerateOTP" AutoPostBack="true" src="../../Images/OTP_BUT2.png" style="border-style:None;border-width:0px;" />
+                                                                              
+                                                                            </td>
+                                                                            
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td colspan="2" align="center" valign="middle" style="border-style: none;">
+                                                                                
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                       
+                                                                       
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="center" valign="top">
+                                                                    <span id="lblFailure" style="color:OrangeRed;font-weight:bold;"></span>&nbsp;
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" valign="top" height="8">
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr>
+                <td height="100" align="left" valign="top" bgcolor="#fff" >
+                    </td>
+            </tr>
+            
+            <tr>
+                <td align="left" valign="top" bgcolor="#187eb1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" height="30" align="right" valign="middle" class="footer">
+                                © 2018 Society for Elimination of Rural Poverty, Department of Rural Development,
+                                Government of Telangana, India. All rights reserved &nbsp;&nbsp;&nbsp;
+                            </td>
+                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+        <input type="hidden" name="hdn_password_flg" id="hdn_password_flg" />
+
+        <input type="hidden" name="hdn_flag" id="hdn_flag" />
+    
+
+<script type="text/javascript">
+//<![CDATA[
+DISABLEOTPFIELDSATLOADING();//]]>
+</script>
+</form>
+</body>
+</html>

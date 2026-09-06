@@ -1,0 +1,25 @@
+Login
+Home
+About Us
+Scope
+Login
+SECURE LOGIN
+Username
+*
+Password
+*
+Forgot Your Password?
+Enter your User Name to receive your password.
+*
+No. Of Samples Collected
+No. Of Samples Received at Central lab
+No. Of Samples Damaged
+No. Of Samples Processed
+No. Of Samples Reports Generated
+No. Of Samples Not Yet Processed
+No. Of PHC/UPH's onboard
+All Copy Rights Reserved by Commissioner, Health & Family Welfare Department, Government of Telangana © 2018
+Privacy Policy
+Developed by Neumeric Technologies
+This is the main portal
+for Telangana Diagnostics Program administered by Commissioner, Health & Family Welfare Department, Government of Telangana. This portal provides a single window access to all citizen services related information under Telangana Diagnostics Program and related information. This portal is designed, deployed and maintained in collaboration with ITE&C Department, Government of Telangana.

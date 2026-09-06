@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchemeIQ+ Eligibility Rule Schema",
+  "description": "Schema for deterministic scheme eligibility rules with provenance.",
+  "type": "object",
+  "properties": {
+    "version": { "type": "string" },
+    "last_updated": { "type": "string" },
+    "schemes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scheme_id", "scheme_name", "scheme_scope", "rules", "unstructured_criteria"],
+        "properties": {
+          "scheme_id": { "type": "string" },
+          "scheme_name": { "type": "string" },
+          "scheme_scope": { "type": "string", "enum": ["State", "Central"] },
+          "category": { "type": "string" },
+          "official_url": { "type": "string" },
+          "source_authority": { "type": "string" },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["rule_id", "field", "operator", "expected_value", "required", "rule_type", "confidence", "official_url"],
+              "properties": {
+                "rule_id": { "type": "string" },
+                "field": { "type": "string" },
+                "operator": {
+                  "type": "string",
+                  "enum": [
+                    "eq", "neq", "gt", "gte", "lt", "lte", "between",
+                    "in", "not_in", "equals_ignore_case", "contains_any",
+                    "is_true", "is_false", "exists", "missing"
+                  ]
+                },
+                "expected_value": {},
+                "required": { "type": "boolean" },
+                "rule_type": { "type": "string", "enum": ["hard_filter", "preference", "domain_match"] },
+                "description": { "type": "string" },
+                "source_type": { "type": "string" },
+                "source_filename": { "type": "string" },
+                "official_url": { "type": "string" },
+                "source_excerpt": { "type": "string" },
+                "confidence": { "type": "string", "enum": ["HIGH", "MEDIUM", "LOW"] }
+              }
+            }
+          },
+          "unstructured_criteria": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["criterion_id", "description", "reason_unstructured"],
+              "properties": {
+                "criterion_id": { "type": "string" },
+                "description": { "type": "string" },
+                "reason_unstructured": { "type": "string" },
+                "source_filename": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

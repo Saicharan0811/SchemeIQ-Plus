@@ -1,0 +1,229 @@
+{
+  "report_timestamp": "2026-08-27T10:35:39.886750+00:00",
+  "version": "1.0.0",
+  "total_schemes": 14,
+  "scheme_summary": [
+    {
+      "scheme_id": "TS001",
+      "scheme_name": "Rythu Bharosa",
+      "scheme_scope": "State",
+      "category": "Agriculture",
+      "official_url": "https://rythubharosa.telangana.gov.in/",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "farmer_status",
+        "land_ownership_status"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS002",
+      "scheme_name": "Rythu Bima",
+      "scheme_scope": "State",
+      "category": "Agriculture / Insurance",
+      "official_url": "https://mahabubabad.telangana.gov.in/scheme/rythu-bima/",
+      "deterministic_rules_count": 4,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "farmer_status",
+        "age",
+        "age"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS003",
+      "scheme_name": "Cheyutha",
+      "scheme_scope": "State",
+      "category": "Healthcare",
+      "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+      "deterministic_rules_count": 2,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "annual_income"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS004",
+      "scheme_name": "Maha Lakshmi",
+      "scheme_scope": "State",
+      "category": "Women / Welfare",
+      "official_url": "https://www.telangana.gov.in/Government-Initiatives/",
+      "deterministic_rules_count": 2,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "gender"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS005",
+      "scheme_name": "Aasara Pensions",
+      "scheme_scope": "State",
+      "category": "Social Security",
+      "official_url": "https://www.aasara.telangana.gov.in/",
+      "deterministic_rules_count": 2,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "pensioner_category"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS006",
+      "scheme_name": "Telangana ePASS Scholarships",
+      "scheme_scope": "State",
+      "category": "Education / Scholarship",
+      "official_url": "https://telanganaepass.cgg.gov.in/",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "student_status",
+        "annual_income"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS007",
+      "scheme_name": "MCH Kit Scheme",
+      "scheme_scope": "State",
+      "category": "Healthcare / Women & Child",
+      "official_url": "https://chfw.telangana.gov.in/programmes.html",
+      "deterministic_rules_count": 2,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state",
+        "gender"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "TS008",
+      "scheme_name": "Telangana Diagnostics",
+      "scheme_scope": "State",
+      "category": "Healthcare",
+      "official_url": "https://chfw.telangana.gov.in/programmes.html",
+      "deterministic_rules_count": 1,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "state"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT001",
+      "scheme_name": "PM-KISAN",
+      "scheme_scope": "Central",
+      "category": "Agriculture",
+      "official_url": "https://pmkisan.gov.in/",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "farmer_status",
+        "land_ownership_status",
+        "pays_income_tax"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT002",
+      "scheme_name": "Ayushman Bharat PM-JAY",
+      "scheme_scope": "Central",
+      "category": "Healthcare",
+      "official_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2053881",
+      "deterministic_rules_count": 1,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "age"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT003",
+      "scheme_name": "PMAY-U 2.0",
+      "scheme_scope": "Central",
+      "category": "Housing",
+      "official_url": "https://pmaymis.gov.in/pmaymis2_2024/",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "residence_type",
+        "owns_pucca_house",
+        "annual_income"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT004",
+      "scheme_name": "Pradhan Mantri Mudra Yojana",
+      "scheme_scope": "Central",
+      "category": "Entrepreneurship / Credit",
+      "official_url": "https://www.mudra.org.in/FAQ",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "business_owner_status",
+        "age",
+        "loan_requirement"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT005",
+      "scheme_name": "PMEGP",
+      "scheme_scope": "Central",
+      "category": "Employment / Entrepreneurship",
+      "official_url": "https://wanaparthy.telangana.gov.in/district-industries-center/",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "age",
+        "business_owner_status",
+        "project_cost"
+      ],
+      "full_provenance_attached": true
+    },
+    {
+      "scheme_id": "CT006",
+      "scheme_name": "Atal Pension Yojana",
+      "scheme_scope": "Central",
+      "category": "Pension / Social Security",
+      "official_url": "https://pfrda.org.in/web/pfrda/schemes/atal-pension-yojana-apy",
+      "deterministic_rules_count": 3,
+      "unstructured_criteria_count": 1,
+      "rule_fields": [
+        "age",
+        "age",
+        "pays_income_tax"
+      ],
+      "full_provenance_attached": true
+    }
+  ],
+  "total_deterministic_rules": 35,
+  "total_unstructured_criteria": 14,
+  "fields_used_in_rules": [
+    "age",
+    "annual_income",
+    "business_owner_status",
+    "farmer_status",
+    "gender",
+    "land_ownership_status",
+    "loan_requirement",
+    "owns_pucca_house",
+    "pays_income_tax",
+    "pensioner_category",
+    "project_cost",
+    "residence_type",
+    "state",
+    "student_status"
+  ],
+  "source_provenance_coverage_pct": 100.0
+}
