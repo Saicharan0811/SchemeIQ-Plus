@@ -30,6 +30,8 @@ services:
       - key: LOG_LEVEL
         value: INFO
       - key: EMBEDDING_PROVIDER
-        value: sentence-transformers
+        value: onnx
       - key: EMBEDDING_MODEL
         value: all-MiniLM-L6-v2
+      - key: OMP_NUM_THREADS
+        value: "1"
