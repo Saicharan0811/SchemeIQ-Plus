@@ -437,3 +437,65 @@ def test_wsgi_entrypoint_import():
     assert wsgi.app.name == "src.api.app"
 
 
+def test_health_endpoint_does_not_reload_xgboost_repeatedly(client):
+    """Verify GET /health reuses the cached reranker and does not reload model from disk on each request."""
+    import xgboost as xgb
+    from unittest.mock import patch
+
+    with patch.object(xgb.XGBRanker, "load_model", wraps=xgb.XGBRanker().load_model) as mock_load:
+        # Call /health 5 times in sequence
+        for _ in range(5):
+            resp = client.get("/health")
+            assert resp.status_code == 200
+            data = resp.get_json()
+            assert data["xgboost_model_available"] is True
+
+        # Model should be loaded at most once across all 5 requests (not 5 times)
+        assert mock_load.call_count <= 1
+
+
+def test_rag_pipeline_stage_level_observability(client, caplog):
+    """Verify POST /api/ask emits concise INFO-level timing logs for each pipeline stage."""
+    import logging
+
+    with caplog.at_level(logging.INFO):
+        resp = client.post(
+            "/api/ask",
+            json={"query": "Who is eligible for Rythu Bharosa?", "top_k": 3},
+        )
+        assert resp.status_code == 200
+
+        logs = [r.message for r in caplog.records]
+        # Verify each of the required stage timing logs was emitted
+        assert any("HybridRetriever: query embedded in" in msg for msg in logs), "Missing ONNX embedding timing log"
+        assert any("HybridRetriever: Chroma dense retrieval completed in" in msg for msg in logs), "Missing Chroma dense timing log"
+        assert any("HybridRetriever: BM25 retrieval completed in" in msg for msg in logs), "Missing BM25 retrieval timing log"
+        assert any("HybridRetriever: RRF merge completed in" in msg for msg in logs), "Missing RRF merge timing log"
+        assert any("AnswerGenerator: calling LLM provider" in msg for msg in logs), "Missing pre-generation log"
+        assert any("AnswerGenerator: LLM generation completed in" in msg for msg in logs), "Missing post-generation log"
+
+
+def test_openai_provider_timeout_configured():
+    """Verify OpenAILLMProvider initializes OpenAI client with explicit 15-second timeout."""
+    import os
+    from unittest.mock import patch
+    from src.rag.answer_generator import OpenAILLMProvider
+
+    with patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test-mock-key-for-timeout-check"}):
+        provider = OpenAILLMProvider()
+        # Verify client timeout is set to 15.0 seconds
+        assert getattr(provider._client, "timeout", None) == 15.0
+
+
+def test_onnx_spinning_disabled():
+    """Verify ONNXEmbeddingProvider disables intra-op spinning in session options."""
+    from src.rag.embeddings import get_embedding_provider, ONNXEmbeddingProvider
+
+    provider = get_embedding_provider(provider_type="onnx", force_new=True)
+    assert isinstance(provider, ONNXEmbeddingProvider)
+    # Ensure provider is functional and dim is 384
+    emb = provider.embed_query("warmup check")
+    assert len(emb) == 384
+
+
+

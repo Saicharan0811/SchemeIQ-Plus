@@ -88,6 +88,12 @@ class ONNXEmbeddingProvider(EmbeddingProvider):
             so.inter_op_num_threads = 1
             so.log_severity_level = 3
             so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+            so.add_session_config_entry("session.intra_op.allow_spinning", "0")
+        else:
+            try:
+                so.add_session_config_entry("session.intra_op.allow_spinning", "0")
+            except Exception:
+                pass
 
         self.session = ort.InferenceSession(
             str(model_path),

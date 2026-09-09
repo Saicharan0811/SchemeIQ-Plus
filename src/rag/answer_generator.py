@@ -34,6 +34,7 @@ import logging
 import os
 import re
 import textwrap
+import time
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
@@ -259,7 +260,7 @@ class OpenAILLMProvider(BaseLLMProvider):
 
         try:
             from openai import OpenAI
-            kwargs = {"api_key": api_key}
+            kwargs = {"api_key": api_key, "timeout": 15.0}
             if base_url := (base_url or os.environ.get("OPENAI_BASE_URL")):
                 kwargs["base_url"] = base_url
             self._client = OpenAI(**kwargs)
@@ -519,6 +520,13 @@ class AnswerGenerator:
         gen_status = GroundingStatus.GROUNDED
         gen_note = ""
 
+        logger.info(
+            "AnswerGenerator: calling LLM provider '%s' (model='%s', prompt_len=%d)",
+            self.provider_name,
+            self.model_name,
+            len(prompt),
+        )
+        t_gen_start = time.perf_counter()
         try:
             answer_text = self._llm.generate(prompt, max_tokens=self.max_tokens)
         except Exception as e:
@@ -529,6 +537,12 @@ class AnswerGenerator:
             )
             gen_status = GroundingStatus.GENERATION_FAILED
             gen_note = f"LLM call failed: {e}"
+        logger.info(
+            "AnswerGenerator: LLM generation completed in %.3fs (status=%s, answer_len=%d)",
+            time.perf_counter() - t_gen_start,
+            gen_status,
+            len(answer_text),
+        )
 
         # ---- Step 5: Validate ----
         if gen_status == GroundingStatus.GROUNDED:

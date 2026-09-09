@@ -26,6 +26,7 @@ Config (all overridable):
 from __future__ import annotations
 
 import logging
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -205,9 +206,16 @@ class HybridRetriever:
         scheme_filter = detected_scheme if use_scheme_filter else None
 
         # ---- Dense retrieval ----
+        t_emb_start = time.perf_counter()
         q_emb = self._emb_provider.embed_query(query)
+        logger.info(
+            "HybridRetriever: query embedded in %.3fs (dim=%d)",
+            time.perf_counter() - t_emb_start,
+            len(q_emb),
+        )
         dense_top_k = self.dense_candidates
 
+        t_dense_start = time.perf_counter()
         if scheme_filter:
             # Use ChromaDB where_filter to restrict to detected scheme
             try:
@@ -222,16 +230,35 @@ class HybridRetriever:
                 dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
         else:
             dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
+        logger.info(
+            "HybridRetriever: Chroma dense retrieval completed in %.3fs (%d chunks, filter=%s)",
+            time.perf_counter() - t_dense_start,
+            len(dense_raw),
+            scheme_filter,
+        )
 
         # ---- BM25 keyword retrieval ----
+        t_bm25_start = time.perf_counter()
         keyword_raw = self._keyword_retriever.retrieve(
             query,
             top_k=self.keyword_candidates,
             scheme_id_filter=scheme_filter,
         )
+        logger.info(
+            "HybridRetriever: BM25 retrieval completed in %.3fs (%d chunks, filter=%s)",
+            time.perf_counter() - t_bm25_start,
+            len(keyword_raw),
+            scheme_filter,
+        )
 
         # ---- RRF merge ----
+        t_rrf_start = time.perf_counter()
         merged = _rrf_merge(dense_raw, keyword_raw, rrf_k=self.rrf_k)
+        logger.info(
+            "HybridRetriever: RRF merge completed in %.3fs (%d candidates merged)",
+            time.perf_counter() - t_rrf_start,
+            len(merged),
+        )
 
         # ---- Build HybridResult list ----
         results: list[HybridResult] = []

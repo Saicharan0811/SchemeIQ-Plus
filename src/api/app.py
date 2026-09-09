@@ -108,7 +108,7 @@ def create_app(
         """
         Service health status, version, and XGBoost LTR model availability.
         """
-        reranker = XGBoostReRanker()
+        reranker = elig_service.recommender._get_reranker()
         return jsonify({
             "status": "healthy",
             "service": "SchemeIQ+ Production API",
