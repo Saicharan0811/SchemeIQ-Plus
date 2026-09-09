@@ -5,6 +5,7 @@ Handles collection lifecycle, idempotent upserts, metadata indexing, and dense s
 """
 
 import logging
+import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -26,10 +27,13 @@ class VectorStoreManager:
         self,
         persist_directory: Optional[Path] = None,
         collection_name: str = DEFAULT_COLLECTION_NAME,
+        query_timeout: float = 5.0,
     ):
         self.persist_directory = persist_directory or DEFAULT_PERSIST_DIR
         self.collection_name = collection_name
         self.persist_directory.mkdir(parents=True, exist_ok=True)
+        self._lock = threading.Lock()
+        self._query_timeout = query_timeout
 
         # Initialize ChromaDB persistent client
         self.client = chromadb.PersistentClient(
@@ -100,9 +104,11 @@ class VectorStoreManager:
         query_embedding: List[float],
         top_k: int = 5,
         where_filter: Optional[Dict[str, Any]] = None,
+        timeout: Optional[float] = None,
     ) -> List[RetrievalResult]:
         """
         Perform dense similarity search using query embedding vector.
+        Thread-safe: queries are serialized with self._lock and bounded by timeout.
         """
         kwargs: Dict[str, Any] = {
             "query_embeddings": [query_embedding],
@@ -112,7 +118,32 @@ class VectorStoreManager:
         if where_filter:
             kwargs["where"] = where_filter
 
-        results = self.collection.query(**kwargs)
+        effective_timeout = timeout if timeout is not None else self._query_timeout
+
+        with self._lock:
+            if effective_timeout and effective_timeout > 0:
+                res_box: List[Any] = [None]
+                err_box: List[Optional[Exception]] = [None]
+
+                def _query_target():
+                    try:
+                        res_box[0] = self.collection.query(**kwargs)
+                    except Exception as e:
+                        err_box[0] = e
+
+                t = threading.Thread(target=_query_target, daemon=True)
+                t.start()
+                t.join(timeout=effective_timeout)
+
+                if t.is_alive():
+                    raise TimeoutError(f"ChromaDB query timed out after {effective_timeout:.1f}s")
+
+                if err_box[0] is not None:
+                    raise err_box[0]
+
+                results = res_box[0]
+            else:
+                results = self.collection.query(**kwargs)
 
         retrieval_results: List[RetrievalResult] = []
         ids = results.get("ids", [[]])[0]

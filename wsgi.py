@@ -47,7 +47,8 @@ from src.api.app import create_app
 try:
     _rag = RAGService(allow_fallback=True)
     _rag._retriever._emb_provider.embed_query("warmup")
-    logger.info("RAGService pre-warmed successfully (embedding execution path warmed).")
+    _rag._retriever._vector_store.query_similar([0.0] * 384, top_k=1)
+    logger.info("RAGService pre-warmed successfully (embedding + Chroma paths warmed).")
 except Exception as e:
     logger.warning(f"RAGService pre-warming warning: {e}. Lazy loading will be used.")
     _rag = None
