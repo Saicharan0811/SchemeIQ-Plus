@@ -67,27 +67,36 @@ def test_chroma_query_lock_protection():
         assert max_concurrent == 1, f"Expected max concurrency of 1, got {max_concurrent}"
 
 
-def test_chroma_timeout_handling():
-    """Verify that query_similar raises TimeoutError when query duration exceeds timeout and releases lock."""
+def test_no_detached_query_threads():
+    """Verify that query_similar executes synchronously and spawns no background/daemon threads."""
     vsm = VectorStoreManager()
+    threads_before = {t.ident for t in threading.enumerate()}
 
-    def _hanging_query(*args, **kwargs):
-        time.sleep(0.5)
-        return {"ids": [[]], "documents": [[]], "metadatas": [[]], "distances": [[]]}
+    # Execute synchronous query
+    results = vsm.query_similar([0.0] * 384, top_k=1)
+    assert isinstance(results, list)
 
-    with patch.object(vsm.collection, "query", side_effect=_hanging_query):
-        t0 = time.perf_counter()
-        with pytest.raises(TimeoutError) as exc_info:
-            # Set small 0.1s timeout
-            vsm.query_similar([0.0] * 384, top_k=1, timeout=0.1)
-        elapsed = time.perf_counter() - t0
+    threads_after = {t.ident for t in threading.enumerate()}
+    # No new lingering threads should be created or left running
+    new_threads = threads_after - threads_before
+    assert not new_threads, f"Unexpected background threads left running: {new_threads}"
 
-        assert "timed out after 0.1s" in str(exc_info.value)
-        assert elapsed < 0.45, f"Timeout took too long to abort: {elapsed:.2f}s"
 
-    # Verify the lock was cleanly released: a subsequent fast query succeeds immediately
-    res = vsm.query_similar([0.0] * 384, top_k=1, timeout=5.0)
-    assert isinstance(res, list)
+def test_bm25_fallback_when_dense_fails():
+    """Verify that when Chroma dense retrieval fails completely, HybridRetriever safely falls back to BM25."""
+    from src.rag.hybrid_retriever import HybridRetriever
+    retriever = HybridRetriever()
+
+    # Simulate dense retrieval failure (both filtered and unfiltered)
+    with patch.object(retriever._vector_store, "query_similar", side_effect=RuntimeError("Simulated Chroma timeout/failure")):
+        results = retriever.retrieve("Who is eligible for Rythu Bharosa?", final_top_k=5)
+
+        # Retrieval must not fail or raise: it must produce grounded BM25 results
+        assert len(results) > 0, "Expected BM25 results when dense fails"
+        assert results[0].scheme_id == "TS001"
+        assert results[0].bm25_score is not None
+        assert results[0].dense_score is None
+        assert len(results[0].chunk_text) > 0
 
 
 def test_existing_retrieval_behavior_unchanged():

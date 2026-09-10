@@ -216,6 +216,7 @@ class HybridRetriever:
         dense_top_k = self.dense_candidates
 
         t_dense_start = time.perf_counter()
+        dense_raw: list = []
         if scheme_filter:
             # Use ChromaDB where_filter to restrict to detected scheme
             try:
@@ -225,11 +226,19 @@ class HybridRetriever:
                     where_filter={"scheme_id": scheme_filter},
                 )
             except Exception as e:
-                logger.error(f"Fallback to unfiltered query due to error: {e}")
+                logger.error(f"Filtered dense query failed: {e}. Falling back to unfiltered query.")
                 # Fallback to unfiltered if filter fails
-                dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
+                try:
+                    dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
+                except Exception as e2:
+                    logger.error(f"Unfiltered dense query also failed: {e2}. Falling back to BM25-only retrieval.")
+                    dense_raw = []
         else:
-            dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
+            try:
+                dense_raw = self._vector_store.query_similar(q_emb, top_k=dense_top_k)
+            except Exception as e:
+                logger.error(f"Dense query failed: {e}. Falling back to BM25-only retrieval.")
+                dense_raw = []
         logger.info(
             "HybridRetriever: Chroma dense retrieval completed in %.3fs (%d chunks, filter=%s)",
             time.perf_counter() - t_dense_start,

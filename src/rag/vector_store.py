@@ -108,7 +108,7 @@ class VectorStoreManager:
     ) -> List[RetrievalResult]:
         """
         Perform dense similarity search using query embedding vector.
-        Thread-safe: queries are serialized with self._lock and bounded by timeout.
+        Thread-safe: queries are serialized with self._lock synchronously.
         """
         kwargs: Dict[str, Any] = {
             "query_embeddings": [query_embedding],
@@ -118,32 +118,8 @@ class VectorStoreManager:
         if where_filter:
             kwargs["where"] = where_filter
 
-        effective_timeout = timeout if timeout is not None else self._query_timeout
-
         with self._lock:
-            if effective_timeout and effective_timeout > 0:
-                res_box: List[Any] = [None]
-                err_box: List[Optional[Exception]] = [None]
-
-                def _query_target():
-                    try:
-                        res_box[0] = self.collection.query(**kwargs)
-                    except Exception as e:
-                        err_box[0] = e
-
-                t = threading.Thread(target=_query_target, daemon=True)
-                t.start()
-                t.join(timeout=effective_timeout)
-
-                if t.is_alive():
-                    raise TimeoutError(f"ChromaDB query timed out after {effective_timeout:.1f}s")
-
-                if err_box[0] is not None:
-                    raise err_box[0]
-
-                results = res_box[0]
-            else:
-                results = self.collection.query(**kwargs)
+            results = self.collection.query(**kwargs)
 
         retrieval_results: List[RetrievalResult] = []
         ids = results.get("ids", [[]])[0]

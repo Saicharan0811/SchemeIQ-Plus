@@ -35,3 +35,5 @@ services:
         value: all-MiniLM-L6-v2
       - key: OMP_NUM_THREADS
         value: "1"
+      - key: RAYON_NUM_THREADS
+        value: "1"
