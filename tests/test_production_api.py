@@ -498,4 +498,37 @@ def test_onnx_spinning_disabled():
     assert len(emb) == 384
 
 
+def test_production_gunicorn_single_thread():
+    """Assert render.yaml Gunicorn startCommand uses exactly --threads 1.
 
+    ChromaDB 1.x (chromadb_rust_bindings) initialises a Tokio async runtime and
+    SQLite connection pool bound to the initialisation thread.  When Gunicorn's
+    gthread pool calls collection.query() from a *different* thread the Tokio
+    dispatch deadlocks indefinitely.  --threads 1 ensures every request executes
+    on the same thread as the WSGI prewarm, preventing the hang.
+    """
+    from pathlib import Path
+    import re
+
+    render_yaml = Path("render.yaml").read_text(encoding="utf-8")
+
+    # startCommand must contain --threads 1 (not 2, 4, etc.)
+    match = re.search(r"startCommand:\s*(gunicorn[^\n]+)", render_yaml)
+    assert match, "render.yaml is missing a startCommand line"
+
+    cmd = match.group(1)
+    assert "--threads 1" in cmd, (
+        f"Production Gunicorn command must use --threads 1 to prevent ChromaDB "
+        f"cross-thread Tokio deadlock. Found: {cmd!r}"
+    )
+    assert "--workers 1" in cmd, (
+        f"Production Gunicorn command must use --workers 1. Found: {cmd!r}"
+    )
+
+    # WSGI_THREADS env var must also be 1
+    assert "WSGI_THREADS" in render_yaml, "render.yaml missing WSGI_THREADS env var"
+    threads_match = re.search(r"WSGI_THREADS[^\n]*\n\s*value:\s*(\d+)", render_yaml)
+    assert threads_match, "Could not parse WSGI_THREADS value in render.yaml"
+    assert threads_match.group(1) == "1", (
+        f"WSGI_THREADS env var must be 1, got: {threads_match.group(1)}"
+    )

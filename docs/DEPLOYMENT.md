@@ -60,7 +60,7 @@ ENVIRONMENT=production
 # Server network binding
 HOST=0.0.0.0
 PORT=5000
-WSGI_THREADS=4
+WSGI_THREADS=1
 
 # Restrict CORS to trusted frontend domain(s)
 CORS_ALLOWED_ORIGINS=https://schemeiq.example.com,http://localhost:5173
@@ -87,8 +87,13 @@ python -m waitress --port=5000 wsgi:app
 #### Linux & Containerized Environments (Gunicorn):
 ```bash
 pip install gunicorn
-gunicorn --workers 2 --threads 4 --bind 0.0.0.0:5000 wsgi:app
+gunicorn --workers 1 --threads 1 --bind 0.0.0.0:5000 wsgi:app
 ```
+> **Note**: Use `--threads 1` (single thread). ChromaDB 1.x uses a native Rust/Tokio
+> runtime (`chromadb_rust_bindings`) that must be called from the thread on which it
+> was initialized. Running with `--threads >1` causes Gunicorn's `gthread` pool to
+> invoke ChromaDB from foreign threads, deadlocking `collection.query()`. PyTorch was
+> replaced by ONNX Runtime (Phase 9D.1) so memory stays ~200MB, well within 512MB limits.
 
 ### Step 3.4: Verify Backend Health
 ```bash
