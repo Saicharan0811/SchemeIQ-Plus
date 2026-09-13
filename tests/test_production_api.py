@@ -58,7 +58,7 @@ def farmer_payload():
 
 
 def test_health_endpoint(client):
-    """Verify GET /health returns service status and model availability."""
+    """Verify GET /health returns service status, model availability, and chroma_connected."""
     resp = client.get("/health")
     assert resp.status_code == 200
     data = resp.get_json()
@@ -68,6 +68,8 @@ def test_health_endpoint(client):
     assert "timestamp" in data
     assert "xgboost_model_available" in data
     assert data["official_schemes_count"] == 14
+    assert "chroma_connected" in data
+    assert isinstance(data["chroma_connected"], bool)
 
 
 def test_recommend_heuristic_mode_success(client, farmer_payload):

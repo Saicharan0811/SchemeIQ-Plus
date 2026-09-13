@@ -106,9 +106,21 @@ def create_app(
     @app.route("/health", methods=["GET"])
     def health():
         """
-        Service health status, version, and XGBoost LTR model availability.
+        Service health status, version, XGBoost LTR model availability, and
+        Chroma connectivity.  Always returns HTTP 200 quickly.
+        chroma_connected may be False if the Chroma service is still starting
+        or temporarily unreachable; this does not affect eligibility or ranking.
         """
         reranker = elig_service.recommender._get_reranker()
+
+        # Bounded Chroma heartbeat — must not block /health.
+        # is_healthy() caps the check at 0.5 s and catches all exceptions.
+        chroma_connected: bool = False
+        try:
+            chroma_connected = get_rag_service()._retriever._vector_store.is_healthy()
+        except Exception:
+            chroma_connected = False
+
         return jsonify({
             "status": "healthy",
             "service": "SchemeIQ+ Production API",
@@ -116,6 +128,7 @@ def create_app(
             "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "xgboost_model_available": reranker.is_available(),
             "official_schemes_count": len(elig_service.evaluator.schemes),
+            "chroma_connected": chroma_connected,
         }), 200
 
     # -----------------------------------------------------------------------

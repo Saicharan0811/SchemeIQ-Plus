@@ -2,9 +2,16 @@
 """
 SchemeIQ+ — Persistent ChromaDB Vector Store Manager
 Handles collection lifecycle, idempotent upserts, metadata indexing, and dense similarity search.
+
+Client Selection:
+  - Production (CHROMA_SERVER_HOST env var set): chromadb.HttpClient targeting the
+    private Chroma service. All Rust/Tokio/SQLite work executes in the separate process.
+  - Local development (CHROMA_SERVER_HOST unset): chromadb.PersistentClient against
+    data/vector_store/chroma_db (existing offline snapshot). No extra server needed.
 """
 
 import logging
+import os
 import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -21,7 +28,11 @@ DEFAULT_COLLECTION_NAME = "schemeiq_official_schemes"
 
 
 class VectorStoreManager:
-    """Manages persistent ChromaDB vector storage for official scheme chunks."""
+    """Manages ChromaDB vector storage for official scheme chunks.
+
+    Uses HttpClient in production (CHROMA_SERVER_HOST is set) and
+    PersistentClient for local development (CHROMA_SERVER_HOST is unset).
+    """
 
     def __init__(
         self,
@@ -31,22 +42,66 @@ class VectorStoreManager:
     ):
         self.persist_directory = persist_directory or DEFAULT_PERSIST_DIR
         self.collection_name = collection_name
-        self.persist_directory.mkdir(parents=True, exist_ok=True)
         self._lock = threading.Lock()
         self._query_timeout = query_timeout
 
-        # Initialize ChromaDB persistent client
-        self.client = chromadb.PersistentClient(
-            path=str(self.persist_directory),
-            settings=Settings(anonymized_telemetry=False, is_persistent=True),
-        )
+        # ---------------------------------------------------------------
+        # Client selection based on CHROMA_SERVER_HOST environment variable.
+        # ---------------------------------------------------------------
+        server_host = os.environ.get("CHROMA_SERVER_HOST", "").strip()
+
+        if server_host:
+            server_port = int(os.environ.get("CHROMA_SERVER_PORT", "8000"))
+            server_ssl = os.environ.get("CHROMA_SERVER_SSL", "false").lower() == "true"
+            logger.info(
+                "ChromaDB client: HttpClient → http%s://%s:%d",
+                "s" if server_ssl else "", server_host, server_port,
+            )
+            self.client = chromadb.HttpClient(
+                host=server_host,
+                port=server_port,
+                ssl=server_ssl,
+                settings=Settings(anonymized_telemetry=False),
+            )
+            self._is_http = True
+        else:
+            self.persist_directory.mkdir(parents=True, exist_ok=True)
+            logger.info(
+                "ChromaDB client: PersistentClient → %s", self.persist_directory
+            )
+            self.client = chromadb.PersistentClient(
+                path=str(self.persist_directory),
+                settings=Settings(anonymized_telemetry=False, is_persistent=True),
+            )
+            self._is_http = False
 
         # Get or create collection with cosine similarity metric
         self.collection = self.client.get_or_create_collection(
             name=self.collection_name,
             metadata={"hnsw:space": "cosine", "description": "SchemeIQ+ Official Government Scheme Corpus"}
         )
-        logger.info(f"Initialized ChromaDB collection '{self.collection_name}' at: {self.persist_directory}")
+        logger.info(
+            "Initialized ChromaDB collection '%s'%s",
+            self.collection_name,
+            " (remote HttpClient)" if self._is_http else f" at: {self.persist_directory}",
+        )
+
+    def is_healthy(self) -> bool:
+        """Return True if Chroma responds to a heartbeat within 0.5 s.
+
+        Always returns a bool; never raises. Used by /health to report
+        chroma_connected without blocking the response.
+        """
+        import concurrent.futures
+        try:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
+                fut = ex.submit(self.client.heartbeat)
+                hb = fut.result(timeout=0.5)
+                return isinstance(hb, (int, float)) and hb > 0
+        except Exception:
+            return False
+
+
 
     def get_existing_chunk_hashes(self) -> Dict[str, str]:
         """

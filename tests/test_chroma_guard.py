@@ -132,3 +132,128 @@ def test_wsgi_prewarm_includes_chroma_query():
         # Ensure collection is loaded and responsive
         res = wsgi._rag._retriever._vector_store.query_similar([0.0] * 384, top_k=1)
         assert len(res) == 1
+
+
+# ── Phase 9D.7 Chroma HTTP Architecture Tests ─────────────────────────────────
+
+def test_vector_store_manager_http_client_selection():
+    """Verify that VectorStoreManager selects chromadb.HttpClient when CHROMA_SERVER_HOST is set."""
+    import os
+    from unittest.mock import MagicMock, patch
+
+    mock_http_client = MagicMock()
+    mock_collection = MagicMock()
+    mock_http_client.get_or_create_collection.return_value = mock_collection
+
+    with patch.dict(os.environ, {
+        "CHROMA_SERVER_HOST": "schemeiq-plus-chroma",
+        "CHROMA_SERVER_PORT": "8000",
+        "CHROMA_SERVER_SSL": "false",
+    }):
+        with patch("chromadb.HttpClient", return_value=mock_http_client) as mock_init:
+            vsm = VectorStoreManager()
+            assert vsm._is_http is True
+            assert vsm.client is mock_http_client
+            mock_init.assert_called_once()
+            call_kwargs = mock_init.call_args[1]
+            assert call_kwargs["host"] == "schemeiq-plus-chroma"
+            assert call_kwargs["port"] == 8000
+            assert call_kwargs["ssl"] is False
+
+
+def test_vector_store_manager_persistent_client_fallback():
+    """Verify that VectorStoreManager falls back to chromadb.PersistentClient when CHROMA_SERVER_HOST is unset."""
+    import os
+    from unittest.mock import patch
+
+    # Ensure CHROMA_SERVER_HOST is absent
+    env_copy = os.environ.copy()
+    env_copy.pop("CHROMA_SERVER_HOST", None)
+
+    with patch.dict(os.environ, env_copy, clear=True):
+        vsm = VectorStoreManager()
+        assert vsm._is_http is False
+        import chromadb
+        assert isinstance(vsm.client, chromadb.api.ClientAPI)
+
+
+def test_health_endpoint_contains_chroma_connected():
+    """Verify GET /health response contains 'chroma_connected' field."""
+    from src.api.app import create_app
+
+    app = create_app(test_config={"TESTING": True})
+    with app.test_client() as client:
+        resp = client.get("/health")
+        assert resp.status_code == 200
+        data = resp.get_json()
+        assert "chroma_connected" in data
+        assert isinstance(data["chroma_connected"], bool)
+
+
+def test_health_endpoint_remains_200_when_heartbeat_fails():
+    """Verify GET /health remains HTTP 200 and returns chroma_connected=False if Chroma heartbeat fails."""
+    from src.api.app import create_app
+    from unittest.mock import patch
+
+    app = create_app(test_config={"TESTING": True})
+    with patch("src.rag.vector_store.VectorStoreManager.is_healthy", return_value=False):
+        with app.test_client() as client:
+            resp = client.get("/health")
+            assert resp.status_code == 200
+            data = resp.get_json()
+            assert data["status"] == "healthy"
+            assert data["chroma_connected"] is False
+
+
+def test_render_yaml_private_chroma_service():
+    """Verify render.yaml declares schemeiq-plus-chroma private service with plan 0.5c-512mb."""
+    import yaml
+    from pathlib import Path
+
+    render_path = Path("render.yaml")
+    assert render_path.exists(), "render.yaml not found"
+
+    with open(render_path, "r", encoding="utf-8") as f:
+        spec = yaml.safe_load(f)
+
+    services = spec.get("services", [])
+    pservs = [s for s in services if s.get("type") == "pserv"]
+    assert len(pservs) >= 1, "Expected at least one pserv in render.yaml"
+
+    chroma_pserv = next((s for s in pservs if s.get("name") == "schemeiq-plus-chroma"), None)
+    assert chroma_pserv is not None, "Missing 'schemeiq-plus-chroma' private service in render.yaml"
+    assert chroma_pserv.get("plan") == "0.5c-512mb", (
+        f"Expected plan 0.5c-512mb, got: {chroma_pserv.get('plan')}"
+    )
+    assert chroma_pserv.get("startCommand") == "python scripts/start_chroma_service.py"
+
+    # Verify no persistent disk is attached
+    assert "disk" not in chroma_pserv, "render.yaml must not attach a persistent disk to chroma service"
+
+
+def test_render_yaml_backend_references_chroma_from_service():
+    """Verify backend in render.yaml links CHROMA_SERVER_HOST via fromService."""
+    import yaml
+    from pathlib import Path
+
+    render_path = Path("render.yaml")
+    with open(render_path, "r", encoding="utf-8") as f:
+        spec = yaml.safe_load(f)
+
+    services = spec.get("services", [])
+    web_services = [s for s in services if s.get("type") == "web"]
+    backend = next((s for s in web_services if s.get("name") == "schemeiq-plus-backend"), None)
+    assert backend is not None, "Missing 'schemeiq-plus-backend' in render.yaml"
+
+    env_vars = {v["key"]: v for v in backend.get("envVars", [])}
+    assert "CHROMA_SERVER_HOST" in env_vars, "Backend missing CHROMA_SERVER_HOST env var"
+
+    chroma_host_var = env_vars["CHROMA_SERVER_HOST"]
+    assert "fromService" in chroma_host_var, "CHROMA_SERVER_HOST must use fromService directive"
+    from_svc = chroma_host_var["fromService"]
+    assert from_svc.get("type") == "pserv"
+    assert from_svc.get("name") == "schemeiq-plus-chroma"
+    assert from_svc.get("property") == "host"
+
+    assert env_vars.get("CHROMA_SERVER_PORT", {}).get("value") == "8000"
+    assert env_vars.get("CHROMA_SERVER_SSL", {}).get("value") == "false"

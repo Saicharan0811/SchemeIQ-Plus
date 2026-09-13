@@ -1,22 +1,39 @@
 # ==============================================================================
-# Render Blueprint Specification — SchemeIQ+ Backend Web Service (Phase 9B)
+# Render Blueprint Specification — SchemeIQ+ Production Architecture (Phase 9D.7)
 # ==============================================================================
 # Docs: https://render.com/docs/blueprint-spec
 # ==============================================================================
 
 services:
+  # ----------------------------------------------------------------------------
+  # 1. Standalone Chroma Vector Database Service (Private Service)
+  # ----------------------------------------------------------------------------
+  - type: pserv
+    name: schemeiq-plus-chroma
+    runtime: python
+    region: oregon
+    plan: 0.5c-512mb
+    buildCommand: pip install -r requirements.txt
+    startCommand: python scripts/start_chroma_service.py
+    envVars:
+      - key: RAYON_NUM_THREADS
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: EMBEDDING_PROVIDER
+        value: onnx
+      - key: EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2
+
+  # ----------------------------------------------------------------------------
+  # 2. SchemeIQ+ Web API Service (Free Web Service)
+  # ----------------------------------------------------------------------------
   - type: web
     name: schemeiq-plus-backend
     runtime: python
-    region: oregon # or frankfurt / singapore based on user preference
-    plan: free # or starter
+    region: oregon
+    plan: free
     buildCommand: pip install -r requirements.txt
-    # Single Gunicorn worker with 1 thread to ensure ChromaDB's native Rust/Tokio
-    # runtime (chromadb_rust_bindings) is always called from the same OS thread on
-    # which PersistentClient was initialized. Multi-thread (--threads >1) causes the
-    # gthread worker to call into Tokio from a foreign thread, deadlocking the query.
-    # Memory is safe: PyTorch was replaced by ONNX Runtime (Phase 9D.1), keeping
-    # total server RAM ~200MB well within Render's 512MB limit.
     startCommand: gunicorn --workers 1 --threads 1 --timeout 120 --bind 0.0.0.0:$PORT wsgi:app
     healthCheckPath: /health
     autoDeploy: true
@@ -41,3 +58,13 @@ services:
         value: "1"
       - key: RAYON_NUM_THREADS
         value: "1"
+      - key: CHROMA_SERVER_HOST
+        fromService:
+          type: pserv
+          name: schemeiq-plus-chroma
+          property: host
+      - key: CHROMA_SERVER_PORT
+        value: "8000"
+      - key: CHROMA_SERVER_SSL
+        value: "false"
+
