@@ -71,9 +71,17 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5000"))
     threads = int(os.environ.get("WSGI_THREADS", "4"))
 
+    local_url = f"http://localhost:{port}"
+    logger.info(f"Starting SchemeIQ+ production WSGI server (Waitress) bound to {host}:{port} ({threads} threads)...")
+    logger.info(f"Local Access URL: {local_url}")
+    print(f"\n=======================================================", flush=True)
+    print(f" SchemeIQ+ WSGI Server bound to: {host}:{port}", flush=True)
+    print(f" Local Access URL:   {local_url}", flush=True)
+    print(f" Health Check URL:   {local_url}/health", flush=True)
+    print(f"=======================================================\n", flush=True)
+
     try:
         import waitress
-        logger.info(f"Starting SchemeIQ+ production WSGI server (Waitress) on http://{host}:{port} ({threads} threads)...")
         waitress.serve(app, host=host, port=port, threads=threads)
     except ImportError:
         logger.warning("Waitress not installed; falling back to Flask development server with debug=False.")

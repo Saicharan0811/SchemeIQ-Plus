@@ -101,6 +101,27 @@ def create_app(
 
 
     # -----------------------------------------------------------------------
+    # Endpoint 0: Root Service Info
+    # -----------------------------------------------------------------------
+    @app.route("/", methods=["GET"])
+    def root():
+        """
+        Root endpoint providing service status and links to existing endpoints.
+        """
+        return jsonify({
+            "service": "SchemeIQ+ Production API",
+            "status": "healthy",
+            "version": "1.0.0",
+            "health_endpoint": "/health",
+            "endpoints": {
+                "health": "GET /health",
+                "recommend": "POST /api/recommend",
+                "scheme_lookup": "GET /api/schemes/<scheme_id>",
+                "ask_rag": "POST /api/ask",
+            },
+        }), 200
+
+    # -----------------------------------------------------------------------
     # Endpoint 1: Health
     # -----------------------------------------------------------------------
     @app.route("/health", methods=["GET"])

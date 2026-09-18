@@ -13,6 +13,7 @@ Architecture:
         ├── PromptBuilder     (strict grounding prompt)
         |
         ├── BaseLLMProvider   (provider abstraction)
+        |   ├── OllamaLLMProvider         (local Ollama, e.g. qwen3:8b)
         |   ├── OpenAILLMProvider
         |   └── LocalTemplateLLMProvider  (dev/offline fallback)
         |
@@ -288,6 +289,152 @@ class OpenAILLMProvider(BaseLLMProvider):
         return content.strip()
 
 
+class OllamaLLMProvider(BaseLLMProvider):
+    """
+    Local Ollama LLM provider.
+
+    Calls the Ollama REST API at OLLAMA_BASE_URL (default: http://localhost:11434)
+    using the model specified by OLLAMA_MODEL (default: qwen3:8b).
+
+    Uses the project's existing `requests` library — no new dependency required.
+    Raises ConnectionError clearly if Ollama is unreachable so the caller can
+    decide whether to fall back or propagate the error.
+    """
+
+    def __init__(
+        self,
+        model: Optional[str] = None,
+        base_url: Optional[str] = None,
+        timeout: Optional[float] = None,
+    ) -> None:
+        self._model = (
+            model
+            or os.environ.get("OLLAMA_MODEL", "")
+            or "qwen3:8b"
+        )
+        self._base_url = (
+            base_url
+            or os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
+        ).rstrip("/")
+        self._connect_timeout = float(os.environ.get("OLLAMA_CONNECT_TIMEOUT", "10.0"))
+        self._read_timeout = float(timeout or os.environ.get("OLLAMA_TIMEOUT", "300.0"))
+
+        try:
+            import requests as _requests  # noqa: F401  (already in requirements.txt)
+        except ImportError:
+            raise ImportError(
+                "requests package is not installed. Run: pip install requests"
+            )
+
+        # Verify Ollama is reachable at construction time so failures surface early
+        self._verify_reachable()
+
+    def _verify_reachable(self) -> None:
+        """Ping /api/tags to confirm Ollama is running and the model is available."""
+        import requests
+        url = f"{self._base_url}/api/tags"
+        try:
+            resp = requests.get(url, timeout=self._connect_timeout)
+            resp.raise_for_status()
+        except Exception as exc:
+            raise ConnectionError(
+                f"Ollama is not reachable at {self._base_url}. "
+                f"Please ensure Ollama is running (ollama serve). "
+                f"Original error: {exc}"
+            ) from exc
+
+        # Check that the configured model is available in Ollama
+        try:
+            tags = resp.json()
+            model_names = [
+                m.get("name", "").split(":")[0]
+                for m in tags.get("models", [])
+            ]
+            # Also check full names (with tag) for exact match
+            full_names = [m.get("name", "") for m in tags.get("models", [])]
+            requested_base = self._model.split(":")[0]
+            if self._model not in full_names and requested_base not in model_names:
+                logger.warning(
+                    "OllamaLLMProvider: model '%s' not found in Ollama. "
+                    "Available models: %s. "
+                    "Run: ollama pull %s",
+                    self._model,
+                    full_names,
+                    self._model,
+                )
+        except Exception:
+            # Non-fatal: tags parsing failure should not block startup
+            pass
+
+    @property
+    def model_name(self) -> str:
+        return self._model
+
+    @property
+    def provider_name(self) -> str:
+        return "ollama"
+
+    def generate(self, prompt: str, max_tokens: int = 1024) -> str:
+        """
+        Call Ollama /api/generate with stream=false.
+
+        The full grounding prompt (including retrieved context) is sent as the
+        prompt field. Ollama returns the complete response in one JSON object.
+        Sets think=False by default (configurable via OLLAMA_THINK) to avoid
+        lengthy reasoning loops on CPU and directly return grounded answers.
+        """
+        import requests
+
+        think_enabled = os.environ.get("OLLAMA_THINK", "false").lower() in ("true", "1", "yes")
+
+        url = f"{self._base_url}/api/generate"
+        payload = {
+            "model": self._model,
+            "prompt": prompt,
+            "stream": False,
+            "think": think_enabled,
+            "options": {
+                "num_predict": max_tokens,
+                "temperature": 0.1,   # low temperature for factual grounding
+                "top_p": 0.9,
+            },
+        }
+
+        try:
+            resp = requests.post(
+                url,
+                json=payload,
+                timeout=(self._connect_timeout, self._read_timeout),
+            )
+            resp.raise_for_status()
+        except requests.exceptions.ConnectionError as exc:
+            raise ConnectionError(
+                f"Could not connect to Ollama at {self._base_url}. "
+                f"Is 'ollama serve' running? Error: {exc}"
+            ) from exc
+        except requests.exceptions.Timeout as exc:
+            raise TimeoutError(
+                f"Ollama request timed out after {self._read_timeout}s. "
+                f"The model '{self._model}' may need more time. Error: {exc}"
+            ) from exc
+        except requests.exceptions.HTTPError as exc:
+            raise RuntimeError(
+                f"Ollama returned HTTP {resp.status_code}: {resp.text[:200]}"
+            ) from exc
+
+        data = resp.json()
+        content = data.get("response", "").strip()
+        # Fallback to thinking field if response is empty (e.g. if model output thinking only)
+        if not content and data.get("thinking", "").strip():
+            content = data.get("thinking", "").strip()
+
+        if not content:
+            raise ValueError(
+                f"Ollama returned an empty response for model '{self._model}'."
+            )
+        return content
+
+
 class LocalTemplateLLMProvider(BaseLLMProvider):
     """
     Offline fallback provider for development / testing without an API key.
@@ -323,10 +470,11 @@ class LocalTemplateLLMProvider(BaseLLMProvider):
         context_text = context_match.group(1).strip() if context_match else "[No context extracted]"
 
         return (
-            "[OFFLINE FALLBACK — No LLM API key configured]\n\n"
+            "[OFFLINE FALLBACK — No LLM configured]\n\n"
             "The following is the raw official government source context retrieved for your query. "
             "No language model has processed or summarised this. "
-            "Please configure OPENAI_API_KEY in .env for full answer generation.\n\n"
+            "Please configure LLM_PROVIDER=ollama (with Ollama running) or LLM_PROVIDER=openai "
+            "with OPENAI_API_KEY in .env for full answer generation.\n\n"
             f"{context_text}"
         )
 
@@ -342,17 +490,40 @@ def get_llm_provider(
     Priority:
       1. Explicit provider_type argument
       2. LLM_PROVIDER env var
-      3. If OPENAI_API_KEY is set → OpenAILLMProvider
+         - "ollama"  → OllamaLLMProvider  (local Ollama, e.g. qwen3:8b)
+         - "openai"  → OpenAILLMProvider
+      3. Auto-detect: if OPENAI_API_KEY is set → OpenAILLMProvider
       4. If allow_fallback=True → LocalTemplateLLMProvider (dev only)
       5. Otherwise → raise EnvironmentError
 
     Args:
-        provider_type: "openai" or "local"
+        provider_type: "ollama", "openai", or "local"
         model: override model name
-        allow_fallback: if True, use LocalTemplateLLMProvider when no key present
+        allow_fallback: if True, use LocalTemplateLLMProvider when no configured provider works
     """
     ptype = (provider_type or os.environ.get("LLM_PROVIDER", "")).lower()
 
+    # ---- Ollama (local, preferred for development and self-hosted deployments) ----
+    if ptype == "ollama":
+        try:
+            provider = OllamaLLMProvider(model=model)
+            logger.info(
+                "LLM provider: OllamaLLMProvider (model=%s, base_url=%s)",
+                provider.model_name,
+                provider._base_url,
+            )
+            return provider
+        except (ConnectionError, ImportError) as exc:
+            if allow_fallback:
+                logger.warning(
+                    "Ollama not reachable — falling back to LocalTemplateLLMProvider. "
+                    "Ensure 'ollama serve' is running. Error: %s",
+                    exc,
+                )
+                return LocalTemplateLLMProvider()
+            raise
+
+    # ---- OpenAI (or compatible endpoint) ----
     if ptype == "openai" or (not ptype and os.environ.get("OPENAI_API_KEY", "")):
         try:
             return OpenAILLMProvider(model=model)
@@ -362,12 +533,18 @@ def get_llm_provider(
                 return LocalTemplateLLMProvider()
             raise
 
+    # ---- No provider configured ----
     if allow_fallback:
-        logger.warning("No LLM provider configured — using LocalTemplateLLMProvider (development only).")
+        logger.warning(
+            "No LLM provider configured — using LocalTemplateLLMProvider (development only). "
+            "Set LLM_PROVIDER=ollama in .env to use local Ollama (qwen3:8b recommended)."
+        )
         return LocalTemplateLLMProvider()
 
     raise EnvironmentError(
-        "No LLM provider configured. Set LLM_PROVIDER=openai and OPENAI_API_KEY in .env"
+        "No LLM provider configured. "
+        "Set LLM_PROVIDER=ollama (with Ollama running) or "
+        "LLM_PROVIDER=openai with OPENAI_API_KEY in .env."
     )
 
 
@@ -533,7 +710,9 @@ class AnswerGenerator:
             logger.error(f"LLM generation failed: {e}")
             answer_text = (
                 "I could not generate an answer at this time due to a technical error. "
-                "Please check your LLM provider configuration (OPENAI_API_KEY in .env)."
+                "Please check your LLM provider configuration "
+                "(LLM_PROVIDER and OLLAMA_BASE_URL/OLLAMA_MODEL in .env, "
+                "or OPENAI_API_KEY if using OpenAI)."
             )
             gen_status = GroundingStatus.GENERATION_FAILED
             gen_note = f"LLM call failed: {e}"
@@ -555,9 +734,10 @@ class AnswerGenerator:
         if self.provider_name == "local" and gen_status == GroundingStatus.GROUNDED:
             gen_status = GroundingStatus.PARTIALLY_GROUNDED
             gen_note = (
-                "This answer was produced by the offline template fallback (no LLM API key). "
+                "This answer was produced by the offline template fallback (no LLM configured). "
                 "It presents raw retrieved context, not a language-model-generated response. "
-                "Configure OPENAI_API_KEY for full RAG answer generation."
+                "Configure LLM_PROVIDER=ollama (with Ollama running) or "
+                "LLM_PROVIDER=openai with OPENAI_API_KEY for full RAG answer generation."
             )
 
         return GroundedAnswer(
