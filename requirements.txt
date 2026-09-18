@@ -23,7 +23,7 @@ xgboost>=2.0.0
 scikit-learn>=1.4.0
 
 # Information Retrieval & RAG
-chromadb>=0.5.0
+numpy>=1.26.0
 onnxruntime>=1.18.0
 tokenizers>=0.19.0
 huggingface-hub>=0.23.0

@@ -1,33 +1,13 @@
 # ==============================================================================
-# Render Blueprint Specification — SchemeIQ+ Production Architecture (Phase 9D.7)
+# Render Blueprint Specification — SchemeIQ+ Production Architecture (Phase 9D.8)
+# Zero-cost architecture: Single Free Web Service with local deterministic vector index.
 # ==============================================================================
 # Docs: https://render.com/docs/blueprint-spec
 # ==============================================================================
-# Phase 9D.7.5 sync trigger
 
 services:
   # ----------------------------------------------------------------------------
-  # 1. Standalone Chroma Vector Database Service (Private Service)
-  # ----------------------------------------------------------------------------
-  - type: pserv
-    name: schemeiq-plus-chroma
-    runtime: python
-    region: oregon
-    plan: 0.5c-512mb
-    buildCommand: pip install -r requirements.txt
-    startCommand: python scripts/start_chroma_service.py
-    envVars:
-      - key: RAYON_NUM_THREADS
-        value: "1"
-      - key: OMP_NUM_THREADS
-        value: "1"
-      - key: EMBEDDING_PROVIDER
-        value: onnx
-      - key: EMBEDDING_MODEL
-        value: all-MiniLM-L6-v2
-
-  # ----------------------------------------------------------------------------
-  # 2. SchemeIQ+ Web API Service (Free Web Service)
+  # SchemeIQ+ Web API Service (Free Web Service)
   # ----------------------------------------------------------------------------
   - type: web
     name: schemeiq-plus-backend
@@ -59,13 +39,3 @@ services:
         value: "1"
       - key: RAYON_NUM_THREADS
         value: "1"
-      - key: CHROMA_SERVER_HOST
-        fromService:
-          type: pserv
-          name: schemeiq-plus-chroma
-          property: host
-      - key: CHROMA_SERVER_PORT
-        value: "8000"
-      - key: CHROMA_SERVER_SSL
-        value: "false"
-

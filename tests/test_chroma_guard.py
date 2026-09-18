@@ -134,47 +134,32 @@ def test_wsgi_prewarm_includes_chroma_query():
         assert len(res) == 1
 
 
-# ── Phase 9D.7 Chroma HTTP Architecture Tests ─────────────────────────────────
+# ── Phase 9D.8 Zero-Cost Architecture Tests ────────────────────────────────────
 
-def test_vector_store_manager_http_client_selection():
-    """Verify that VectorStoreManager selects chromadb.HttpClient when CHROMA_SERVER_HOST is set."""
-    import os
-    from unittest.mock import MagicMock, patch
-
-    mock_http_client = MagicMock()
-    mock_collection = MagicMock()
-    mock_http_client.get_or_create_collection.return_value = mock_collection
-
-    with patch.dict(os.environ, {
-        "CHROMA_SERVER_HOST": "schemeiq-plus-chroma",
-        "CHROMA_SERVER_PORT": "8000",
-        "CHROMA_SERVER_SSL": "false",
-    }):
-        with patch("chromadb.HttpClient", return_value=mock_http_client) as mock_init:
-            vsm = VectorStoreManager()
-            assert vsm._is_http is True
-            assert vsm.client is mock_http_client
-            mock_init.assert_called_once()
-            call_kwargs = mock_init.call_args[1]
-            assert call_kwargs["host"] == "schemeiq-plus-chroma"
-            assert call_kwargs["port"] == 8000
-            assert call_kwargs["ssl"] is False
+def test_local_dense_index_loads_166_vectors():
+    """Verify that VectorStoreManager loads all 166 canonical vectors from dense_index.json."""
+    vsm = VectorStoreManager()
+    assert vsm.is_healthy() is True
+    assert vsm.collection.count() == 166
+    stats = vsm.get_collection_stats()
+    assert stats["total_records"] == 166
+    assert stats["collection_name"] == "schemeiq_official_schemes"
 
 
-def test_vector_store_manager_persistent_client_fallback():
-    """Verify that VectorStoreManager falls back to chromadb.PersistentClient when CHROMA_SERVER_HOST is unset."""
-    import os
-    from unittest.mock import patch
+def test_vector_store_deterministic_rebuild_from_canonical(tmp_path):
+    """Verify that vector index can be deterministically rebuilt from canonical documents."""
+    temp_index_file = tmp_path / "dense_index.json"
+    from scripts.build_vector_index import build_vector_index
 
-    # Ensure CHROMA_SERVER_HOST is absent
-    env_copy = os.environ.copy()
-    env_copy.pop("CHROMA_SERVER_HOST", None)
+    index_data = build_vector_index(output_path=temp_index_file)
+    assert index_data["total_records"] == 166
+    assert index_data["unique_scheme_count"] == 14
+    assert temp_index_file.exists()
 
-    with patch.dict(os.environ, env_copy, clear=True):
-        vsm = VectorStoreManager()
-        assert vsm._is_http is False
-        import chromadb
-        assert isinstance(vsm.client, chromadb.api.ClientAPI)
+    # Load with VectorStoreManager pointing to temp dir
+    vsm_temp = VectorStoreManager(persist_directory=temp_index_file)
+    assert vsm_temp.is_healthy() is True
+    assert vsm_temp.collection.count() == 166
 
 
 def test_health_endpoint_contains_chroma_connected():
@@ -188,10 +173,11 @@ def test_health_endpoint_contains_chroma_connected():
         data = resp.get_json()
         assert "chroma_connected" in data
         assert isinstance(data["chroma_connected"], bool)
+        assert data["chroma_connected"] is True
 
 
 def test_health_endpoint_remains_200_when_heartbeat_fails():
-    """Verify GET /health remains HTTP 200 and returns chroma_connected=False if Chroma heartbeat fails."""
+    """Verify GET /health remains HTTP 200 and returns chroma_connected=False if vector store is unhealthy."""
     from src.api.app import create_app
     from unittest.mock import patch
 
@@ -205,8 +191,8 @@ def test_health_endpoint_remains_200_when_heartbeat_fails():
             assert data["chroma_connected"] is False
 
 
-def test_render_yaml_private_chroma_service():
-    """Verify render.yaml declares schemeiq-plus-chroma private service with plan 0.5c-512mb."""
+def test_render_yaml_zero_cost_single_web_service():
+    """Verify render.yaml declares only ONE service: free schemeiq-plus-backend web service."""
     import yaml
     from pathlib import Path
 
@@ -217,43 +203,31 @@ def test_render_yaml_private_chroma_service():
         spec = yaml.safe_load(f)
 
     services = spec.get("services", [])
+    assert len(services) == 1, f"Expected exactly 1 service in render.yaml, found {len(services)}"
+
+    backend = services[0]
+    assert backend.get("type") == "web", f"Expected type: web, got {backend.get('type')}"
+    assert backend.get("name") == "schemeiq-plus-backend"
+    assert backend.get("plan") == "free", f"Expected plan: free, got {backend.get('plan')}"
+
+    # Verify no private services or paid plans exist
     pservs = [s for s in services if s.get("type") == "pserv"]
-    assert len(pservs) >= 1, "Expected at least one pserv in render.yaml"
+    assert len(pservs) == 0, "render.yaml must not contain any pserv (private service) definitions"
 
-    chroma_pserv = next((s for s in pservs if s.get("name") == "schemeiq-plus-chroma"), None)
-    assert chroma_pserv is not None, "Missing 'schemeiq-plus-chroma' private service in render.yaml"
-    assert chroma_pserv.get("plan") == "0.5c-512mb", (
-        f"Expected plan 0.5c-512mb, got: {chroma_pserv.get('plan')}"
-    )
-    assert chroma_pserv.get("startCommand") == "python scripts/start_chroma_service.py"
-
-    # Verify no persistent disk is attached
-    assert "disk" not in chroma_pserv, "render.yaml must not attach a persistent disk to chroma service"
-
-
-def test_render_yaml_backend_references_chroma_from_service():
-    """Verify backend in render.yaml links CHROMA_SERVER_HOST via fromService."""
-    import yaml
-    from pathlib import Path
-
-    render_path = Path("render.yaml")
-    with open(render_path, "r", encoding="utf-8") as f:
-        spec = yaml.safe_load(f)
-
-    services = spec.get("services", [])
-    web_services = [s for s in services if s.get("type") == "web"]
-    backend = next((s for s in web_services if s.get("name") == "schemeiq-plus-backend"), None)
-    assert backend is not None, "Missing 'schemeiq-plus-backend' in render.yaml"
-
+    # Verify no obsolete CHROMA_SERVER_* env vars remain
     env_vars = {v["key"]: v for v in backend.get("envVars", [])}
-    assert "CHROMA_SERVER_HOST" in env_vars, "Backend missing CHROMA_SERVER_HOST env var"
+    assert "CHROMA_SERVER_HOST" not in env_vars, "Obsolete CHROMA_SERVER_HOST must be removed"
+    assert "CHROMA_SERVER_PORT" not in env_vars, "Obsolete CHROMA_SERVER_PORT must be removed"
+    assert "CHROMA_SERVER_SSL" not in env_vars, "Obsolete CHROMA_SERVER_SSL must be removed"
 
-    chroma_host_var = env_vars["CHROMA_SERVER_HOST"]
-    assert "fromService" in chroma_host_var, "CHROMA_SERVER_HOST must use fromService directive"
-    from_svc = chroma_host_var["fromService"]
-    assert from_svc.get("type") == "pserv"
-    assert from_svc.get("name") == "schemeiq-plus-chroma"
-    assert from_svc.get("property") == "host"
 
-    assert env_vars.get("CHROMA_SERVER_PORT", {}).get("value") == "8000"
-    assert env_vars.get("CHROMA_SERVER_SSL", {}).get("value") == "false"
+def test_vector_store_integrity_check():
+    """Verify vector store invariants: 166 vectors, 14 schemes, complete metadata, no duplicates."""
+    vsm = VectorStoreManager()
+    integrity = vsm.verify_integrity()
+    assert integrity["status"] == "PASS"
+    assert integrity["total_stored_vectors"] == 166
+    assert integrity["unique_scheme_count"] == 14
+    assert len(integrity["indexed_scheme_ids"]) == 14
+    assert integrity["empty_documents_count"] == 0
+

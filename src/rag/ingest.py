@@ -109,9 +109,9 @@ class RAGIngestionPipeline:
             seen_ids.add(chk.chunk_id)
             valid_chunks.append(chk)
 
-        # 3. Idempotent Caching Check with ChromaDB
+        # 3. Idempotent Caching Check with vector store
         existing_hashes = self.vector_store.get_existing_chunk_hashes()
-        logger.info(f"Found {len(existing_hashes)} existing vectors in ChromaDB collection.")
+        logger.info(f"Found {len(existing_hashes)} existing vectors in vector store collection.")
 
         chunks_to_embed: List[DocumentChunk] = []
         chunks_skipped: List[DocumentChunk] = []

@@ -38,4 +38,7 @@ frontend/.env.*
 # Temporary / scratch files
 scratch/
 
+# Legacy Chroma vector database (replaced by dense_index.json in Phase 9D.8)
+data/vector_store/chroma_db/
+
 

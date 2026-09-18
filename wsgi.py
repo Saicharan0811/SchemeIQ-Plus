@@ -47,16 +47,8 @@ from src.api.app import create_app
 try:
     _rag = RAGService(allow_fallback=True)
     _rag._retriever._emb_provider.embed_query("warmup")
-    if os.environ.get("CHROMA_SERVER_HOST", "").strip():
-        # Remote Chroma service: verify connectivity with a lightweight heartbeat.
-        # Do NOT run a full collection.query here; that is done by the Chroma
-        # service startup script which seeds and verifies the 166-vector corpus.
-        _rag._retriever._vector_store.client.heartbeat()
-        logger.info("RAGService pre-warmed (ONNX + remote Chroma heartbeat OK).")
-    else:
-        # Local PersistentClient: prime HNSW memory map with a zero-vector query.
-        _rag._retriever._vector_store.query_similar([0.0] * 384, top_k=1)
-        logger.info("RAGService pre-warmed successfully (embedding + Chroma paths warmed).")
+    _rag._retriever._vector_store.query_similar([0.0] * 384, top_k=1)
+    logger.info("RAGService pre-warmed successfully (embedding + vector index paths warmed).")
 except Exception as e:
     logger.warning(f"RAGService pre-warming warning: {e}. Lazy loading will be used.")
     _rag = None
