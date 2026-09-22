@@ -177,25 +177,41 @@ def build_source_citations(used_chunks: List[HybridResult]) -> List[SourceCitati
 # Prompt Builder (Phase 5D)
 # ---------------------------------------------------------------------------
 
-SYSTEM_PROMPT_TEMPLATE = textwrap.dedent("""
+# System-level instructions sent as the "system" role in chat API calls.
+# Rule 4 is intentionally worded to guide behaviour WITHOUT providing a
+# copy-pasteable refusal sentence that the model might reproduce verbatim.
+SYSTEM_PROMPT = textwrap.dedent("""
 You are SchemeIQ+, a factual AI assistant for official Indian government scheme information.
 
-Your ONLY job is to answer the user's question using the official source context provided below.
+Your ONLY job is to answer the user's question using the official source context that will be
+provided in the next message.
 
 STRICT GROUNDING RULES:
-1. Use ONLY the information in the OFFICIAL RETRIEVED CONTEXT below. Do not use your training knowledge about government schemes.
+1. Use ONLY the information in the OFFICIAL RETRIEVED CONTEXT provided. Do not use your
+   training knowledge about government schemes.
 2. Do not invent or guess any fact not explicitly stated in the context.
-3. Preserve exact numbers, percentages, monetary amounts (such as ₹50,000 or 35%), dates, and conditions as they appear in the context. Do not round or approximate them.
-4. If the retrieved context does not contain sufficient information to answer the question, say clearly: "I could not find sufficient information in the official SchemeIQ+ sources to answer that completely." Then share only what is actually supported.
-5. If two or more sources in the context contain conflicting information about the same fact, explicitly state that the retrieved official sources contain differing information and identify which sources disagree.
-6. Never claim that a user is definitely eligible for a scheme. Use hedged language such as: "Based on the information available in the retrieved official sources, you may be eligible if..."
-7. Structure the answer clearly using plain language. Use bullet points or numbered lists when listing multiple criteria, benefits, or steps.
+3. Preserve exact numbers, percentages, monetary amounts (such as ₹50,000 or 35%), dates,
+   and conditions as they appear in the context. Do not round or approximate them.
+4. Base your answer strictly on what the context says. If certain details are not present in
+   the context, answer only with what IS present and note briefly which specific detail was
+   not found — do not refuse to answer entirely when relevant information exists.
+5. If two or more sources in the context contain conflicting information about the same fact,
+   explicitly state that the retrieved official sources contain differing information and
+   identify which sources disagree.
+6. Never claim that a user is definitely eligible for a scheme. Use hedged language such as:
+   "Based on the information available in the retrieved official sources, you may be
+   eligible if..."
+7. Structure the answer clearly using plain language. Use bullet points or numbered lists
+   when listing multiple criteria, benefits, or steps.
 8. At the end of your answer, list the official sources used in this format:
 
 Sources:
 [1] Scheme Name — Document Title
     https://official-url
+""").strip()
 
+# User-turn template: contains the retrieved context + question.
+USER_PROMPT_TEMPLATE = textwrap.dedent("""
 OFFICIAL RETRIEVED CONTEXT:
 {retrieved_context}
 
@@ -207,12 +223,18 @@ USER QUESTION:
 def build_prompt(
     user_query: str,
     context_str: str,
-) -> str:
-    """Inject query and context into the system prompt template."""
-    return SYSTEM_PROMPT_TEMPLATE.format(
+) -> tuple[str, str]:
+    """
+    Build (system_message, user_message) tuple for chat-style LLM calls.
+
+    Returns:
+        (system_msg, user_msg) — both ready to be sent in the messages array.
+    """
+    user_msg = USER_PROMPT_TEMPLATE.format(
         retrieved_context=context_str,
         user_query=user_query,
     )
+    return SYSTEM_PROMPT, user_msg
 
 
 # ---------------------------------------------------------------------------
@@ -374,23 +396,41 @@ class OllamaLLMProvider(BaseLLMProvider):
     def provider_name(self) -> str:
         return "ollama"
 
-    def generate(self, prompt: str, max_tokens: int = 1024) -> str:
+    def generate(
+        self,
+        prompt: str,
+        max_tokens: int = 1024,
+        *,
+        system_message: Optional[str] = None,
+    ) -> str:
         """
-        Call Ollama /api/generate with stream=false.
+        Call Ollama /api/chat with stream=false.
 
-        The full grounding prompt (including retrieved context) is sent as the
-        prompt field. Ollama returns the complete response in one JSON object.
-        Sets think=False by default (configurable via OLLAMA_THINK) to avoid
-        lengthy reasoning loops on CPU and directly return grounded answers.
+        Uses the chat endpoint so that system instructions and the user context
+        are delivered as separate, properly-roled messages. This is the correct
+        way to call Qwen3 and most modern instruction-tuned models via Ollama —
+        the older /api/generate endpoint concatenates everything into a single
+        string which can confuse the model into refusing or echoing instructions.
+
+        If system_message is provided it is sent as role="system".
+        prompt is always sent as role="user".
+
+        Sets think=False by default (configurable via OLLAMA_THINK env var) to
+        avoid lengthy reasoning loops and directly return grounded answers.
         """
         import requests
 
         think_enabled = os.environ.get("OLLAMA_THINK", "false").lower() in ("true", "1", "yes")
 
-        url = f"{self._base_url}/api/generate"
+        messages = []
+        if system_message:
+            messages.append({"role": "system", "content": system_message})
+        messages.append({"role": "user", "content": prompt})
+
+        url = f"{self._base_url}/api/chat"
         payload = {
             "model": self._model,
-            "prompt": prompt,
+            "messages": messages,
             "stream": False,
             "think": think_enabled,
             "options": {
@@ -423,14 +463,18 @@ class OllamaLLMProvider(BaseLLMProvider):
             ) from exc
 
         data = resp.json()
-        content = data.get("response", "").strip()
-        # Fallback to thinking field if response is empty (e.g. if model output thinking only)
-        if not content and data.get("thinking", "").strip():
-            content = data.get("thinking", "").strip()
+        # /api/chat response structure: data["message"]["content"]
+        message_obj = data.get("message", {})
+        content = (message_obj.get("content") or "").strip()
+
+        # Fallback: some Ollama builds also expose a top-level "response" key
+        if not content:
+            content = data.get("response", "").strip()
 
         if not content:
             raise ValueError(
-                f"Ollama returned an empty response for model '{self._model}'."
+                f"Ollama /api/chat returned an empty response for model '{self._model}'. "
+                f"Raw response keys: {list(data.keys())}"
             )
         return content
 
@@ -552,6 +596,25 @@ def get_llm_provider(
 # Answer Validator (Phase 5I)
 # ---------------------------------------------------------------------------
 
+# Phrases that indicate the LLM refused to use the provided context rather than
+# generating a grounded answer.  Any answer that matches one of these patterns
+# (after lower-casing) must NOT be marked GROUNDED — it is a refusal.
+_REFUSAL_PATTERNS: list[str] = [
+    "i could not find sufficient information in the official schemeiq",
+    "could not find sufficient information",
+    "insufficient information in the official",
+    "no relevant information was found in the provided context",
+    "the provided context does not contain",
+    "unable to find the requested information",
+]
+
+
+def _is_refusal(answer: str) -> bool:
+    """Return True when the answer text looks like a canned refusal sentence."""
+    lower = answer.lower()
+    return any(pat in lower for pat in _REFUSAL_PATTERNS)
+
+
 def validate_answer(
     answer: str,
     context_str: str,
@@ -562,23 +625,34 @@ def validate_answer(
 
     Checks:
       - Empty answer → GENERATION_FAILED
-      - Very short answer → PARTIALLY_GROUNDED
+      - Very short answer → GENERATION_FAILED
+      - Generic refusal sentence (model refused despite having context) → GENERATION_FAILED
       - No sources used → INSUFFICIENT_CONTEXT
       - Context was empty → INSUFFICIENT_CONTEXT
 
     Returns:
         (grounding_status, grounding_note)
 
-    IMPORTANT: This validator checks whether an answer was generated and whether
-    sources are present. It does NOT guarantee factual correctness of the answer
-    content. The answer is "retrieval-grounded" (derived from official sources),
-    not "verified factually correct".
+    IMPORTANT: This validator checks whether a useful answer was generated and
+    whether sources are present. It does NOT guarantee factual correctness of
+    the answer content. The answer is "retrieval-grounded" (derived from
+    official sources), not "verified factually correct".
     """
     if not answer or not answer.strip():
         return GroundingStatus.GENERATION_FAILED, "LLM returned an empty answer."
 
     if len(answer.strip()) < MIN_ANSWER_CHARS:
         return GroundingStatus.GENERATION_FAILED, f"Answer is too short ({len(answer.strip())} chars)."
+
+    # Detect generic refusal when context was actually present — this means the
+    # LLM ignored the retrieved context rather than using it.
+    if _is_refusal(answer) and used_chunks:
+        return (
+            GroundingStatus.GENERATION_FAILED,
+            "LLM issued a generic refusal despite available retrieved context. "
+            "This typically indicates a prompt-format mismatch (e.g. /api/generate "
+            "vs /api/chat) or an overly strict refusal trigger in the model.",
+        )
 
     if not used_chunks:
         return (
@@ -689,8 +763,8 @@ class AnswerGenerator:
                 context_chunks_used=0,
             )
 
-        # ---- Step 3: Build prompt ----
-        prompt = build_prompt(query, context_str)
+        # ---- Step 3: Build prompt (returns system_msg, user_msg tuple) ----
+        system_msg, user_msg = build_prompt(query, context_str)
 
         # ---- Step 4: Call LLM ----
         answer_text = ""
@@ -698,27 +772,42 @@ class AnswerGenerator:
         gen_note = ""
 
         logger.info(
-            "AnswerGenerator: calling LLM provider '%s' (model='%s', prompt_len=%d)",
+            "AnswerGenerator: calling LLM provider '%s' (model='%s', user_msg_len=%d)",
             self.provider_name,
             self.model_name,
-            len(prompt),
+            len(user_msg),
         )
         t_gen_start = time.perf_counter()
         try:
-            answer_text = self._llm.generate(prompt, max_tokens=self.max_tokens)
+            # OllamaLLMProvider accepts system_message as a keyword argument;
+            # other providers that don't accept it fall back to the prompt-only
+            # signature via the except block below.
+            if isinstance(self._llm, OllamaLLMProvider):
+                answer_text = self._llm.generate(
+                    user_msg,
+                    max_tokens=self.max_tokens,
+                    system_message=system_msg,
+                )
+            else:
+                # For OpenAI and LocalTemplate providers, combine into a single
+                # prompt string as before (they handle their own message format
+                # internally or accept a plain prompt).
+                combined_prompt = f"{system_msg}\n\n{user_msg}"
+                answer_text = self._llm.generate(combined_prompt, max_tokens=self.max_tokens)
         except Exception as e:
             logger.error(f"LLM generation failed: {e}")
             answer_text = (
-                "I could not generate an answer at this time due to a technical error. "
+                "Answer generation encountered a technical error. "
                 "Please check your LLM provider configuration "
                 "(LLM_PROVIDER and OLLAMA_BASE_URL/OLLAMA_MODEL in .env, "
                 "or OPENAI_API_KEY if using OpenAI)."
             )
             gen_status = GroundingStatus.GENERATION_FAILED
             gen_note = f"LLM call failed: {e}"
+        gen_time = time.perf_counter() - t_gen_start
         logger.info(
             "AnswerGenerator: LLM generation completed in %.3fs (status=%s, answer_len=%d)",
-            time.perf_counter() - t_gen_start,
+            gen_time,
             gen_status,
             len(answer_text),
         )
