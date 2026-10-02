@@ -27,7 +27,6 @@ numpy>=1.26.0
 onnxruntime>=1.18.0
 tokenizers>=0.19.0
 huggingface-hub>=0.23.0
-sentence-transformers>=2.7.0
 rank-bm25>=0.2.2
 
 # LLM provider SDK — OpenAI-compatible client used by OpenAILLMProvider.
