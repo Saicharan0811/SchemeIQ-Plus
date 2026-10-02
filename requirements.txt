@@ -30,4 +30,7 @@ huggingface-hub>=0.23.0
 sentence-transformers>=2.7.0
 rank-bm25>=0.2.2
 
-
+# LLM provider SDK — OpenAI-compatible client used by OpenAILLMProvider.
+# Required for cloud LLM backends: OpenAI, Groq, Together AI, etc.
+# The local Ollama provider (OllamaLLMProvider) uses `requests` and does NOT need this.
+openai>=1.30.0
