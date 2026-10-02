@@ -12,12 +12,25 @@
  */
 
 const rawBase = import.meta.env.VITE_API_BASE_URL;
-const API_BASE =
-  typeof rawBase === "string" && rawBase.trim().length > 0
-    ? rawBase.trim().replace(/\/+$/, "")
-    : import.meta.env.DEV
-    ? "http://127.0.0.1:5000"
-    : "";
+const API_BASE = (() => {
+  if (typeof rawBase === "string" && rawBase.trim().length > 0) {
+    return rawBase.trim().replace(/\/+$/, "");
+  }
+  if (import.meta.env.DEV) {
+    // Local development fallback — Vite dev server proxies or Flask runs on :5000
+    return "http://127.0.0.1:5000";
+  }
+  // Production build without VITE_API_BASE_URL set in Vercel dashboard.
+  // API calls will fail. Set VITE_API_BASE_URL in Vercel Project Settings →
+  // Environment Variables → Production, pointing to your public Flask backend URL.
+  console.error(
+    "[SchemeIQ+] VITE_API_BASE_URL is not set. " +
+    "Set it in the Vercel dashboard (Settings → Environment Variables) " +
+    "to the public HTTPS URL of your Flask backend. " +
+    "A locally running Flask server (127.0.0.1:5000) is NOT reachable from Vercel."
+  );
+  return "";
+})();
 
 async function apiRequest(path, options = {}) {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;

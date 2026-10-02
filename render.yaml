@@ -28,7 +28,7 @@ services:
       - key: WSGI_THREADS
         value: 2
       - key: CORS_ALLOWED_ORIGINS
-        value: https://scheme-iq-plus-f8mb8z9n6-sai-charan6.vercel.app
+        value: https://scheme-iq-plus-e3lhne5e6-sai-charan6.vercel.app
       - key: LLM_PROVIDER
         value: openai
       - key: OPENAI_BASE_URL
